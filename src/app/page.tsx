@@ -113,14 +113,6 @@ export default function HomePage() {
       {/* 5. FAQ SECTION */}
       <FAQ />
 
-      {/* 6. TRUST / FOOTER PLACEHOLDER */}
-      <footer className="py-20 bg-black text-center border-t border-white/10">
-        <h2 className="font-heading text-3xl font-bold text-white mb-8">Ready to Restore Value?</h2>
-        <p className="text-neutral-400 mb-8 max-w-xl mx-auto">Get a detailed, itemized quote within 24 hours. No hidden costs.</p>
-        <Link href="/contact" className="inline-block bg-white text-black px-8 py-4 font-bold rounded-full hover:bg-tmt-orange hover:text-white transition-colors">
-          Contact Us Today
-        </Link>
-      </footer>
     </main>
   );
 }

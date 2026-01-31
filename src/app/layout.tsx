@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import { Navbar } from "@/components/ui/Navbar";
+import { Footer } from "@/components/ui/Footer";
 import { WhatsAppFloat } from "@/components/ui/WhatsAppFloat";
 import { Analytics } from "@/components/analytics/Analytics";
 import "./globals.css";
@@ -32,6 +33,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <Footer />
         <WhatsAppFloat />
         <Analytics />
       </body>
