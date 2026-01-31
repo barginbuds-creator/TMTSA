@@ -37,6 +37,7 @@ export const Navbar = () => {
                 <div className="hidden md:flex items-center gap-8 font-heading font-medium text-sm tracking-widest uppercase">
                     <Link href="/" className="text-white hover:text-tmt-orange transition-colors">Home</Link>
                     <Link href="/#services" className="text-white hover:text-tmt-orange transition-colors">Services</Link>
+                    <Link href="/blog" className="text-white hover:text-tmt-orange transition-colors">Blog</Link>
                     <Link href="/contact" className="bg-white text-black px-6 py-2 font-bold hover:bg-tmt-orange hover:text-white transition-colors">
                         Get Quote
                     </Link>
