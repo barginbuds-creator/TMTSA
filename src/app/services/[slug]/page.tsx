@@ -38,7 +38,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         "provider": {
             "@type": "HomeAndConstructionBusiness",
             "name": "The Maintenance Team",
-            "image": "https://themaintenanceteamsa.co.za/logo.png", // Placeholder
+            "image": "https://tmtsa-website-flyq2ib0g-kyles-projects-1a3e7e0d.vercel.app/images/logo.png", // Correct logo path
             "telephone": "+27766300879",
             "address": {
                 "@type": "PostalAddress",
