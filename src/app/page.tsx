@@ -72,28 +72,32 @@ export default function HomePage() {
                 <Star className="w-3 h-3 fill-current" /> Project Spotlight
               </div>
               <h3 className="font-heading text-4xl md:text-5xl font-bold text-white mb-6">
-                Camps Bay <br />Structural Repair
+                Becott Heights <br />Restoration
               </h3>
               <div className="space-y-6 text-neutral-400 font-sans text-lg">
                 <p>
-                  <strong className="text-white">The Challenge:</strong> Severe salt damage and failing waterproofing led to interior leaks and structural cracks.
+                  <strong className="text-white">Scope of Work:</strong> Leaking balconies were causing significant structural damage, including deep cracks and spalling concrete.
                 </p>
                 <p>
-                  <strong className="text-white">The Solution:</strong> We stripped the roof back to concrete, applied a 4mm torch-on system, and sealed all lateral walls with hydrophobic coatings.
+                  <strong className="text-white">The Solution:</strong> A comprehensive waterproofing overhaul and structural repair. We treated the damage at the source and applied a fresh, weather-resistant coating.
+                </p>
+                <p className="italic text-sm text-neutral-500">
+                  "Another large project almost completed. Trusted by 90% of all leading property agencies throughout the Western Cape."
                 </p>
                 <div className="flex items-center gap-2 text-white font-bold mt-8">
                   <ShieldCheck className="w-6 h-6 text-tmt-orange" />
-                  10-Year Water-Tight Guarantee
+                  Work In Progress (Winter Prep)
                 </div>
               </div>
             </div>
 
             <div className="w-full md:w-1/2">
               <BeforeAfterSlider
-                beforeImage="/images/roof-dirty.jpg"
-                afterImage="/images/roof-clean.jpg"
+                beforeImage="/images/projects/becott/becott-1.jpg"
+                afterImage="/images/projects/becott/becott-2.jpg"
                 className="shadow-2xl shadow-black/50 border border-white/10"
               />
+              <p className="text-xs text-center text-neutral-500 mt-2 uppercase tracking-widest">Slide to compare Before / During</p>
             </div>
 
           </div>
