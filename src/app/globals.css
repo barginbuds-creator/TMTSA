@@ -2,20 +2,33 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #1A1A1A; /* Charcoal */
+  --foreground: #1A1A1A;
+  /* Charcoal */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  
+
   /* TMT Brand Colors */
   --color-tmt-dark: #1A1A1A;
   --color-tmt-orange: #FF6B00;
   --color-tmt-grey: #64748B;
-  
+
   --font-sans: var(--font-inter);
   --font-heading: var(--font-space-grotesk);
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  --animate-marquee: marquee 30s linear infinite;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -31,7 +44,12 @@ body {
   font-family: var(--font-sans);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   letter-spacing: -0.02em;
 }

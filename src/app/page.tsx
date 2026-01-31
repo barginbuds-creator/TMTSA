@@ -1,7 +1,10 @@
 import { BeforeAfterSlider } from "@/components/ui/BeforeAfterSlider";
 import { BentoCard, BentoGrid } from "@/components/ui/BentoGrid";
 import { DynamicHero } from "@/components/ui/DynamicHero";
+import { FAQ } from "@/components/ui/FAQ";
+import { ReviewsTicker } from "@/components/ui/ReviewsTicker";
 import { Droplets, Home, Paintbrush, ShieldCheck, Star, Wrench } from "lucide-react";
+import Link from "next/link";
 
 export default function HomePage() {
   return (
@@ -97,18 +100,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. TRUST / FOOTER PLACEHOLDER */}
-      <footer className="py-20 bg-black text-center">
+      {/* 4. REVIEWS TICKER */}
+      <section className="py-12 bg-tmt-orange">
+        <h2 className="sr-only">Client Reviews</h2>
+        <ReviewsTicker />
+      </section>
+
+      {/* 5. FAQ SECTION */}
+      <FAQ />
+
+      {/* 6. TRUST / FOOTER PLACEHOLDER */}
+      <footer className="py-20 bg-black text-center border-t border-white/10">
         <h2 className="font-heading text-3xl font-bold text-white mb-8">Ready to Restore Value?</h2>
         <p className="text-neutral-400 mb-8 max-w-xl mx-auto">Get a detailed, itemized quote within 24 hours. No hidden costs.</p>
-        {/* WhatsApp Float Placeholder */}
-        <div className="fixed bottom-8 right-8 z-50">
-          <button className="bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform flex items-center gap-2">
-            <span className="font-bold hidden md:inline">Chat on WhatsApp</span>
-            {/* WhatsApp Icon SVG would go here */}
-            <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.664-.698c1.025.592 2.072.88 3.327.88 3.18 0 5.767-2.587 5.767-5.766.001-3.187-2.575-5.77-5.77-5.77zm-.52 8.56c-.252.016-.407-.11-.58-.16-.957-.272-1.74-.75-2.292-1.282-.576-.554-1.016-1.306-1.248-2.18-.088-.33.093-.538.307-.655.127-.066.23-.083.33-.11.085-.022.188-.035.297-.04.14-.006.28.02.404.09.136.077.587 1.458.647 1.57.06.113.1.25.04.425-.06.175-.247.388-.37.525-.138.152-.225.21-.08.463.364.636 1.056 1.343 1.84 1.8.256.15.524.234.782.26.257.026.43-.105.584-.257.17-.168.397-.565.552-.525.155.04 1.002.472 1.17.55.17.078.283.116.324.186.04.07.04.407-.13.882-.17.476-.994.664-1.36.68z" /></svg>
-          </button>
-        </div>
+        <Link href="/contact" className="inline-block bg-white text-black px-8 py-4 font-bold rounded-full hover:bg-tmt-orange hover:text-white transition-colors">
+          Contact Us Today
+        </Link>
       </footer>
     </main>
   );
