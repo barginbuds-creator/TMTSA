@@ -18,7 +18,7 @@ export const Navbar = () => {
         <nav
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent",
-                scrolled ? "bg-black/90 backdrop-blur-md border-white/10 py-4" : "bg-transparent py-6"
+                scrolled ? "bg-white/90 backdrop-blur-md border-zinc-200 py-4 shadow-sm" : "bg-transparent py-6"
             )}
         >
             <div className="container mx-auto px-4 flex items-center justify-between">
@@ -34,10 +34,13 @@ export const Navbar = () => {
                 </Link>
 
                 {/* Desktop Nav */}
-                <div className="hidden md:flex items-center gap-8 font-heading font-medium text-sm tracking-widest uppercase">
-                    <Link href="/" className="text-white hover:text-tmt-orange transition-colors">Home</Link>
-                    <Link href="/#services" className="text-white hover:text-tmt-orange transition-colors">Services</Link>
-                    <Link href="/blog" className="text-white hover:text-tmt-orange transition-colors">Blog</Link>
+                <div className={cn(
+                    "hidden md:flex items-center gap-8 font-heading font-medium text-sm tracking-widest uppercase transition-colors",
+                    scrolled ? "text-zinc-900" : "text-white"
+                )}>
+                    <Link href="/" className="hover:text-tmt-orange transition-colors">Home</Link>
+                    <Link href="/#services" className="hover:text-tmt-orange transition-colors">Services</Link>
+                    <Link href="/blog" className="hover:text-tmt-orange transition-colors">Blog</Link>
                     <Link href="/contact" className="bg-white text-black px-6 py-2 font-bold hover:bg-tmt-orange hover:text-white transition-colors">
                         Get Quote
                     </Link>

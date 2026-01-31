@@ -51,15 +51,15 @@ export const BentoCard = ({
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10" />
             </div>
 
-            <div className="absolute top-4 left-4 z-20 text-white/50 group-hover/bento:text-tmt-orange transition-colors">
+            <div className="absolute top-4 left-4 z-20 text-zinc-400 group-hover/bento:text-tmt-orange transition-colors">
                 {icon}
             </div>
 
             <div className="group-hover/bento:translate-x-2 transition duration-200 p-6 z-20 mt-auto">
-                <h3 className="font-heading font-bold text-2xl text-white mb-2 uppercase tracking-wide">
+                <h3 className="font-heading font-bold text-2xl text-zinc-900 mb-2 uppercase tracking-wide">
                     {title}
                 </h3>
-                <p className="font-sans font-normal text-neutral-300 text-sm mb-4 max-w-[90%]">
+                <p className="font-sans font-normal text-zinc-600 text-sm mb-4 max-w-[90%]">
                     {description}
                 </p>
                 {href && (

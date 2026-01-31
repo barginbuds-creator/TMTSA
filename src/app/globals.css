@@ -1,9 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #1A1A1A;
-  /* Charcoal */
+  --background: #fafafa; /* Zinc-50 */
+  --foreground: #18181b; /* Zinc-900 */
 }
 
 @theme inline {
@@ -11,7 +10,7 @@
   --color-foreground: var(--foreground);
 
   /* TMT Brand Colors */
-  --color-tmt-dark: #1A1A1A;
+  --color-tmt-dark: #18181b;
   --color-tmt-orange: #FF6B00;
   --color-tmt-grey: #64748B;
 
@@ -31,10 +30,11 @@
   --animate-marquee: marquee 30s linear infinite;
 }
 
+/* Remove dark mode override for now to force light theme */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #fafafa;
+    --foreground: #18181b;
   }
 }
 
