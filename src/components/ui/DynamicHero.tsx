@@ -35,8 +35,8 @@ export const DynamicHero = () => {
                 >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                        src="/images/hero-executive-gold.png"
-                        alt="Executive Gold Hotel Aesthetic | Black Marble & Gold"
+                        src="/images/hero-executive-white-gold.png"
+                        alt="Executive White Marble & Gold | Light & Airy"
                         className="w-full h-full object-cover"
                     />
                 </motion.div>
