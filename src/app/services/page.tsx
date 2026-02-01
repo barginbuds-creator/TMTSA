@@ -1,5 +1,6 @@
 "use client";
 
+import { PageHero } from "@/components/ui/PageHero";
 import { cn } from "@/lib/utils";
 import { ArrowRight, Droplets, Hammer, Home, Paintbrush, Phone, Wrench } from "lucide-react";
 import Link from "next/link";
@@ -40,15 +41,13 @@ const SERVICES = [
 export default function ServicesPage() {
     return (
         <main className="min-h-screen bg-white text-tmt-dark selection:bg-tmt-orange selection:text-white">
-            {/* 1. Header */}
-            <section className="pt-32 pb-16 px-4 container mx-auto text-center">
-                <h1 className="font-heading font-black text-5xl md:text-7xl mb-6 tracking-tight uppercase">
-                    Elite <span className="text-tmt-orange">Services</span>
-                </h1>
-                <p className="font-sans text-tmt-grey text-lg max-w-2xl mx-auto leading-relaxed">
-                    Comprehensive property maintenance specialists. From waterproofing to full-scale renovations, we handle it all.
-                </p>
-            </section>
+            {/* 1. Unique Page Hero */}
+            <PageHero
+                title={<span>Elite <span className="text-tmt-orange">Services</span></span>}
+                subtitle="Comprehensive property maintenance specialists. From waterproofing to full-scale renovations, we handle it all."
+                imageSrc="/images/hero-services-gold.png"
+                imageAlt="White Marble Architect Table with Gold Tools"
+            />
 
             {/* 2. Services Grid */}
             <section className="pb-32 px-4 container mx-auto">

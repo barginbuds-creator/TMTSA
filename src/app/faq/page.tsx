@@ -1,6 +1,7 @@
 "use client";
 
 import { DynamicHero } from "@/components/ui/DynamicHero";
+import { PageHero } from "@/components/ui/PageHero";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { Minus, Plus } from "lucide-react";
@@ -50,15 +51,13 @@ export default function FAQPage() {
 
     return (
         <main className="min-h-screen bg-white text-tmt-dark selection:bg-tmt-orange selection:text-white">
-            {/* 1. Subtle Header Section (No Giant Hero) */}
-            <section className="pt-32 pb-16 px-4 container mx-auto text-center">
-                <h1 className="font-heading font-black text-5xl md:text-7xl mb-6 tracking-tight uppercase">
-                    Client <span className="text-tmt-orange">Support</span>
-                </h1>
-                <p className="font-sans text-tmt-grey text-lg max-w-2xl mx-auto leading-relaxed">
-                    Common questions regarding our premium waterproofing, painting, and structural repair services.
-                </p>
-            </section>
+            {/* 1. Unique Page Hero */}
+            <PageHero
+                title={<span>Client <span className="text-tmt-orange">Support</span></span>}
+                subtitle="Common questions regarding our premium waterproofing, painting, and structural repair services."
+                imageSrc="/images/hero-faq-gold.png"
+                imageAlt="Minimalist White & Gold Geometric Shapes"
+            />
 
             {/* 2. FAQ Accordion */}
             <section className="pb-32 px-4 container mx-auto max-w-4xl">
