@@ -42,21 +42,22 @@ export const BentoCard = ({
     return (
         <div
             className={cn(
-                "row-span-1 rounded-none group/bento hover:shadow-2xl transition duration-200 shadow-none p-0 bg-neutral-100 dark:bg-tmt-dark border-l-4 border-transparent hover:border-tmt-orange flex flex-col justify-between overflow-hidden relative",
+                "row-span-1 border border-neutral-200 group/bento hover:border-black transition duration-500 overflow-hidden relative bg-white h-full",
                 className
             )}
         >
             <div className="h-full w-full absolute inset-0 z-0">
                 {header}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10" />
+                {/* Lighter, more architectural gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 transition-opacity duration-500 group-hover/bento:opacity-90" />
             </div>
 
-            <div className="absolute top-4 left-4 z-20 text-zinc-400 group-hover/bento:text-tmt-orange transition-colors">
+            <div className="absolute top-6 left-6 z-20 transition-colors duration-300">
                 {icon}
             </div>
 
-            <div className="group-hover/bento:translate-x-2 transition duration-200 p-6 z-20 mt-auto">
-                <h3 className="font-heading font-bold text-2xl text-zinc-900 mb-2 uppercase tracking-wide">
+            <div className="absolute bottom-6 left-6 z-20 pr-6">
+                <h3 className="font-heading font-bold text-2xl text-white mb-2 uppercase tracking-wide">
                     {title}
                 </h3>
                 <p className="font-sans font-normal text-zinc-600 text-sm mb-4 max-w-[90%]">

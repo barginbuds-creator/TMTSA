@@ -7,85 +7,87 @@ import { Droplets, Paintbrush, ShieldCheck, Star, Wrench } from "lucide-react";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-zinc-50 text-zinc-900 selection:bg-tmt-orange selection:text-white pb-20">
+    <main className="min-h-screen bg-white text-black selection:bg-black selection:text-white pb-20">
       {/* 1. HERO SECTION */}
       <DynamicHero />
 
       {/* 2. SERVICES SECTION (Bento Grid) */}
-      <section className="py-24 px-4 container mx-auto" id="services">
-        <div className="mb-16 text-center">
-          <h2 className="text-tmt-orange font-bold tracking-widest uppercase mb-4 text-sm">Our Expertise</h2>
-          <h3 className="font-heading text-4xl md:text-5xl font-bold text-zinc-900">
-            Industrial Specificity. <br />
-            <span className="text-zinc-500">Residential Care.</span>
+      <section className="py-32 px-4 container mx-auto" id="services">
+        <div className="mb-20 text-center">
+          <h2 className="text-black font-bold tracking-[0.2em] uppercase mb-6 text-xs bg-neutral-100 inline-block px-4 py-2 rounded-full border border-neutral-200">
+            Our Expertise
+          </h2>
+          <h3 className="font-heading text-5xl md:text-6xl font-black text-black tracking-tight leading-none">
+            Industrial Power. <br />
+            <span className="text-neutral-400 font-light">Residential Grace.</span>
           </h3>
         </div>
 
-        <BentoGrid className="max-w-6xl mx-auto h-auto md:h-[600px] auto-rows-[minmax(0,1fr)]">
+        <BentoGrid className="max-w-7xl mx-auto h-auto md:h-[600px] auto-rows-[minmax(0,1fr)]">
           {/* Large Tile: Waterproofing */}
           <BentoCard
-            className="md:col-span-2 md:row-span-2 relative bg-white shadow-xl shadow-zinc-200/50 border border-zinc-100"
-            title="Advanced Waterproofing"
-            description="From lateral damp treatments to torch-on roofing systems. We use industrial-grade sealants to protect your home from the Cape storms."
-            cta="See Solutions"
+            className="md:col-span-2 md:row-span-2"
+            title="Waterproofing"
+            description="Lateral damp & roofing systems using industrial-grade sealants."
+            cta="View Solutions"
             href="/services/waterproofing"
-            icon={<Droplets className="w-12 h-12 text-tmt-orange" />}
+            icon={<Droplets className="w-10 h-10 text-white" />}
             header={
-              <div className="absolute inset-0 grayscale opacity-10 mix-blend-multiply" style={{ backgroundImage: 'url(/images/hero-poster.jpg)', backgroundSize: 'cover' }} />
+              <div className="absolute inset-0 grayscale contrast-125 brightness-75" style={{ backgroundImage: 'url(/images/hero-poster.jpg)', backgroundSize: 'cover' }} />
             }
           />
 
           {/* Medium Tile: Painting */}
           <BentoCard
-            className="md:col-span-1 md:row-span-1 bg-white shadow-xl shadow-zinc-200/50 border border-zinc-100"
-            title="Premium Painting"
-            description="Interior & Exterior coatings with a 10-year guarantee."
-            icon={<Paintbrush className="w-8 h-8 text-tmt-orange" />}
+            className="md:col-span-1 md:row-span-1 bg-black"
+            title="Painting"
+            description="Premium interior & exterior coatings."
+            icon={<Paintbrush className="w-8 h-8 text-neutral-400" />}
             href="/services/painting"
             header={
-              <div className="absolute inset-0 bg-zinc-50" />
+              <div className="absolute inset-0 bg-neutral-900" />
             }
           />
 
           {/* Small Tile: Cleaning */}
           <BentoCard
-            className="md:col-span-1 md:row-span-1 bg-white shadow-xl shadow-zinc-200/50 border border-zinc-100"
-            title="High-Pressure Cleaning"
-            description="Restore your roof and paving to brand new."
-            icon={<Wrench className="w-8 h-8 text-tmt-orange" />}
+            className="md:col-span-1 md:row-span-1"
+            title="Cleaning"
+            description="High-pressure roof & paving restoration."
+            icon={<Wrench className="w-8 h-8 text-neutral-400" />}
             href="/services/cleaning"
             header={
-              <div className="absolute inset-0 bg-zinc-50" />
+              <div className="absolute inset-0 bg-neutral-800" />
             }
           />
         </BentoGrid>
       </section>
 
       {/* 3. PROJECT SPOTLIGHT (Before/After) */}
-      <section className="py-24 bg-zinc-100 relative overflow-hidden">
+      <section className="py-32 bg-neutral-50 border-t border-neutral-200 relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col md:flex-row gap-12 items-center">
+          <div className="flex flex-col md:flex-row gap-20 items-center">
 
             <div className="w-full md:w-1/2">
-              <div className="inline-flex items-center gap-2 border border-tmt-orange/30 rounded-full px-4 py-1 text-tmt-orange text-xs font-bold uppercase tracking-widest mb-6 bg-white shadow-sm">
-                <Star className="w-3 h-3 fill-current" /> Project Spotlight
+              <div className="inline-flex items-center gap-3 text-black text-xs font-bold uppercase tracking-[0.2em] mb-8 border-l-2 border-black pl-4">
+                Project Spotlight
               </div>
-              <h3 className="font-heading text-4xl md:text-5xl font-bold text-zinc-900 mb-6">
-                Becott Heights <br />Restoration
+              <h3 className="font-heading text-5xl md:text-7xl font-bold text-black mb-8 leading-[0.9]">
+                Becott <br /><span className="text-neutral-400 font-light">Heights.</span>
               </h3>
-              <div className="space-y-6 text-zinc-600 font-sans text-lg">
+              <div className="space-y-8 text-neutral-600 font-sans text-xl leading-relaxed">
                 <p>
-                  <strong className="text-zinc-900">Scope of Work:</strong> Leaking balconies were causing significant structural damage, including deep cracks and spalling concrete.
+                  <strong className="text-black block mb-2 text-sm uppercase tracking-wide">The Challenge</strong>
+                  Leaking balconies causing structural decay and spalling concrete.
                 </p>
                 <p>
-                  <strong className="text-zinc-900">The Solution:</strong> A comprehensive waterproofing overhaul and structural repair. We treated the damage at the source and applied a fresh, weather-resistant coating.
+                  <strong className="text-black block mb-2 text-sm uppercase tracking-wide">The Solution</strong>
+                  Comprehensive waterproofing overhaul with industrial-grade finish.
                 </p>
-                <p className="italic text-sm text-zinc-500">
-                  &quot;Another large project almost completed. Trusted by 90% of all leading property agencies throughout the Western Cape.&quot;
-                </p>
-                <div className="flex items-center gap-2 text-zinc-900 font-bold mt-8">
-                  <ShieldCheck className="w-6 h-6 text-tmt-orange" />
-                  Work In Progress (Winter Prep)
+
+                <div className="flex items-center gap-3 text-black font-bold mt-12 pt-12 border-t border-neutral-200">
+                  <ShieldCheck className="w-6 h-6" />
+                  <span className="uppercase tracking-widest text-sm">Certificate Issued</span>
                 </div>
               </div>
             </div>
@@ -94,9 +96,9 @@ export default function HomePage() {
               <BeforeAfterSlider
                 beforeImage="/images/projects/becott/becott-1.jpg"
                 afterImage="/images/projects/becott/becott-2.jpg"
-                className="shadow-2xl shadow-zinc-900/10 border-[4px] border-white"
+                className="shadow-2xl shadow-black/20 border-0"
               />
-              <p className="text-xs text-center text-zinc-400 mt-2 uppercase tracking-widest">Slide to compare Before / During</p>
+              <p className="text-[10px] text-center text-neutral-400 mt-4 uppercase tracking-[0.3em]">Drag to Compare</p>
             </div>
 
           </div>
