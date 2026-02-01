@@ -35,14 +35,14 @@ export const DynamicHero = () => {
                 >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                        src="/images/hero-atlantic-luxury.png"
-                        alt="Luxury Clifton Villa at Twilight"
+                        src="/images/hero-luxury-concierge.png"
+                        alt="Minimalist Luxury Architectural Detail"
                         className="w-full h-full object-cover"
                     />
                 </motion.div>
 
-                {/* Navy Overlay (Atlantic Luxury Palette) */}
-                <div className="absolute inset-0 bg-tmt-dark/50 z-10" />
+                {/* Lighter Overlay for Gallery Feel (Luxury Concierge Palette) */}
+                <div className="absolute inset-0 bg-black/20 z-10" />
 
                 {/* Seamless Blend to Page Background (Cream) */}
                 <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent z-20" />

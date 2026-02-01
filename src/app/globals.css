@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #E0E0E0;
-  /* Light Mist Grey (Softer than White) */
+  --background: #FFFFFF;
+  /* Pure White (Gallery Cleanliness) */
   /* Off-White/Cream (Warmth) */
   --foreground: #18181b;
   /* Zinc-900 */
@@ -12,12 +12,13 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  /* TMT Atlantic Luxury Brand Colors */
-  --color-tmt-dark: #002366;
-  /* Deep Royal Navy (Trust & Class) */
-  --color-tmt-orange: #CD7F32;
-  /* Antique Bronze (Subtle Warmth) */
-  --color-tmt-grey: #64748B;
+  /* TMT Luxury Concierge Brand Colors */
+  --color-tmt-dark: #000000;
+  /* Jet Black (Authority & Luxury) */
+  --color-tmt-orange: #525252;
+  /* Charcoal Grey (Sophisticated Accent) - Replaces the loud orange/bronze */
+  --color-tmt-grey: #a3a3a3;
+  /* Platinum Grey (Discreet) */
 
   --font-sans: var(--font-inter);
   --font-heading: var(--font-space-grotesk);
