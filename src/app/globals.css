@@ -12,13 +12,13 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  /* TMT Luxury Concierge Brand Colors */
-  --color-tmt-dark: #000000;
-  /* Jet Black (Authority & Luxury) */
-  --color-tmt-orange: #525252;
-  /* Charcoal Grey (Sophisticated Accent) - Replaces the loud orange/bronze */
-  --color-tmt-grey: #a3a3a3;
-  /* Platinum Grey (Discreet) */
+  /* TMT Executive Gold Brand Colors */
+  --color-tmt-dark: #121212;
+  /* Matte Black (Sleek, Modern, Serious) */
+  --color-tmt-orange: #D4AF37;
+  /* Champagne Gold (High Value Accent) */
+  --color-tmt-grey: #525252;
+  /* Dark Grey (Subtitle Support) */
 
   --font-sans: var(--font-manrope);
   --font-heading: var(--font-outfit);
