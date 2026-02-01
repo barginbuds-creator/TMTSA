@@ -42,7 +42,7 @@ export const ReviewsTicker = () => {
                             {/* Header: User & Google Logo */}
                             <div className="flex justify-between items-start mb-3">
                                 <div className="flex items-center gap-3">
-                                    <div className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 font-bold text-lg">
+                                    <div className="w-10 h-10 rounded-full bg-tmt-orange/10 flex items-center justify-center text-tmt-orange font-bold text-lg">
                                         {review.name.charAt(0)}
                                     </div>
                                     <div>
