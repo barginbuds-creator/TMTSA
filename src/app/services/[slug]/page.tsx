@@ -1,3 +1,4 @@
+import { PageHero } from "@/components/ui/PageHero";
 import { getServiceBySlug, SERVICE_LOCATIONS } from "@/data/services";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -38,7 +39,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         "provider": {
             "@type": "HomeAndConstructionBusiness",
             "name": "The Maintenance Team",
-            "image": "https://tmtsa-website-flyq2ib0g-kyles-projects-1a3e7e0d.vercel.app/images/logo.png", // Correct logo path
+            "image": "https://tmtsa-website.vercel.app/images/logo.png", // Correct logo path
             "telephone": "+27766300879",
             "address": {
                 "@type": "PostalAddress",
@@ -55,46 +56,32 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
     };
 
     return (
-        <main className="min-h-screen bg-tmt-dark text-white">
+        <main className="min-h-screen bg-white text-tmt-dark selection:bg-tmt-orange selection:text-white">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
 
-            {/* Hero Section */}
-            <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 bg-black/60 z-10" />
-                <div className="absolute inset-0 z-0 bg-neutral-900"
-                    style={{
-                        backgroundImage: 'url(/images/hero-poster.jpg)',
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center'
-                    }}
-                />
-
-                <div className="relative z-20 text-center px-4">
-                    <span className="text-tmt-orange font-bold tracking-widest uppercase text-sm mb-4 block">
-                        Location: {service.location}
-                    </span>
-                    <h1 className="font-heading text-4xl md:text-6xl font-black mb-4 uppercase">
-                        {service.service}
-                    </h1>
-                    <p className="text-xl text-neutral-300 max-w-2xl mx-auto">
-                        {service.description}
-                    </p>
-                </div>
-            </section>
+            {/* Unique Page Hero */}
+            <PageHero
+                title={<span>{service.service} <span className="text-tmt-orange">Services</span></span>}
+                subtitle={service.title}
+                imageSrc="/images/hero-services-gold.png" // Fallback or could be dynamic if added to data
+                imageAlt={service.service}
+            />
 
             {/* Content Section */}
             <section className="py-20 container mx-auto px-4 max-w-4xl">
                 <div
-                    className="prose prose-invert prose-lg prose-orange bg-zinc-900/50 p-8 rounded-xl border border-white/10"
+                    className="prose prose-lg prose-headings:font-heading prose-headings:font-bold prose-headings:uppercase prose-headings:tracking-wide prose-p:text-neutral-600 prose-li:text-neutral-600 prose-strong:text-black prose-img:rounded-sm prose-img:shadow-xl prose-img:border prose-img:border-black/5 max-w-none"
                     dangerouslySetInnerHTML={{ __html: service.content }}
                 />
 
-                <div className="mt-12 text-center">
-                    <a href="/contact" className="inline-block px-8 py-4 bg-tmt-orange text-white font-bold uppercase hover:bg-orange-600 transition-colors">
-                        Get a Quote for {service.service}
+                <div className="mt-16 border-t border-neutral-100 pt-12 text-center">
+                    <h3 className="font-heading font-bold text-3xl mb-6 uppercase">Ready to Start?</h3>
+                    <p className="text-neutral-500 mb-8 max-w-xl mx-auto">Contact us today for a free consultation and quote for your {service.service} project.</p>
+                    <a href="/contact" className="inline-block px-10 py-4 bg-tmt-dark text-white font-bold uppercase tracking-widest hover:bg-tmt-orange hover:text-white transition-colors duration-300">
+                        Get a Quote
                     </a>
                 </div>
             </section>

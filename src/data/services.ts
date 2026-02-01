@@ -87,6 +87,128 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
             <h3>Don't Wait on Cracks</h3>
             <p>In Blouberg's corrosive environment, a small crack allows salt air to reach your rebar quickly. Early intervention saves tens of thousands in future heavy construction costs. Call TMT for a specialized structural assessment.</p>
         `
+    },
+    // GENERIC SERVICES (For /services main page linking)
+    {
+        slug: "waterproofing",
+        service: "Waterproofing",
+        location: "Cape Town",
+        title: "Expert Waterproofing Contractors | Torch-on & Lateral Damp",
+        description: "Industrial-grade waterproofing solutions. We specialize in torch-on systems for flat roofs and balconies, offering a 10-year guarantee against water ingress.",
+        content: `
+            <h2>Permanent Waterproofing Solutions</h2>
+            <p>Water intrusion is the single biggest threat to your property's structural integrity. At <strong>The Maintenance Team</strong>, we employ advanced waterproofing systems designed to withstand the Cape's harsh winter rains and summer heat.</p>
+            
+            <h3>Our Systems</h3>
+            <ul>
+                 <li><strong>Torch-on Membrane:</strong> Heat-fused bitumen layers for flat roofs and concrete slabs. Highly durable and seamless.</li>
+                 <li><strong>Cementitious Slurries:</strong> Ideal for rising damp, lateral damp, and basement tanking.</li>
+                 <li><strong>Acrylic Reinforced:</strong> Flexible waterproofing for parapets and flashings.</li>
+            </ul>
+
+            <img src="/images/promotions/waterproofing.jpg" alt="Waterproofing Guarantee" class="rounded-lg shadow-lg my-8 w-full block" />
+
+            <h3>The TMT 10-Year Guarantee</h3>
+            <p>We stand by our workmanship. All full waterproofing installations come with a certified 10-year guarantee, giving you peace of mind that your asset is protected.</p>
+        `
+    },
+    {
+        slug: "painting-roofing",
+        service: "Paint & Roof",
+        location: "Cape Town",
+        title: "Interior & Exterior Painting | Roof Restoration",
+        description: "Transform your property with our premium painting and roof restoration services. Airless spraying for roofs and expert interior finishing.",
+        content: `
+            <h2>Professional Painting & Decoration</h2>
+            <p>A fresh coat of paint does more than just look good—it protects your home from the elements. We offer comprehensive residential painting services, from detailed interior trim to full exterior re-coating.</p>
+
+            <img src="/images/promotions/interior-painting.jpg" alt="Interior Painting" class="rounded-lg shadow-lg my-8 w-full block" />
+
+            <h3>Roof Restoration Specialists</h3>
+            <p>Don't replace your roof if you don't have to. Our restoration process extends the life of your roof by 10-15 years:</p>
+            <ol>
+                <li>High-pressure cleaning (250 bar) to remove moss and oxidation.</li>
+                <li>Fungicidal treatment to prevent regrowth.</li>
+                <li>Replacement of broken tiles and re-pointing of ridge caps.</li>
+                <li>Application of pure-acrylic roof coating via airless spray for a factory finish.</li>
+            </ol>
+        `
+    },
+    {
+        slug: "plumbing",
+        service: "Plumbing",
+        location: "Cape Town",
+        title: "Residential Maintenance Plumbing & Repairs",
+        description: "Reliable plumbing services for leak detection, blocked drains, and geyser maintenance. Fast turnaround times for emergencies.",
+        content: `
+            <h2>Reliable Maintenance Plumbing</h2>
+            <p>From a dripping tap to a burst geyser, our plumbing division handles all general maintenance and emergency repairs. We pride ourselves on quick response times and tidy workmanship.</p>
+            
+            <h3>Core Services</h3>
+            <ul>
+                <li><strong>Leak Detection:</strong> Using acoustic and thermal imaging to find hidden leaks.</li>
+                <li><strong>Geyser Installation:</strong> Repairs and replacements to SANS 10254 standards.</li>
+                <li><strong>Blocked Drains:</strong> Mechanical drain cleaning to restore flow.</li>
+                <li><strong>Sanitaryware:</strong> Installation of toilets, basins, and showers for bathroom upgrades.</li>
+            </ul>
+        `
+    },
+    {
+        slug: "renovations",
+        service: "Renovations",
+        location: "Cape Town",
+        title: "Full-Service Bathroom & Kitchen Renovations",
+        description: "Turnkey renovation services. We handle the entire project from demolition to tiling, plumbing, and electrical, delivering showroom-quality results.",
+        content: `
+            <h2>Turnkey Property Renovations</h2>
+            <p>Renovating shouldn't be stressful. TMT offers a complete project management service for bathroom and kitchen makeovers. We coordinate all trades, so you only deal with one point of contact.</p>
+
+            <img src="/images/promotions/bathroom-renovation.jpg" alt="Bathroom Renovation" class="rounded-lg shadow-lg my-8 w-full block" />
+
+            <h3>Our Renovation Scope</h3>
+            <ul>
+                <li><strong>Demolition & Carting:</strong> Clean, safe removal of old rubble.</li>
+                <li><strong>Plumbing & Electrical:</strong> Re-routing points for new layouts.</li>
+                <li><strong>Tiling:</strong> Expert installation of porcelain, ceramic, and natural stone.</li>
+                <li><strong>Finishing:</strong> Skimming, painting, and fitting installation.</li>
+            </ul>
+        `
+    },
+    {
+        slug: "structural-repairs",
+        service: "Structural Repairs",
+        location: "Cape Town",
+        title: "Structural Repair Experts | Spalling & Cracks",
+        description: "Specialized repair of structural cracks and concrete spalling. Essential maintenance for coastal properties dealing with salt corrosion.",
+        content: `
+            <h2>Protecting Structural Integrity</h2>
+            <p>Coastal living takes a toll on buildings. 'Concrete cancer' or spalling occurs when reinforcing steel rusts and expands, cracking the concrete. If left untreated, this can compromise the building's safety.</p>
+
+             <img src="/images/promotions/structural-repairs.jpg" alt="Structural Repairs" class="rounded-lg shadow-lg my-8 w-full block" />
+
+            <h3>Our Engineering Approach</h3>
+            <p>We use high-strength structural epoxies and mortars to reinstate damaged concrete. Our process involves cutting back to clean steel, treating rust, applying bonding agents, and re-casting the section to original strength.</p>
+        `
+    },
+    {
+        slug: "paving-cleaning",
+        service: "Paving & Cleaning",
+        location: "Cape Town",
+        title: "High-Pressure Cleaning & Paving Restoration",
+        description: "Restore your driveway, roof, and walls to new. Industrial high-pressure cleaning that removes years of grime, oil, and moss.",
+        content: `
+            <h2>Industrial High-Pressure Cleaning</h2>
+            <p>First impressions count. Over time, pavers and walls collect grime, oil, and moss that standard hosing won't move. Our industrial machinery restores your exterior surfaces to their original look.</p>
+
+            <img src="/images/promotions/paving-experts.jpg" alt="Paving Experts" class="rounded-lg shadow-lg my-8 w-full block" />
+
+            <h3>Services Include</h3>
+            <ul>
+                <li><strong>Roof Cleaning:</strong> Removing moss and lichen that damages tiles.</li>
+                <li><strong>Paving Restoration:</strong> Cleaning and re-grouting pavers to prevent shifting.</li>
+                <li><strong>Wall Washing:</strong> Pre-paint preparation and general cleaning.</li>
+            </ul>
+        `
     }
 ];
 
