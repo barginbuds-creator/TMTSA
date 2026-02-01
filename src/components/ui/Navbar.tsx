@@ -25,7 +25,7 @@ export const Navbar = () => {
                 {/* Logo */}
                 <Link href="/" className="relative h-12 w-32 md:h-16 md:w-48 transition-transform hover:scale-105">
                     <Image
-                        src="/images/logo.png"
+                        src="/images/tmt-logo-new.png"
                         alt="The Maintenance Team"
                         fill
                         className="object-contain"

@@ -11,7 +11,7 @@ export const Footer = () => {
                     <div className="md:col-span-1">
                         <Link href="/" className="block relative h-12 w-48 mb-6">
                             <Image
-                                src="/images/logo.png"
+                                src="/images/tmt-logo-new.png"
                                 alt="The Maintenance Team Logo"
                                 fill
                                 className="object-contain"
