@@ -9,32 +9,38 @@ const SERVICES = [
     {
         title: "Waterproofing",
         description: "Expert waterproofing solutions for flat roofs, balconies, and showers to protect your property from water damage.",
-        icon: <Droplets className="w-8 h-8 md:w-10 md:h-10 text-white" />,
-        features: ["Torch-on Systems", "Lateral Damp Treatment", "Balcony Sealing"]
+        features: ["Torch-on Systems", "Lateral Damp Treatment", "Balcony Sealing"],
+        image: "/images/promotions/waterproofing.jpg"
     },
     {
-        title: "Painting & Roofing",
+        title: "Paint & Roof",
         description: "Comprehensive painting and roofing repairs ensuring longevity and aesthetic appeal for your home.",
-        icon: <Paintbrush className="w-8 h-8 md:w-10 md:h-10 text-white" />,
-        features: ["Interior & Exterior", "Roof Painting & Repair", "Protective Coatings"]
+        features: ["Interior & Exterior", "Roof Painting & Repair", "Protective Coatings"],
+        image: "/images/promotions/interior-painting.jpg"
     },
     {
         title: "Plumbing",
         description: "Professional plumbing services for maintenance, repairs, and clear-outs.",
-        icon: <Wrench className="w-8 h-8 md:w-10 md:h-10 text-white" />,
-        features: ["Leak Detection", "Maintenance", "Renovation Plumbing"]
+        features: ["Leak Detection", "Maintenance", "Renovation Plumbing"],
+        image: null // Icon fallback
     },
     {
         title: "Renovations",
         description: "Complete bathroom and kitchen renovations, handling everything from demolition to the final finish.",
-        icon: <Home className="w-8 h-8 md:w-10 md:h-10 text-white" />,
-        features: ["Kitchens & Bathrooms", "Property Improvements", "Structural Repairs"]
+        features: ["Kitchens & Bathrooms", "Property Improvements", "Tiling"],
+        image: "/images/promotions/bathroom-renovation.jpg"
     },
     {
-        title: "High Pressure Cleaning",
-        description: "Deep cleaning for roofs, paving, and walls to restore your property's original look.",
-        icon: <Hammer className="w-8 h-8 md:w-10 md:h-10 text-white" />,
-        features: ["Roof Cleaning", "Paving Restoration", "Wall Washing"]
+        title: "Structural Repairs",
+        description: "Specialized repair of structural cracks and spalling to restore the integrity of your building.",
+        features: ["Crack Injection", "Spalling Repair", "Structural Assessments"],
+        image: "/images/promotions/structural-repairs.jpg"
+    },
+    {
+        title: "Paving & Cleaning",
+        description: "Deep cleaning and paving restoration to bring your exterior surfaces back to life.",
+        features: ["Roof Cleaning", "Paving Restoration", "Wall Washing"],
+        image: "/images/promotions/paving-experts.jpg"
     }
 ];
 
@@ -55,36 +61,52 @@ export default function ServicesPage() {
                     {SERVICES.map((service, index) => (
                         <div
                             key={index}
-                            className="group border border-neutral-200 bg-white p-8 hover:border-black transition-all duration-500 relative overflow-hidden"
+                            className="group border border-neutral-200 bg-white hover:border-black transition-all duration-500 relative overflow-hidden flex flex-col"
                         >
-                            {/* Gold Accent Line */}
-                            <div className="absolute top-0 left-0 w-full h-1 bg-tmt-orange transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                            {/* Image Header */}
+                            <div className="h-64 overflow-hidden relative bg-neutral-100">
+                                {service.image ? (
+                                    // eslint-disable-next-line @next/next/no-img-element
+                                    <img
+                                        src={service.image}
+                                        alt={service.title}
+                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    />
+                                ) : (
+                                    <div className="w-full h-full flex items-center justify-center bg-tmt-dark">
+                                        <Wrench className="w-20 h-20 text-white/20" />
+                                    </div>
+                                )}
 
-                            <div className="mb-8 w-16 h-16 bg-tmt-dark flex items-center justify-center rounded-sm shadow-xl shadow-black/10 group-hover:scale-110 transition-transform duration-500">
-                                {service.icon}
+                                {/* Gold Overlay on Hover */}
+                                <div className="absolute inset-0 bg-tmt-orange/0 group-hover:bg-tmt-orange/10 transition-colors duration-500" />
                             </div>
 
-                            <h3 className="font-heading font-bold text-2xl text-black mb-4 uppercase tracking-wide">
-                                {service.title}
-                            </h3>
+                            {/* Content */}
+                            <div className="p-8 flex-1 flex flex-col">
+                                <h3 className="font-heading font-bold text-2xl text-black mb-4 uppercase tracking-wide">
+                                    {service.title}
+                                </h3>
 
-                            <p className="font-sans text-neutral-600 mb-8 leading-relaxed">
-                                {service.description}
-                            </p>
+                                <p className="font-sans text-neutral-600 mb-8 leading-relaxed flex-1">
+                                    {service.description}
+                                </p>
 
-                            <ul className="space-y-3 mb-8 border-t border-neutral-100 pt-6">
-                                {service.features.map((feature, i) => (
-                                    <li key={i} className="flex items-center text-sm font-bold text-neutral-800 uppercase tracking-wider">
-                                        <span className="w-1.5 h-1.5 bg-tmt-orange rounded-full mr-3" />
-                                        {feature}
-                                    </li>
-                                ))}
-                            </ul>
+                                <ul className="space-y-3 pt-6 border-t border-neutral-100">
+                                    {service.features.map((feature, i) => (
+                                        <li key={i} className="flex items-center text-sm font-bold text-neutral-800 uppercase tracking-wider">
+                                            <span className="w-1.5 h-1.5 bg-tmt-orange rounded-full mr-3" />
+                                            {feature}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         </div>
                     ))}
 
                     {/* Contact Card */}
-                    <div className="group border border-black bg-tmt-dark p-8 flex flex-col justify-center items-center text-center relative overflow-hidden">
+                    <div className="group border border-black bg-tmt-dark p-8 flex flex-col justify-center items-center text-center relative overflow-hidden h-full min-h-[500px]">
+                        {/* ... content ... */}
                         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at center, #D4AF37 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
                         <h3 className="font-heading font-black text-3xl text-white mb-6 uppercase tracking-tight relative z-10">
                             Ready to <span className="text-tmt-orange">Start?</span>
