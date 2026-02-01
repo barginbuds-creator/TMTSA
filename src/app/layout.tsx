@@ -19,6 +19,9 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "The Maintenance Team | Waterproofing & Painting Specialists",
   description: "Cape Town's No.1 specialists for waterproofing, painting, and structural repairs. Serving Durbanville, Blouberg, and greater Cape Town.",
+  icons: {
+    icon: '/favicon.png',
+  },
 };
 
 export default function RootLayout({
