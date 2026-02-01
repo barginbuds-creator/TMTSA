@@ -3,8 +3,7 @@ import { BentoCard, BentoGrid } from "@/components/ui/BentoGrid";
 import { DynamicHero } from "@/components/ui/DynamicHero";
 import { FAQ } from "@/components/ui/FAQ";
 import { ReviewsTicker } from "@/components/ui/ReviewsTicker";
-import { Droplets, Home, Paintbrush, ShieldCheck, Star, Wrench } from "lucide-react";
-import Link from "next/link";
+import { Droplets, Paintbrush, ShieldCheck, Star, Wrench } from "lucide-react";
 
 export default function HomePage() {
   return (
@@ -82,7 +81,7 @@ export default function HomePage() {
                   <strong className="text-zinc-900">The Solution:</strong> A comprehensive waterproofing overhaul and structural repair. We treated the damage at the source and applied a fresh, weather-resistant coating.
                 </p>
                 <p className="italic text-sm text-zinc-500">
-                  "Another large project almost completed. Trusted by 90% of all leading property agencies throughout the Western Cape."
+                  &quot;Another large project almost completed. Trusted by 90% of all leading property agencies throughout the Western Cape.&quot;
                 </p>
                 <div className="flex items-center gap-2 text-zinc-900 font-bold mt-8">
                   <ShieldCheck className="w-6 h-6 text-tmt-orange" />

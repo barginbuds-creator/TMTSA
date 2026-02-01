@@ -118,7 +118,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                         {/* Abstract Shape or Logo Opacity could go here */}
                     </div>
                     <h3 className="font-heading text-3xl font-bold mb-4">Need Expert Advice for Your Property?</h3>
-                    <p className="text-neutral-400 mb-8 max-w-xl mx-auto">Don't let minor maintenance issues become major structural failures. Contact TMT today for a free assessment.</p>
+                    <p className="text-neutral-400 mb-8 max-w-xl mx-auto">Don&apos;t let minor maintenance issues become major structural failures. Contact TMT today for a free assessment.</p>
                     <Link href="/contact" className="inline-block bg-tmt-orange text-white px-8 py-4 font-bold rounded-full hover:bg-orange-600 transition-colors shadow-lg shadow-orange-500/20">
                         Get a Free Quote
                     </Link>

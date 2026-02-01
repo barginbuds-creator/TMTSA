@@ -20,7 +20,7 @@ export default function BlogListingPage() {
                         Insights & <span className="text-tmt-orange">Expertise</span>
                     </h1>
                     <p className="text-neutral-400 max-w-2xl mx-auto text-lg">
-                        Technical guides, case studies, and maintenance tips from Cape Town's leading property restoration specialists.
+                        Technical guides, case studies, and maintenance tips from Cape Town&apos;s leading property restoration specialists.
                     </p>
                 </div>
 

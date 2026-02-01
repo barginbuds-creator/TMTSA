@@ -1,4 +1,4 @@
-import { BadgeCheck, Mail, MapPin, Phone, ShieldCheck, Clock } from "lucide-react";
+import { BadgeCheck, Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
 
 export const metadata = {
     title: "Contact Us | The Maintenance Team",
@@ -71,7 +71,7 @@ export default function ContactPage() {
                     {/* Form Placeholder */}
                     <div className="bg-neutral-900 p-8 rounded-2xl border border-white/10">
                         <h2 className="font-heading text-3xl font-bold text-white mb-2">Request Assessment</h2>
-                        <p className="text-neutral-400 mb-8">Fill in your details and we'll call you back.</p>
+                        <p className="text-neutral-400 mb-8">Fill in your details and we&apos;ll call you back.</p>
 
                         <form className="space-y-6">
                             <div className="grid grid-cols-2 gap-4">
