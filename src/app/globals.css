@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fafafa; /* Zinc-50 */
+  --background: #F7F7F7; /* Light Sand */
   --foreground: #18181b; /* Zinc-900 */
 }
 
@@ -9,9 +9,9 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  /* TMT Brand Colors */
-  --color-tmt-dark: #18181b;
-  --color-tmt-orange: #FF6B00;
+  /* TMT Eco-Modern Brand Colors */
+  --color-tmt-dark: #4A5568; /* Slate Blue-Grey (Professional Foundation) */
+  --color-tmt-orange: #2E5E4E; /* Forest Green (Growth and Calm) - Formerly Orange */
   --color-tmt-grey: #64748B;
 
   --font-sans: var(--font-inter);
