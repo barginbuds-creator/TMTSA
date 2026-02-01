@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Manrope, Outfit } from "next/font/google"; // High-end Geometric Sans
 import { Navbar } from "@/components/ui/Navbar";
 import { Footer } from "@/components/ui/Footer";
 import { WhatsAppFloat } from "@/components/ui/WhatsAppFloat";
 import { Analytics } from "@/components/analytics/Analytics";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const manrope = Manrope({
+  variable: "--font-manrope", // Replaces Inter for Body
   subsets: ["latin"],
 });
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const outfit = Outfit({
+  variable: "--font-outfit", // Replaces Space Grotesk for Headings
   subsets: ["latin"],
 });
 
@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}
+        className={`${manrope.variable} ${outfit.variable} antialiased`}
       >
         <Navbar />
         {children}

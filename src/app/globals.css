@@ -20,8 +20,8 @@
   --color-tmt-grey: #a3a3a3;
   /* Platinum Grey (Discreet) */
 
-  --font-sans: var(--font-inter);
-  --font-heading: var(--font-space-grotesk);
+  --font-sans: var(--font-manrope);
+  --font-heading: var(--font-outfit);
 
   @keyframes marquee {
     from {
