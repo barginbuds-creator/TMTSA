@@ -10,13 +10,13 @@ const SERVICES = [
         title: "Waterproofing",
         description: "Expert waterproofing solutions for flat roofs, balconies, and showers to protect your property from water damage.",
         features: ["Torch-on Systems", "Lateral Damp Treatment", "Balcony Sealing"],
-        image: "/images/promotions/waterproofing.jpg"
+        image: "/images/services/hero-waterproofing.png"
     },
     {
         title: "Paint & Roof",
         description: "Comprehensive painting and roofing repairs ensuring longevity and aesthetic appeal for your home.",
         features: ["Interior & Exterior", "Roof Painting & Repair", "Protective Coatings"],
-        image: "/images/promotions/interior-painting.jpg"
+        image: "/images/services/hero-painting.png"
     },
     {
         title: "Plumbing",
@@ -28,19 +28,19 @@ const SERVICES = [
         title: "Renovations",
         description: "Complete bathroom and kitchen renovations, handling everything from demolition to the final finish.",
         features: ["Kitchens & Bathrooms", "Property Improvements", "Tiling"],
-        image: "/images/promotions/bathroom-renovation.jpg"
+        image: "/images/services/content-renovation.png"
     },
     {
         title: "Structural Repairs",
         description: "Specialized repair of structural cracks and spalling to restore the integrity of your building.",
         features: ["Crack Injection", "Spalling Repair", "Structural Assessments"],
-        image: "/images/promotions/structural-repairs.jpg"
+        image: "/images/services/hero-structural.png"
     },
     {
         title: "Paving & Cleaning",
         description: "Deep cleaning and paving restoration to bring your exterior surfaces back to life.",
         features: ["Roof Cleaning", "Paving Restoration", "Wall Washing"],
-        image: "/images/promotions/paving-experts.jpg"
+        image: "/images/services/hero-cleaning.png"
     }
 ];
 
