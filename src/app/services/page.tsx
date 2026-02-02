@@ -47,12 +47,13 @@ const SERVICES = [
 export default function ServicesPage() {
     return (
         <main className="min-h-screen bg-white text-tmt-dark selection:bg-tmt-orange selection:text-white">
-            {/* 1. Unique Page Hero */}
+            {/* 1. Unique Page Hero (Compact Hub Style) */}
             <PageHero
                 title={<span>Elite <span className="text-tmt-orange">Services</span></span>}
                 subtitle="Comprehensive property maintenance specialists. From waterproofing to full-scale renovations, we handle it all."
                 imageSrc="/images/hero-services-gold.png"
                 imageAlt="White Marble Architect Table with Gold Tools"
+                size="compact"
             />
 
             {/* 2. Services Grid */}
