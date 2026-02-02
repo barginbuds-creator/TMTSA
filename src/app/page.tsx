@@ -43,7 +43,7 @@ export default function HomePage() {
             title="Painting"
             description="Premium interior & exterior coatings."
             icon={<Paintbrush className="w-8 h-8 text-neutral-400" />}
-            href="/services/painting"
+            href="/services/painting-roofing"
             header={
               <div className="absolute inset-0 bg-neutral-900" />
             }
@@ -55,7 +55,7 @@ export default function HomePage() {
             title="Cleaning"
             description="High-pressure roof & paving restoration."
             icon={<Wrench className="w-8 h-8 text-neutral-400" />}
-            href="/services/cleaning"
+            href="/services/paving-cleaning"
             header={
               <div className="absolute inset-0 bg-neutral-800" />
             }

@@ -39,7 +39,7 @@ export const Navbar = () => {
                     scrolled ? "text-zinc-900" : "text-white"
                 )}>
                     <Link href="/" className="hover:text-tmt-orange transition-colors">Home</Link>
-                    <Link href="/#services" className="hover:text-tmt-orange transition-colors">Services</Link>
+                    <Link href="/services" className="hover:text-tmt-orange transition-colors">Services</Link>
                     <Link href="/blog" className="hover:text-tmt-orange transition-colors">Blog</Link>
                     <Link href="/contact" className="bg-white text-black px-6 py-2 font-bold hover:bg-tmt-orange hover:text-white transition-colors">
                         Get Quote
