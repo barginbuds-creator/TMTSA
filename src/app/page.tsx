@@ -19,7 +19,7 @@ export default function HomePage() {
           </h2>
           <h3 className="font-heading text-5xl md:text-6xl font-black text-black tracking-tight leading-none">
             Industrial Power. <br />
-            <span className="text-neutral-400 font-light">Residential Grace.</span>
+            <span className="text-neutral-400 font-light">Residential Grace. (Updated)</span>
           </h3>
         </div>
 
