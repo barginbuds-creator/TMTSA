@@ -6,7 +6,7 @@ export const Footer = () => {
     return (
         <footer className="bg-zinc-950 text-white pt-24 pb-12 border-t border-zinc-800">
             <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-20 mb-20">
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-8 lg:gap-12 mb-20">
                     {/* 1. Brand & CTA */}
                     <div className="md:col-span-1">
                         <Link href="/" className="block relative h-12 w-48 mb-6">
@@ -47,7 +47,18 @@ export const Footer = () => {
                         </ul>
                     </div>
 
-                    {/* 4. Contact Info */}
+                    {/* 4. Prime Areas */}
+                    <div className="hidden md:block">
+                        <Link href="/areas" className="font-heading font-bold text-lg mb-6 uppercase tracking-widest text-zinc-500 block hover:text-tmt-orange transition-colors">Prime Areas</Link>
+                        <ul className="space-y-4 text-zinc-400 text-sm">
+                            <li><span className="text-zinc-500 block text-xs uppercase tracking-wide mb-1">Atlantic Seaboard</span> Camps Bay, Clifton, Llandudno</li>
+                            <li><span className="text-zinc-500 block text-xs uppercase tracking-wide mb-1">Southern Suburbs</span> Constantia, Bishopscourt</li>
+                            <li><span className="text-zinc-500 block text-xs uppercase tracking-wide mb-1">Northern Suburbs</span> Durbanville, Plattekloof</li>
+                            <li><span className="text-zinc-500 block text-xs uppercase tracking-wide mb-1">Winelands</span> Val de Vie, Pearl Valley</li>
+                        </ul>
+                    </div>
+
+                    {/* 5. Contact Info */}
                     <div>
                         <h4 className="font-heading font-bold text-lg mb-6 uppercase tracking-widest text-zinc-500">Contact</h4>
                         <ul className="space-y-6 text-zinc-400 text-sm">
