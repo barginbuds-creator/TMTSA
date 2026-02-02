@@ -66,7 +66,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <PageHero
                 title={<span>{service.service} <span className="text-tmt-orange">Services</span></span>}
                 subtitle={service.title}
-                imageSrc="/images/hero-services-gold.png" // Fallback or could be dynamic if added to data
+                imageSrc={service.heroImage || "/images/hero-services-gold.png"}
                 imageAlt={service.service}
             />
 

@@ -5,6 +5,7 @@ export type ServiceLocation = {
     title: string;
     description: string;
     content: string; // HTML content
+    heroImage?: string;
 };
 
 export const SERVICE_LOCATIONS: ServiceLocation[] = [
@@ -12,6 +13,7 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
         slug: "waterproofing-cape-town",
         service: "Waterproofing",
         location: "Cape Town",
+        heroImage: "/images/services/hero-waterproofing.png",
         title: "Premier Waterproofing Contractors Cape Town | 10-Year Guarantee",
         description: "Stop leaks permanently. TMT specializes in industrial-grade torch-on waterproofing for roofs, balconies, and concrete slabs in Cape Town.",
         content: `
@@ -41,6 +43,7 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
         slug: "roof-painting-durbanville",
         service: "Roof Painting",
         location: "Durbanville",
+        heroImage: "/images/services/hero-painting.png",
         title: "Expert Roof Painting & Restoration Durbanville",
         description: "Restore your home's value. High-pressure cleaning and airless spray painting services for tiled and metal roofs in Durbanville.",
         content: `
@@ -66,6 +69,7 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
         slug: "structural-repairs-blouberg",
         service: "Structural Repairs",
         location: "Blouberg",
+        heroImage: "/images/services/hero-structural.png",
         title: "Structural Repair & Spalling Experts Blouberg",
         description: "Fixing concrete cancer and cracks caused by sea spray. Specialized structural repairs for Bloubergstrand properties.",
         content: `
@@ -93,6 +97,7 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
         slug: "waterproofing",
         service: "Waterproofing",
         location: "Cape Town",
+        heroImage: "/images/services/hero-waterproofing.png",
         title: "Expert Waterproofing Contractors | Torch-on & Lateral Damp",
         description: "Industrial-grade waterproofing solutions. We specialize in torch-on systems for flat roofs and balconies, offering a 10-year guarantee against water ingress.",
         content: `
@@ -106,7 +111,7 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
                  <li><strong>Acrylic Reinforced:</strong> Flexible waterproofing for parapets and flashings.</li>
             </ul>
 
-            <img src="/images/promotions/waterproofing.jpg" alt="Waterproofing Guarantee" class="rounded-lg shadow-lg my-8 w-full block" />
+            <img src="/images/services/content-waterproofing.png" alt="Waterproofing Guarantee" class="rounded-lg shadow-lg my-8 w-full block" />
 
             <h3>The TMT 10-Year Guarantee</h3>
             <p>We stand by our workmanship. All full waterproofing installations come with a certified 10-year guarantee, giving you peace of mind that your asset is protected.</p>
@@ -116,13 +121,14 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
         slug: "painting-roofing",
         service: "Paint & Roof",
         location: "Cape Town",
+        heroImage: "/images/services/hero-painting.png",
         title: "Interior & Exterior Painting | Roof Restoration",
         description: "Transform your property with our premium painting and roof restoration services. Airless spraying for roofs and expert interior finishing.",
         content: `
             <h2>Professional Painting & Decoration</h2>
             <p>A fresh coat of paint does more than just look good—it protects your home from the elements. We offer comprehensive residential painting services, from detailed interior trim to full exterior re-coating.</p>
 
-            <img src="/images/promotions/interior-painting.jpg" alt="Interior Painting" class="rounded-lg shadow-lg my-8 w-full block" />
+            <img src="/images/services/content-painting.png" alt="Interior Painting" class="rounded-lg shadow-lg my-8 w-full block" />
 
             <h3>Roof Restoration Specialists</h3>
             <p>Don't replace your roof if you don't have to. Our restoration process extends the life of your roof by 10-15 years:</p>
@@ -157,13 +163,14 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
         slug: "renovations",
         service: "Renovations",
         location: "Cape Town",
+        heroImage: "/images/hero-services-gold.png",
         title: "Full-Service Bathroom & Kitchen Renovations",
         description: "Turnkey renovation services. We handle the entire project from demolition to tiling, plumbing, and electrical, delivering showroom-quality results.",
         content: `
             <h2>Turnkey Property Renovations</h2>
             <p>Renovating shouldn't be stressful. TMT offers a complete project management service for bathroom and kitchen makeovers. We coordinate all trades, so you only deal with one point of contact.</p>
 
-            <img src="/images/promotions/bathroom-renovation.jpg" alt="Bathroom Renovation" class="rounded-lg shadow-lg my-8 w-full block" />
+            <img src="/images/services/content-renovation.png" alt="Bathroom Renovation" class="rounded-lg shadow-lg my-8 w-full block" />
 
             <h3>Our Renovation Scope</h3>
             <ul>
@@ -178,13 +185,14 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
         slug: "structural-repairs",
         service: "Structural Repairs",
         location: "Cape Town",
+        heroImage: "/images/services/hero-structural.png",
         title: "Structural Repair Experts | Spalling & Cracks",
         description: "Specialized repair of structural cracks and concrete spalling. Essential maintenance for coastal properties dealing with salt corrosion.",
         content: `
             <h2>Protecting Structural Integrity</h2>
             <p>Coastal living takes a toll on buildings. 'Concrete cancer' or spalling occurs when reinforcing steel rusts and expands, cracking the concrete. If left untreated, this can compromise the building's safety.</p>
 
-             <img src="/images/promotions/structural-repairs.jpg" alt="Structural Repairs" class="rounded-lg shadow-lg my-8 w-full block" />
+             <img src="/images/services/content-structural.png" alt="Structural Repairs" class="rounded-lg shadow-lg my-8 w-full block" />
 
             <h3>Our Engineering Approach</h3>
             <p>We use high-strength structural epoxies and mortars to reinstate damaged concrete. Our process involves cutting back to clean steel, treating rust, applying bonding agents, and re-casting the section to original strength.</p>
@@ -194,13 +202,14 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
         slug: "paving-cleaning",
         service: "Paving & Cleaning",
         location: "Cape Town",
+        heroImage: "/images/services/hero-cleaning.png",
         title: "High-Pressure Cleaning & Paving Restoration",
         description: "Restore your driveway, roof, and walls to new. Industrial high-pressure cleaning that removes years of grime, oil, and moss.",
         content: `
             <h2>Industrial High-Pressure Cleaning</h2>
             <p>First impressions count. Over time, pavers and walls collect grime, oil, and moss that standard hosing won't move. Our industrial machinery restores your exterior surfaces to their original look.</p>
 
-            <img src="/images/promotions/paving-experts.jpg" alt="Paving Experts" class="rounded-lg shadow-lg my-8 w-full block" />
+            <img src="/images/services/content-cleaning.png" alt="Paving Experts" class="rounded-lg shadow-lg my-8 w-full block" />
 
             <h3>Services Include</h3>
             <ul>
