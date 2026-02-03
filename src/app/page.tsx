@@ -33,7 +33,7 @@ export default function HomePage() {
             href="/services/waterproofing"
             icon={<Droplets className="w-10 h-10 text-white" />}
             header={
-              <div className="absolute inset-0 grayscale contrast-125 brightness-75" style={{ backgroundImage: 'url(/images/bento-industrial.png)', backgroundSize: 'cover' }} />
+              <div className="absolute inset-0 grayscale contrast-125 brightness-75" style={{ backgroundImage: 'url(/images/bento-industrial.png?v=2)', backgroundSize: 'cover' }} />
             }
           />
 
@@ -45,7 +45,7 @@ export default function HomePage() {
             icon={<Paintbrush className="w-8 h-8 text-neutral-400" />}
             href="/services/painting-roofing"
             header={
-              <div className="absolute inset-0 grayscale contrast-125 brightness-50" style={{ backgroundImage: 'url(/images/bento-residential.png)', backgroundSize: 'cover' }} />
+              <div className="absolute inset-0 grayscale contrast-125 brightness-50" style={{ backgroundImage: 'url(/images/bento-residential.png?v=2)', backgroundSize: 'cover' }} />
             }
           />
 
@@ -57,7 +57,7 @@ export default function HomePage() {
             icon={<Wrench className="w-8 h-8 text-neutral-400" />}
             href="/services/paving-cleaning"
             header={
-              <div className="absolute inset-0 grayscale contrast-125 brightness-50" style={{ backgroundImage: 'url(/images/bento-cleaning.png)', backgroundSize: 'cover' }} />
+              <div className="absolute inset-0 grayscale contrast-125 brightness-50" style={{ backgroundImage: 'url(/images/bento-cleaning.png?v=2)', backgroundSize: 'cover' }} />
             }
           />
         </BentoGrid>
