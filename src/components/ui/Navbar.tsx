@@ -157,6 +157,7 @@ export const Navbar = () => {
                         )}
                     </div>
 
+                    <Link href="/about" className="hover:text-tmt-orange transition-colors">About</Link>
                     <Link href="/blog" className="hover:text-tmt-orange transition-colors">Blog</Link>
                     <Link href="/contact" className="bg-zinc-900 text-white px-6 py-2 font-bold hover:bg-tmt-orange transition-colors">
                         Get Quote
