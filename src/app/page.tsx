@@ -6,8 +6,8 @@ import { ReviewsTicker } from "@/components/ui/ReviewsTicker";
 import { Droplets, Paintbrush, ShieldCheck, Wrench } from "lucide-react";
 import Image from "next/image";
 import bentoIndustrial from "../../public/images/bento-industrial.png";
-import bentoResidential from "../../public/images/bento-residential.png";
-import bentoCleaning from "../../public/images/bento-cleaning.png";
+import bentoResidential from "../../public/images/bento-residential-bright.png";
+import bentoCleaning from "../../public/images/bento-cleaning-bright.png";
 
 export default function HomePage() {
   return (
