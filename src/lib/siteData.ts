@@ -134,11 +134,56 @@ export const SITE_DATA = {
         },
     ],
     areas: [
-        { title: "Atlantic Seaboard", slug: "atlantic-seaboard", href: "/areas/atlantic-seaboard" },
-        { title: "Southern Suburbs", slug: "southern-suburbs", href: "/areas/southern-suburbs" },
-        { title: "Northern Suburbs", slug: "northern-suburbs", href: "/areas/northern-suburbs" },
-        { title: "Winelands", slug: "winelands", href: "/areas/winelands" },
-        { title: "City Bowl", slug: "city-bowl", href: "/areas/city-bowl" },
+        {
+            title: "Atlantic Seaboard",
+            slug: "atlantic-seaboard",
+            href: "/areas/atlantic-seaboard",
+            description: "Premium coastal property protection.",
+            heroImage: "/images/services/hero-structural.png", // Coastal-relevant
+            introText: "Serving Cape Town's premier coastal suburbs. We understand the unique challenges of marine environments, from salt-laden winds to driving rain.",
+            benefits: ["Specialized Anti-Corrosion", "High-End Finishes", "Strict Noise Regulations", "Discrete Operations"],
+            locations: ["Clifton", "Bantry Bay", "Camps Bay", "Fresnaye", "Llandudno", "Sea Point", "Green Point"]
+        },
+        {
+            title: "Southern Suburbs",
+            slug: "southern-suburbs",
+            href: "/areas/southern-suburbs",
+            description: "Estate & Heritage Home Maintenance.",
+            heroImage: "/images/bento-residential-bright.png",
+            introText: "From Constantia to Newlands, we provide specialized care for established family homes and heritage properties.",
+            benefits: ["Heritage Restoration", "Roof Cleaning & Painting", "Garden Cottage Renovations", "Estate Compliant"],
+            locations: ["Constantia", "Bishopscourt", "Newlands", "Claremont", "Rondebosch", "Wynberg", "Tokai"]
+        },
+        {
+            title: "Northern Suburbs",
+            slug: "northern-suburbs",
+            href: "/areas/northern-suburbs",
+            description: "Luxury Estate Maintenance.",
+            heroImage: "/images/services/hero-painting.png",
+            introText: "Comprehensive construction and maintenance services for the rapidly growing Northern Suburbs and lifestyle estates.",
+            benefits: ["New Build Snagging", "Roof Painting", "Paving Cleaning", "Complex Maintenance"],
+            locations: ["Durbanville", "Bellville", "Plattekloof", "Welgemoed", "Brackenfell"]
+        },
+        {
+            title: "Winelands",
+            slug: "winelands",
+            href: "/areas/winelands",
+            description: "High-Value Property Care.",
+            heroImage: "/images/hero-services-gold.png",
+            introText: "Serving the prestigious estates of Paarl, Franschhoek, and Stellenbosch with premium maintenance solutions.",
+            benefits: ["Val de Vie Accredited", "Farm Maintenance", "Hospitality Renovations", "Long-distance Teams"],
+            locations: ["Paarl", "Stellenbosch", "Franschhoek", "Val de Vie", "Pearl Valley"]
+        },
+        {
+            title: "City Bowl",
+            slug: "city-bowl",
+            href: "/areas/city-bowl",
+            description: "Urban Property Solutions.",
+            heroImage: "/images/hero-background.png",
+            introText: "Fast, efficient updates for City Bowl apartments and heritage offices. We handle the logistics of CBD work.",
+            benefits: ["Apartment Renovations", "Body Corporate Work", "Interior Design Support", "Access Control"],
+            locations: ["Vredehoek", "Oranjezicht", "Tamboerskloof", "Gardens", "Higgovale"]
+        },
     ],
     legal: [
         { title: "Privacy Policy", href: "/privacy", icon: Lock },
