@@ -20,8 +20,10 @@ export const Navbar = () => {
 
     // Close mobile menu when route changes
     useEffect(() => {
-        setMobileMenuOpen(false);
-    }, [pathname]);
+        if (mobileMenuOpen) {
+            setMobileMenuOpen(false);
+        }
+    }, [pathname, mobileMenuOpen]);
 
     return (
         <nav
