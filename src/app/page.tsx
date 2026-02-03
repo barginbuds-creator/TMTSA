@@ -4,6 +4,9 @@ import { DynamicHero } from "@/components/ui/DynamicHero";
 import { FAQ } from "@/components/ui/FAQ";
 import { ReviewsTicker } from "@/components/ui/ReviewsTicker";
 import { Droplets, Paintbrush, ShieldCheck, Wrench } from "lucide-react";
+import bentoIndustrial from "../../public/images/bento-industrial.png";
+import bentoResidential from "../../public/images/bento-residential.png";
+import bentoCleaning from "../../public/images/bento-cleaning.png";
 
 export default function HomePage() {
   return (
@@ -33,19 +36,19 @@ export default function HomePage() {
             href="/services/waterproofing"
             icon={<Droplets className="w-10 h-10 text-white" />}
             header={
-              <div className="absolute inset-0 grayscale contrast-125 brightness-75" style={{ backgroundImage: 'url(/images/bento-industrial.png?v=2)', backgroundSize: 'cover' }} />
+              <div className="absolute inset-0" style={{ backgroundImage: `url(${bentoIndustrial.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
             }
           />
 
           {/* Medium Tile: Painting */}
           <BentoCard
-            className="md:col-span-1 md:row-span-1 bg-black"
+            className="md:col-span-1 md:row-span-1"
             title="Painting"
             description="Premium interior & exterior coatings."
             icon={<Paintbrush className="w-8 h-8 text-neutral-400" />}
             href="/services/painting-roofing"
             header={
-              <div className="absolute inset-0 grayscale contrast-125 brightness-50" style={{ backgroundImage: 'url(/images/bento-residential.png?v=2)', backgroundSize: 'cover' }} />
+              <div className="absolute inset-0 grayscale-0 brightness-75" style={{ backgroundImage: `url(${bentoResidential.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
             }
           />
 
@@ -57,7 +60,7 @@ export default function HomePage() {
             icon={<Wrench className="w-8 h-8 text-neutral-400" />}
             href="/services/paving-cleaning"
             header={
-              <div className="absolute inset-0 grayscale contrast-125 brightness-50" style={{ backgroundImage: 'url(/images/bento-cleaning.png?v=2)', backgroundSize: 'cover' }} />
+              <div className="absolute inset-0 grayscale-0 brightness-75" style={{ backgroundImage: `url(${bentoCleaning.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
             }
           />
         </BentoGrid>
