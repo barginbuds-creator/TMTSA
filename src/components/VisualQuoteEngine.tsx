@@ -150,11 +150,11 @@ export const VisualQuoteEngine = () => {
                             <button
                                 key={s.id}
                                 onClick={() => handleServiceSelect(s.id)}
-                                className="flex flex-col items-center justify-center p-10 border-2 border-neutral-100 rounded-xl hover:border-tmt-orange hover:bg-orange-50/10 transition-all duration-300 group"
+                                className="flex flex-col items-center justify-center p-6 md:p-10 border-2 border-neutral-100 rounded-xl hover:border-tmt-orange hover:bg-orange-50/10 transition-all duration-300 group"
                             >
-                                <span className="text-6xl mb-6 group-hover:scale-110 transition-transform duration-300">{s.icon}</span>
-                                <h3 className="font-heading font-bold text-2xl text-tmt-dark">{s.label}</h3>
-                                <div className="mt-4 flex items-center text-tmt-orange font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                                <span className="text-4xl md:text-6xl mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300">{s.icon}</span>
+                                <h3 className="font-heading font-bold text-xl md:text-2xl text-tmt-dark text-center">{s.label}</h3>
+                                <div className="mt-4 flex items-center text-tmt-orange font-semibold text-sm opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity">
                                     Next Step <ArrowRight className="w-4 h-4 ml-1" />
                                 </div>
                             </button>
@@ -269,7 +269,7 @@ export const VisualQuoteEngine = () => {
 
                             <div className="bg-orange-50 border border-orange-100 p-6 rounded-lg">
                                 <span className="block text-sm text-orange-600 font-bold uppercase tracking-wider mb-2">Total Estimate</span>
-                                <div className="text-4xl md:text-5xl font-bold text-tmt-dark tracking-tight">
+                                <div className="text-3xl md:text-5xl font-bold text-tmt-dark tracking-tight">
                                     {size.priceRange}
                                 </div>
                                 <p className="text-xs text-neutral-500 mt-2">*Subject to final on-site measurement.</p>

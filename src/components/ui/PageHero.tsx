@@ -53,8 +53,8 @@ export const PageHero = ({ title, subtitle, imageSrc, imageAlt, size = "default"
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.8 }}
           className={cn(
-            "font-heading font-black text-white/90 leading-tight tracking-tight uppercase drop-shadow-2xl",
-            size === "compact" ? "text-4xl md:text-6xl" : "text-5xl md:text-8xl"
+            "font-heading font-black text-white/90 leading-tight tracking-tight uppercase drop-shadow-2xl px-2",
+            size === "compact" ? "text-3xl md:text-6xl" : "text-4xl md:text-8xl"
           )}
         >
           {title}

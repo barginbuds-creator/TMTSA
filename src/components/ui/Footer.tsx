@@ -4,9 +4,9 @@ import Link from "next/link";
 
 export const Footer = () => {
     return (
-        <footer className="bg-zinc-950 text-white pt-24 pb-12 border-t border-zinc-800">
+        <footer className="bg-zinc-950 text-white pt-12 md:pt-24 pb-8 md:pb-12 border-t border-zinc-800">
             <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 md:grid-cols-5 gap-8 lg:gap-12 mb-20">
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-8 lg:gap-12 mb-12 md:mb-20">
                     {/* 1. Brand & CTA */}
                     <div className="md:col-span-1">
                         <Link href="/" className="block relative h-12 w-48 mb-6">
