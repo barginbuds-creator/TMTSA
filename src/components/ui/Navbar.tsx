@@ -143,7 +143,7 @@ export const Navbar = () => {
                 <button
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                     className={cn(
-                        "md:hidden flex items-center gap-2 z-50 font-bold uppercase tracking-widest text-xs border px-3 py-2 rounded transition-colors",
+                        "md:hidden flex items-center gap-2 relative z-[60] cursor-pointer font-bold uppercase tracking-widest text-xs border px-3 py-2 rounded transition-colors",
                         scrolled || mobileMenuOpen
                             ? "border-zinc-200 text-zinc-900 hover:bg-zinc-100"
                             : "border-white/30 text-white hover:bg-white/10"
