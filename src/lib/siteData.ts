@@ -83,7 +83,7 @@ export const SITE_DATA = {
             slug: "residential",
             href: "/solutions/residential",
             description: "Home maintenance for private owners.",
-            heroImage: "/images/bento-residential-bright.png", // Reusing existing
+            heroImage: "/images/solutions/residential-hero.png",
             introText: "Protecting your family home with premium maintenance solutions. From roof leaks to full renovations.",
             benefits: ["Personalized Service", "Clean Sites", "Trusted Teams", "Long-term Warranties"]
         },
@@ -92,7 +92,7 @@ export const SITE_DATA = {
             slug: "body-corporate",
             href: "/solutions/body-corporate",
             description: "Managed maintenance for sectional titles.",
-            heroImage: "/images/bento-industrial.png",
+            heroImage: "/images/solutions/body-corporate-hero.png",
             introText: "We partner with Trustees and Managing Agents to deliver reliable, budget-compliant maintenance plans for complexes.",
             benefits: ["Budget Planning", "Maintenance Plans", "Compliance Certificates", "Tenant Coordination"]
         },
@@ -101,7 +101,7 @@ export const SITE_DATA = {
             slug: "commercial",
             href: "/solutions/commercial",
             description: "Industrial and office park solutions.",
-            heroImage: "/images/hero-background.png",
+            heroImage: "/images/solutions/commercial-hero.png",
             introText: "Keep your business running. We offer commercial waterproofing, painting, and general maintenance with minimal disruption.",
             benefits: ["After-hours Work", "Health & Safety Compliance", "Asset Management", "Industrial Coatings"]
         },
@@ -110,7 +110,7 @@ export const SITE_DATA = {
             slug: "estates",
             href: "/solutions/estates",
             description: "HOA compliant maintenance.",
-            heroImage: "/images/bento-cleaning-bright.png",
+            heroImage: "/images/solutions/estates-hero.png",
             introText: " specialized services for high-end residential estates. We understand the strict aesthetic and conduct rules of lifestyle estates.",
             benefits: ["HOA Compliance", "Security Cleared Staff", "Uniformed Teams", "Estate Manager Liaison"]
         },
@@ -119,7 +119,7 @@ export const SITE_DATA = {
             slug: "industrial",
             href: "/solutions/industrial",
             description: "Heavy-duty coating and repairs.",
-            heroImage: "/images/services/hero-structural.png",
+            heroImage: "/images/solutions/industrial-hero.png",
             introText: "Rugged solutions for warehouses and factories. Anti-corrosion coatings, floor sealing, and structural reinforcement.",
             benefits: ["Epoxy Flooring", "Rust Treatment", "Roof Sheeting", "High-Access Operations"]
         },
@@ -128,7 +128,7 @@ export const SITE_DATA = {
             slug: "rental-agents",
             href: "/solutions/rental-agents",
             description: "Rapid response for tenant issues.",
-            heroImage: "/images/services/hero-plumbing.png",
+            heroImage: "/images/solutions/rental-agents-hero.png",
             introText: "The preferred partner for rental agents. We handle incoming/outgoing inspections and urgent tenant repairs efficiently.",
             benefits: ["48hr Turnaround", "Itemized Quoting", "Before/After Photos", "Key Handling"]
         },
