@@ -144,6 +144,7 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
         slug: "plumbing",
         service: "Plumbing",
         location: "Cape Town",
+        heroImage: "/images/services/hero-plumbing.png",
         title: "Residential Maintenance Plumbing & Repairs",
         description: "Reliable plumbing services for leak detection, blocked drains, and geyser maintenance. Fast turnaround times for emergencies.",
         content: `
