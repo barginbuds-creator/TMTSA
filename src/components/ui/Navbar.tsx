@@ -21,9 +21,10 @@ export const Navbar = () => {
     // Close mobile menu when route changes
     useEffect(() => {
         if (mobileMenuOpen) {
-            setMobileMenuOpen(false);
+            setMobileMenuOpen(false); // eslint-disable-line react-hooks/exhaustive-deps
         }
-    }, [pathname, mobileMenuOpen]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [pathname]);
 
     return (
         <nav
