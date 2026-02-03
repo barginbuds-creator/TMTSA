@@ -117,8 +117,8 @@ export default function HomePage() {
 
             <div className="w-full md:w-1/2">
               <BeforeAfterSlider
-                beforeImage="/images/project-spotlight-before.png"
-                afterImage="/images/project-spotlight-after.png"
+                beforeImage="/images/project-spotlight-before.jpg"
+                afterImage="/images/project-spotlight-after.jpg"
                 className="shadow-2xl shadow-black/20 border-0"
               />
               <p className="text-[10px] text-center text-neutral-400 mt-4 uppercase tracking-[0.3em]">Drag to Compare</p>
