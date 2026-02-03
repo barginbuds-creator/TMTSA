@@ -126,7 +126,14 @@ export const Navbar = () => {
                             <div className="absolute top-full -left-10 w-[600px] bg-white rounded-xl shadow-xl border border-neutral-100 p-6 grid grid-cols-2 gap-4 animate-in fade-in slide-in-from-top-2">
                                 {SITE_DATA.areas.map((item) => (
                                     <Link key={item.slug} href={item.href} className="group/item flex items-start gap-4 p-3 rounded-lg hover:bg-neutral-50 transition-colors">
-                                        <div className="mt-1 w-2 h-2 rounded-full bg-tmt-orange flex-shrink-0 mt-2" />
+                                        <div className="relative w-16 h-12 rounded-lg overflow-hidden flex-shrink-0 border border-neutral-100">
+                                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                                            <img
+                                                src={item.heroImage}
+                                                alt={item.title}
+                                                className="w-full h-full object-cover group-hover/item:scale-110 transition-transform duration-500"
+                                            />
+                                        </div>
                                         <div>
                                             <div className="font-bold text-zinc-900 group-hover/item:text-tmt-orange transition-colors capitalize text-sm">{item.title}</div>
                                             <p className="text-zinc-500 text-xs normal-case tracking-normal mt-0.5 line-clamp-2">{item.description}</p>

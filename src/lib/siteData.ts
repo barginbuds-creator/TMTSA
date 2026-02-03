@@ -27,7 +27,7 @@ export const SITE_DATA = {
             slug: "waterproofing",
             href: "/services/waterproofing",
             description: "Industrial torch-on and injection systems.",
-            heroImage: "/images/services/hero-waterproofing.png", // Existing assest
+            heroImage: "/images/areas/city-bowl-hero.png", // Existing assest
             introText: "Water intrusion is the single biggest threat to your property's structural integrity. At The Maintenance Team, we employ advanced waterproofing systems designed to withstand the Cape's harsh winter rains and summer heat.",
             benefits: ["10-Year Guarantee", "Torch-on Systems", "Lateral Damp Treatment", "Balcony Waterproofing"]
         },
@@ -36,7 +36,7 @@ export const SITE_DATA = {
             slug: "painting-roofing",
             href: "/services/painting-roofing",
             description: "Airless roof spraying and exterior coating.",
-            heroImage: "/images/services/hero-painting.png",
+            heroImage: "/images/areas/winelands-hero.png",
             introText: "Restore your home's value. High-pressure cleaning and airless spray painting services for tiled and metal roofs.",
             benefits: ["Airless Spray Technology", "Fungicidal Wash", "broken tile replacement", "10-15 Year Lifespan"]
         },
@@ -139,7 +139,7 @@ export const SITE_DATA = {
             slug: "atlantic-seaboard",
             href: "/areas/atlantic-seaboard",
             description: "Premium coastal property protection.",
-            heroImage: "/images/services/hero-structural.png", // Coastal-relevant
+            heroImage: "/images/areas/atlantic-seaboard-hero.png", // Coastal-relevant
             introText: "Serving Cape Town's premier coastal suburbs. We understand the unique challenges of marine environments, from salt-laden winds to driving rain.",
             benefits: ["Specialized Anti-Corrosion", "High-End Finishes", "Strict Noise Regulations", "Discrete Operations"],
             locations: ["Clifton", "Bantry Bay", "Camps Bay", "Fresnaye", "Llandudno", "Sea Point", "Green Point"]
@@ -149,7 +149,7 @@ export const SITE_DATA = {
             slug: "southern-suburbs",
             href: "/areas/southern-suburbs",
             description: "Estate & Heritage Home Maintenance.",
-            heroImage: "/images/bento-residential-bright.png",
+            heroImage: "/images/areas/southern-suburbs-hero.png",
             introText: "From Constantia to Newlands, we provide specialized care for established family homes and heritage properties.",
             benefits: ["Heritage Restoration", "Roof Cleaning & Painting", "Garden Cottage Renovations", "Estate Compliant"],
             locations: ["Constantia", "Bishopscourt", "Newlands", "Claremont", "Rondebosch", "Wynberg", "Tokai"]
@@ -159,7 +159,7 @@ export const SITE_DATA = {
             slug: "northern-suburbs",
             href: "/areas/northern-suburbs",
             description: "Luxury Estate Maintenance.",
-            heroImage: "/images/services/hero-painting.png",
+            heroImage: "/images/areas/northern-suburbs-hero.png",
             introText: "Comprehensive construction and maintenance services for the rapidly growing Northern Suburbs and lifestyle estates.",
             benefits: ["New Build Snagging", "Roof Painting", "Paving Cleaning", "Complex Maintenance"],
             locations: ["Durbanville", "Bellville", "Plattekloof", "Welgemoed", "Brackenfell"]
