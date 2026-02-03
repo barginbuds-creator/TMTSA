@@ -4,7 +4,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "AI Quote Estimator | The Maintenance Team",
-    description: "Get an instant visual estimate for your paving or roof restoration. Upload a photo and see the difference.",
+    description: "Get an instant visual estimate for your property maintenance. Upload a photo and see the difference.",
 };
 
 export default function QuotePage() {
@@ -21,7 +21,7 @@ export default function QuotePage() {
                 <div className="max-w-4xl mx-auto mb-10 text-center">
                     <h2 className="font-heading font-bold text-3xl mb-4">Visualize Your Renovation</h2>
                     <p className="text-neutral-600">
-                        Not sure what difference a clean makes? Upload a photo of your dirty driveway or roof,
+                        Not sure what difference a renovation makes? Upload a photo of your property,
                         and our AI will show you the potential result instantly, along with an estimated price range.
                     </p>
                 </div>

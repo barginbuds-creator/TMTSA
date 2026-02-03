@@ -6,7 +6,10 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 // --- Pricing & Service Logic ---
-type ServiceType = "paving" | "roof";
+import { SITE_DATA } from "@/lib/siteData";
+
+// --- Pricing & Service Logic ---
+type ServiceType = string;
 type SizeOption = {
     id: string;
     label: string;
@@ -14,27 +17,62 @@ type SizeOption = {
     priceRange: string;
 };
 
-const SERVICES = [
-    { id: "paving", label: "Paving Cleaning", icon: "🧱" },
-    { id: "roof", label: "Roof Painting", icon: "🏠" },
-];
+// Map services from SITE_DATA, but we still need specific icons/logic for the engine
+const SERVICE_ICONS: Record<string, string> = {
+    "waterproofing": "💧",
+    "painting-roofing": "🏠",
+    "plumbing": "🔧",
+    "renovations": "🔨",
+    "structural-repairs": "🧱",
+    "paving-cleaning": "🧹",
+};
 
-const SIZES: Record<ServiceType, SizeOption[]> = {
-    paving: [
+const SERVICES = SITE_DATA.services.map(s => ({
+    id: s.slug,
+    label: s.title,
+    icon: SERVICE_ICONS[s.slug] || "✨"
+}));
+
+const SIZES: Record<string, SizeOption[]> = {
+    "paving-cleaning": [
         { id: "small", label: "Small", area: "Patio / Walkway (~20m²)", priceRange: "R800 - R1,200" },
         { id: "medium", label: "Medium", area: "Double Driveway (~50m²)", priceRange: "R2,200 - R2,800" },
         { id: "large", label: "Large", area: "Wrap-around / Estate (~100m²)", priceRange: "R4,500 - R5,500" },
     ],
-    roof: [
+    "painting-roofing": [
         { id: "small", label: "Single Garage", area: "Standard Garage", priceRange: "R3,500 - R5,000" },
         { id: "medium", label: "Standard House", area: "3 Bedroom Home", priceRange: "R15,000 - R22,000" },
         { id: "large", label: "Large Estate", area: "Multi-story / Complex", priceRange: "R35,000+" },
     ],
+    "waterproofing": [
+        { id: "small", label: "Balcony", area: "Single Balcony (~15m²)", priceRange: "R4,500 - R6,500" },
+        { id: "medium", label: "Roof Slab", area: "Flat Roof Section (~40m²)", priceRange: "R12,000 - R18,000" },
+        { id: "large", label: "Full Roof", area: "Complete Torch-on (~100m²)", priceRange: "R35,000 - R45,000" },
+    ],
+    "plumbing": [
+        { id: "small", label: "Minor Repair", area: "Leak / Blockage", priceRange: "R950 - R1,500" },
+        { id: "medium", label: "Installation", area: "Geyser / Toilet Install", priceRange: "R3,500 - R8,000" },
+        { id: "large", label: "Renovation", area: "Full Bathroom Re-pipe", priceRange: "R15,000+" },
+    ],
+    "renovations": [
+        { id: "small", label: "Refresh", area: "Paint & Minor Updates", priceRange: "R15,000 - R25,000" },
+        { id: "medium", label: "Remodel", area: "New Fixtures & Tiling", priceRange: "R45,000 - R85,000" },
+        { id: "large", label: "Full Strip", area: "Complete Rebuild", priceRange: "R120,000+" },
+    ],
+    "structural-repairs": [
+        { id: "small", label: "Crack Inspection", area: "Minor Hairline Cracks", priceRange: "R2,500 - R5,000" },
+        { id: "medium", label: "Spalling Patch", area: "Beam/Column Repair", priceRange: "R8,000 - R15,000" },
+        { id: "large", label: "Major Works", area: "Structural Reinforcement", priceRange: "Quote on Assesment" },
+    ],
 };
 
-const AI_PROMPTS: Record<ServiceType, string> = {
-    paving: "High pressure clean paving, wet look sealer, pristine condition, photorealistic, clean joints, no weeds, brand new driveway",
-    roof: "Freshly painted charcoal grey roof, clean gutters, modern aesthetic, photorealistic, new roof tiles, architectural digest style",
+const AI_PROMPTS: Record<string, string> = {
+    "paving-cleaning": "High pressure clean paving, wet look sealer, pristine condition, photorealistic, clean joints, no weeds, brand new driveway",
+    "painting-roofing": "Freshly painted charcoal grey roof, clean gutters, modern aesthetic, photorealistic, new roof tiles, architectural digest style",
+    "waterproofing": "Clean flat roof, silver bitumen coating, professional waterproofing torch-on, watertight, dry surface, construction details, photorealistic",
+    "plumbing": "Modern bathroom fixtures, clean piping, new geyser installation, professional plumbing work, gleaming chrome, photorealistic interior",
+    "renovations": "Modern luxury bathroom renovation, marble tiles, glass shower, spa-like atmosphere, bright lighting, high-end production value, photorealistic",
+    "structural-repairs": "Repaired concrete beam, smooth plaster finish, painted white, structurally sound, construction site finished work, clean edges, photorealistic",
 };
 
 export const VisualQuoteEngine = () => {
@@ -116,7 +154,8 @@ export const VisualQuoteEngine = () => {
     // Helper to build WhatsApp Link
     const getWhatsAppLink = () => {
         if (!service || !size) return "#";
-        const message = `Hi TMT, I'm interested in the ${service === "paving" ? "Paving Cleaning" : "Roof Painting"}. My area is roughly ${size.label} (${size.area}). The online estimate was ${size.priceRange}. Can we book a site visit? (Ref: AI-Quote)`;
+        const serviceLabel = SERVICES.find(s => s.id === service)?.label || service;
+        const message = `Hi TMT, I'm interested in the ${serviceLabel}. My area is roughly ${size.label} (${size.area}). The online estimate was ${size.priceRange}. Can we book a site visit? (Ref: AI-Quote)`;
         return `https://wa.me/27766300879?text=${encodeURIComponent(message)}`;
     };
 
@@ -193,7 +232,7 @@ export const VisualQuoteEngine = () => {
                 {step === 3 && (
                     <div className="flex flex-col items-center justify-center h-full space-y-8 py-10">
                         <div className="text-center space-y-2">
-                            <h3 className="font-heading font-bold text-xl">Upload a photo of your {service === "paving" ? "driveway" : "roof"}</h3>
+                            <h3 className="font-heading font-bold text-xl">Upload a photo of your area</h3>
                             <p className="text-neutral-500 max-w-sm mx-auto">Our AI will analyze it and show you what it could look like renovated.</p>
                         </div>
 
