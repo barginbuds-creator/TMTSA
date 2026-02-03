@@ -201,23 +201,58 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
     },
     {
         slug: "paving-cleaning",
-        service: "Paving & Cleaning",
+        service: "Paving Cleaning",
         location: "Cape Town",
-        heroImage: "/images/services/hero-cleaning.png",
-        title: "High-Pressure Cleaning & Paving Restoration",
-        description: "Restore your driveway, roof, and walls to new. Industrial high-pressure cleaning that removes years of grime, oil, and moss.",
+        heroImage: "/images/bento-cleaning-bright.png",
+        title: "Paving Cleaning Cape Town | Specialist Driveway Sealing & Restoration",
+        description: "Restore your home's curb appeal. Expert high-pressure paving cleaning, weed removal, and sealing services in Cape Town. Get a free quote today.",
         content: `
-            <h2>Industrial High-Pressure Cleaning</h2>
-            <p>First impressions count. Over time, pavers and walls collect grime, oil, and moss that standard hosing won't move. Our industrial machinery restores your exterior surfaces to their original look.</p>
+            <h2>Restore Your Paving to "Like New" Condition</h2>
+            <p><strong>Professional Paving Cleaning, Sealing & Restoration in Cape Town</strong></p>
+            <p>Is your driveway looking tired? Has your once-pristine patio been taken over by stubborn moss, weeds, and oil stains?</p>
+            <p>In Cape Town’s coastal climate, paving takes a beating. Humidity promotes algae growth, winter rains wash away joint sand, and the summer sun fades natural stone. A dirty driveway doesn’t just look neglected—it becomes slippery and dangerous.</p>
+            <p><strong>The Maintenance Man (TMT)</strong> provides industrial-grade high-pressure cleaning in Cape Town, restoring the original beauty of your paved surfaces. We don’t just blast dirt; we treat, clean, re-sand, and seal to protect your investment for years to come.</p>
 
-            <img src="/images/services/content-cleaning.png" alt="Paving Experts" class="rounded-lg shadow-lg my-8 w-full block" />
+            <h3>Our Paving Restoration Process</h3>
+            <p>We use a 4-step system designed to safely lift deep-set grime without damaging your property.</p>
+            <ol>
+                <li><strong>Chemical Pre-Treatment:</strong> We apply an eco-friendly industrial degreaser and weed killer to break down stubborn oil stains, black algae, and root systems between pavers. This ensures a deeper clean than water alone.</li>
+                <li><strong>Industrial High-Pressure Cleaning:</strong> Using commercial-grade rotary surface cleaners (not just standard garden sprayers), we strip away layers of dirt, moss, and grime. This method provides a uniform clean without the "zebra striping" often left by amateur equipment.</li>
+                <li><strong>Joint Re-Sanding:</strong> Pressure cleaning naturally removes old, dirty sand. We replace this with fresh, kiln-dried silica sand or specialist polymeric sand to stabilize your cobble and brick paving, locking pavers in place and inhibiting future weed growth.</li>
+                <li><strong>Paving Sealing & Protection:</strong> Once dry, we apply a premium penetrating sealer. This acts as a barrier against oil leaks, wine spills on your patio, and UV fading—essential for driveway cleaning services in the harsh Cape sun.</li>
+            </ol>
 
-            <h3>Services Include</h3>
+            <img src="/images/services/content-cleaning.png" alt="High pressure cleaning driveway Camps Bay" class="rounded-lg shadow-lg my-8 w-full block" />
+
+            <h3>Why Cape Town Homeowners Trust TMT</h3>
             <ul>
-                <li><strong>Roof Cleaning:</strong> Removing moss and lichen that damages tiles.</li>
-                <li><strong>Paving Restoration:</strong> Cleaning and re-grouting pavers to prevent shifting.</li>
-                <li><strong>Wall Washing:</strong> Pre-paint preparation and general cleaning.</li>
+                <li><strong>Estate Compliant:</strong> We understand the strict aesthetic guidelines of estates like Val de Vie, Silverhurst, and Baronetcy. We ensure your driveway meets HOA standards.</li>
+                <li><strong>"White Glove" Care:</strong> We respect your property. We carefully protect surrounding flower beds, pool pumps, and painted walls from overspray and debris.</li>
+                <li><strong>Specialist Knowledge:</strong> From delicate sandstone in Bishopscourt to exposed aggregate in the Atlantic Seaboard, we adjust our pressure and chemicals to suit the specific material.</li>
+                <li><strong>Owner-Managed:</strong> Every job is overseen to ensure the high standards required by our clients in the Northern and Southern Suburbs.</li>
             </ul>
+
+            <h3>Frequently Asked Questions (FAQ)</h3>
+            <ul className="space-y-4">
+                <li>
+                    <strong>Will high-pressure cleaning damage my plants or grass?</strong><br/>
+                    No. We pre-soak surrounding vegetation and use biodegradable cleaning agents. For sensitive landscaped gardens in areas like <a href="/areas/constantia">Constantia</a>, we use barriers to control runoff and overspray.
+                </li>
+                <li>
+                    <strong>How long does paving sealing last?</strong><br/>
+                    A high-quality sealer typically lasts 2–3 years, depending on traffic and weather exposure. We recommend a "maintenance coat" every 24 months to keep your patio and pool deck looking pristine.
+                </li>
+                <li>
+                    <strong>Do you remove oil stains from driveways?</strong><br/>
+                    We have a high success rate with oil stain removal using specialized bio-degradable degreasers. However, if oil has penetrated deep into porous stone for years, it may not be 100% removable, though we can significantly lighten it.
+                </li>
+                <li>
+                    <strong>Why do I need to re-sand my paving?</strong><br/>
+                    Joint sand acts as the "glue" that holds your pavers together. Cleaning removes the old sand along with the dirt. Re-sanding is critical to prevent pavers from shifting, wobbling, or sinking over time.
+                </li>
+            </ul>
+
+            <p class="mt-8 text-sm text-gray-500">See our paving work in <a href="/areas/durbanville" class="hover:underline text-tmt-orange">Durbanville</a>, <a href="/areas/camps-bay" class="hover:underline text-tmt-orange">Camps Bay</a>, and <a href="/areas/claremont" class="hover:underline text-tmt-orange">Claremont</a>.</p>
         `
     }
 ];
