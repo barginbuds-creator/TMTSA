@@ -106,7 +106,33 @@ export const Navbar = () => {
                         )}
                     </div>
 
-                    <Link href="/areas" className="hover:text-tmt-orange transition-colors">Areas</Link>
+                    {/* Tools Dropdown */}
+                    <div
+                        className="relative group h-full py-2"
+                        onMouseEnter={() => handleDropdownEnter('tools')}
+                    >
+                        <Link href="/quote" className="hover:text-tmt-orange transition-colors flex items-center gap-1">
+                            Tools <ChevronDown className="w-3 h-3" />
+                        </Link>
+                        {/* Mega Menu */}
+                        {activeDropdown === 'tools' && (
+                            <div className="absolute top-full -left-10 w-[400px] bg-white rounded-xl shadow-xl border border-neutral-100 p-6 grid grid-cols-1 gap-4 animate-in fade-in slide-in-from-top-2">
+                                {SITE_DATA.tools.map((item) => (
+                                    <Link key={item.href} href={item.href} className="group/item flex items-start gap-4 p-3 rounded-lg hover:bg-neutral-50 transition-colors">
+                                        <div className="mt-1 p-2 bg-neutral-100 rounded-md group-hover/item:bg-tmt-orange/10 transition-colors">
+                                            {/* Render icon dynamically if possible, else fallback */}
+                                            {item.icon ? <item.icon className="w-5 h-5 text-zinc-600 group-hover/item:text-tmt-orange" /> : <div className="w-5 h-5 bg-tmt-orange rounded-full" />}
+                                        </div>
+                                        <div>
+                                            <div className="font-bold text-zinc-900 group-hover/item:text-tmt-orange transition-colors text-sm">{item.title}</div>
+                                            <p className="text-zinc-500 text-xs normal-case tracking-normal mt-0.5">{item.description}</p>
+                                        </div>
+                                    </Link>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+
                     <Link href="/blog" className="hover:text-tmt-orange transition-colors">Blog</Link>
                     <Link href="/contact" className="bg-zinc-900 text-white px-6 py-2 font-bold hover:bg-tmt-orange transition-colors">
                         Get Quote
@@ -156,6 +182,17 @@ export const Navbar = () => {
                         </div>
 
                         <Link href="/areas" className="border-b border-zinc-100 pb-4 hover:text-tmt-orange transition-colors">Areas</Link>
+
+                        {/* Mobile Tools */}
+                        <div className="border-b border-zinc-100 pb-4">
+                            <span className="text-tmt-orange mb-2 block text-sm">Tools</span>
+                            <div className="flex flex-col gap-3 pl-4">
+                                {SITE_DATA.tools.map(s => (
+                                    <Link key={s.href} href={s.href} className="text-base text-zinc-600 hover:text-tmt-orange capitalize font-medium">{s.title}</Link>
+                                ))}
+                            </div>
+                        </div>
+
                         <Link href="/blog" className="border-b border-zinc-100 pb-4 hover:text-tmt-orange transition-colors">Blog</Link>
                         <Link href="/contact" className="text-tmt-orange">Get a Quote</Link>
                     </div>
