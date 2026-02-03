@@ -4,6 +4,7 @@ import { DynamicHero } from "@/components/ui/DynamicHero";
 import { FAQ } from "@/components/ui/FAQ";
 import { ReviewsTicker } from "@/components/ui/ReviewsTicker";
 import { Droplets, Paintbrush, ShieldCheck, Wrench } from "lucide-react";
+import Image from "next/image";
 import bentoIndustrial from "../../public/images/bento-industrial.png";
 import bentoResidential from "../../public/images/bento-residential.png";
 import bentoCleaning from "../../public/images/bento-cleaning.png";
@@ -36,7 +37,14 @@ export default function HomePage() {
             href="/services/waterproofing"
             icon={<Droplets className="w-10 h-10 text-white" />}
             header={
-              <div className="absolute inset-0" style={{ backgroundImage: `url(${bentoIndustrial.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
+              <Image
+                src={bentoIndustrial}
+                alt="Industrial Waterproofing"
+                fill
+                className="object-cover opacity-80"
+                sizes="(max-width: 768px) 100vw, 66vw"
+                priority
+              />
             }
           />
 
@@ -48,7 +56,13 @@ export default function HomePage() {
             icon={<Paintbrush className="w-8 h-8 text-neutral-400" />}
             href="/services/painting-roofing"
             header={
-              <div className="absolute inset-0 grayscale-0 brightness-75" style={{ backgroundImage: `url(${bentoResidential.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
+              <Image
+                src={bentoResidential}
+                alt="Residential Painting"
+                fill
+                className="object-cover opacity-80"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
             }
           />
 
@@ -60,7 +74,13 @@ export default function HomePage() {
             icon={<Wrench className="w-8 h-8 text-neutral-400" />}
             href="/services/paving-cleaning"
             header={
-              <div className="absolute inset-0 grayscale-0 brightness-75" style={{ backgroundImage: `url(${bentoCleaning.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
+              <Image
+                src={bentoCleaning}
+                alt="Cleaning Services"
+                fill
+                className="object-cover opacity-80"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
             }
           />
         </BentoGrid>
