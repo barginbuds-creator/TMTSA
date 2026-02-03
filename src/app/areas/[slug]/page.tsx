@@ -15,11 +15,12 @@ const fromSlug = (slug: string) => {
 };
 
 type Props = {
-    params: { slug: string }
+    params: Promise<{ slug: string }>
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const areaName = fromSlug(params.slug);
+    const { slug } = await params;
+    const areaName = fromSlug(slug);
 
     return {
         title: `Builders & Renovators in ${areaName} | The Maintenance Team`,
@@ -33,11 +34,12 @@ export function generateStaticParams() {
     })));
 }
 
-export default function AreaPage({ params }: Props) {
-    const areaName = fromSlug(params.slug);
+export default async function AreaPage({ params }: Props) {
+    const { slug } = await params;
+    const areaName = fromSlug(slug);
 
     // Find the region for context
-    const regionData = TARGET_AREAS.find(r => r.areas.some(a => toSlug(a) === params.slug));
+    const regionData = TARGET_AREAS.find(r => r.areas.some(a => toSlug(a) === slug));
 
     if (!regionData) {
         notFound();
