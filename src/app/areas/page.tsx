@@ -28,13 +28,16 @@ export default function AreasPage() {
 
                             <div className="md:w-2/3">
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    {region.areas.map((area, aIdx) => (
-                                        <Link href="/contact" key={aIdx} className="group flex items-center gap-3 p-4 bg-zinc-50 hover:bg-zinc-100 transition-colors border border-zinc-100">
-                                            <MapPin className="w-5 h-5 text-tmt-orange group-hover:scale-110 transition-transform" />
-                                            <span className="font-bold text-zinc-700">{area}</span>
-                                            <ArrowRight className="w-4 h-4 text-zinc-300 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
-                                        </Link>
-                                    ))}
+                                    {region.areas.map((area, aIdx) => {
+                                        const slug = area.toLowerCase().replace(/\s+/g, '-');
+                                        return (
+                                            <Link href={`/areas/${slug}`} key={aIdx} className="group flex items-center gap-3 p-4 bg-zinc-50 hover:bg-zinc-100 transition-colors border border-zinc-100">
+                                                <MapPin className="w-5 h-5 text-tmt-orange group-hover:scale-110 transition-transform" />
+                                                <span className="font-bold text-zinc-700">{area}</span>
+                                                <ArrowRight className="w-4 h-4 text-zinc-300 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
+                                            </Link>
+                                        );
+                                    })}
                                 </div>
                             </div>
                         </div>
