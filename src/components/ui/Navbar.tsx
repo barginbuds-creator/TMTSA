@@ -1,15 +1,17 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { SITE_DATA } from "@/lib/siteData";
 
 export const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
     const pathname = usePathname();
 
     useEffect(() => {
@@ -21,7 +23,11 @@ export const Navbar = () => {
     // Close mobile menu when route changes
     useEffect(() => {
         setMobileMenuOpen(false); // eslint-disable-line
+        setActiveDropdown(null);
     }, [pathname]);
+
+    const handleDropdownEnter = (menu: string) => setActiveDropdown(menu);
+    const handleDropdownLeave = () => setActiveDropdown(null);
 
     return (
         <nav
@@ -29,6 +35,7 @@ export const Navbar = () => {
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent",
                 scrolled || mobileMenuOpen ? "bg-white/95 backdrop-blur-md border-zinc-200 py-4 shadow-sm" : "bg-transparent py-6"
             )}
+            onMouseLeave={handleDropdownLeave}
         >
             <div className="container mx-auto px-4 flex items-center justify-between">
                 {/* Logo */}
@@ -48,7 +55,57 @@ export const Navbar = () => {
                     scrolled ? "text-zinc-900" : "text-white"
                 )}>
                     <Link href="/" className="hover:text-tmt-orange transition-colors">Home</Link>
-                    <Link href="/services" className="hover:text-tmt-orange transition-colors">Services</Link>
+
+                    {/* Services Dropdown */}
+                    <div
+                        className="relative group h-full py-2"
+                        onMouseEnter={() => handleDropdownEnter('services')}
+                    >
+                        <Link href="/services" className="hover:text-tmt-orange transition-colors flex items-center gap-1">
+                            Services <ChevronDown className="w-3 h-3" />
+                        </Link>
+                        {/* Mega Menu */}
+                        {activeDropdown === 'services' && (
+                            <div className="absolute top-full -left-10 w-[600px] bg-white rounded-xl shadow-xl border border-neutral-100 p-6 grid grid-cols-2 gap-4 animate-in fade-in slide-in-from-top-2">
+                                {SITE_DATA.services.map((service) => (
+                                    <Link key={service.slug} href={service.href} className="group/item flex items-start gap-4 p-3 rounded-lg hover:bg-neutral-50 transition-colors">
+                                        <div className="relative w-12 h-12 rounded-md overflow-hidden flex-shrink-0">
+                                            <Image src={service.heroImage} alt={service.title} fill className="object-cover" />
+                                        </div>
+                                        <div>
+                                            <div className="font-bold text-zinc-900 group-hover/item:text-tmt-orange transition-colors capitalize text-sm">{service.title}</div>
+                                            <p className="text-zinc-500 text-xs normal-case tracking-normal mt-0.5 line-clamp-2">{service.description}</p>
+                                        </div>
+                                    </Link>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+
+                    {/* Solutions Dropdown */}
+                    <div
+                        className="relative group h-full py-2"
+                        onMouseEnter={() => handleDropdownEnter('solutions')}
+                    >
+                        <Link href="/services" className="hover:text-tmt-orange transition-colors flex items-center gap-1">
+                            Solutions <ChevronDown className="w-3 h-3" />
+                        </Link>
+                        {/* Mega Menu */}
+                        {activeDropdown === 'solutions' && (
+                            <div className="absolute top-full -left-10 w-[600px] bg-white rounded-xl shadow-xl border border-neutral-100 p-6 grid grid-cols-2 gap-4 animate-in fade-in slide-in-from-top-2">
+                                {SITE_DATA.solutions.map((item) => (
+                                    <Link key={item.slug} href={item.href} className="group/item flex items-start gap-4 p-3 rounded-lg hover:bg-neutral-50 transition-colors">
+                                        <div className="mt-1 w-2 h-2 rounded-full bg-tmt-orange flex-shrink-0 mt-2" />
+                                        <div>
+                                            <div className="font-bold text-zinc-900 group-hover/item:text-tmt-orange transition-colors capitalize text-sm">{item.title}</div>
+                                            <p className="text-zinc-500 text-xs normal-case tracking-normal mt-0.5 line-clamp-2">{item.description}</p>
+                                        </div>
+                                    </Link>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+
                     <Link href="/areas" className="hover:text-tmt-orange transition-colors">Areas</Link>
                     <Link href="/blog" className="hover:text-tmt-orange transition-colors">Blog</Link>
                     <Link href="/contact" className="bg-zinc-900 text-white px-6 py-2 font-bold hover:bg-tmt-orange transition-colors">
@@ -72,18 +129,38 @@ export const Navbar = () => {
 
                 {/* Mobile Menu Overlay */}
                 <div className={cn(
-                    "fixed inset-0 bg-white z-40 flex flex-col pt-32 px-6 transition-transform duration-300 ease-in-out md:hidden",
+                    "fixed inset-0 bg-white z-40 flex flex-col pt-32 px-6 transition-transform duration-300 ease-in-out md:hidden overflow-y-auto",
                     mobileMenuOpen ? "translate-x-0" : "translate-x-full"
                 )}>
-                    <div className="flex flex-col gap-6 text-2xl font-heading font-bold text-zinc-900 uppercase tracking-wide">
+                    <div className="flex flex-col gap-6 text-xl font-heading font-bold text-zinc-900 uppercase tracking-wide">
                         <Link href="/" className="border-b border-zinc-100 pb-4 hover:text-tmt-orange transition-colors">Home</Link>
-                        <Link href="/services" className="border-b border-zinc-100 pb-4 hover:text-tmt-orange transition-colors">Services</Link>
+
+                        {/* Mobile Services */}
+                        <div className="border-b border-zinc-100 pb-4">
+                            <span className="text-tmt-orange mb-2 block text-sm">Services</span>
+                            <div className="flex flex-col gap-3 pl-4">
+                                {SITE_DATA.services.map(s => (
+                                    <Link key={s.slug} href={s.href} className="text-base text-zinc-600 hover:text-tmt-orange capitalize font-medium">{s.title}</Link>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Mobile Solutions */}
+                        <div className="border-b border-zinc-100 pb-4">
+                            <span className="text-tmt-orange mb-2 block text-sm">Solutions</span>
+                            <div className="flex flex-col gap-3 pl-4">
+                                {SITE_DATA.solutions.map(s => (
+                                    <Link key={s.slug} href={s.href} className="text-base text-zinc-600 hover:text-tmt-orange capitalize font-medium">{s.title}</Link>
+                                ))}
+                            </div>
+                        </div>
+
                         <Link href="/areas" className="border-b border-zinc-100 pb-4 hover:text-tmt-orange transition-colors">Areas</Link>
                         <Link href="/blog" className="border-b border-zinc-100 pb-4 hover:text-tmt-orange transition-colors">Blog</Link>
                         <Link href="/contact" className="text-tmt-orange">Get a Quote</Link>
                     </div>
 
-                    <div className="mt-auto pb-12">
+                    <div className="mt-8 pb-12">
                         <p className="text-zinc-400 text-sm mb-4">Contact Us</p>
                         <p className="text-xl font-bold text-zinc-900">076 630 0879</p>
                         <p className="text-zinc-500">info@tmtsa.co.za</p>
