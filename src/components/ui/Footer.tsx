@@ -4,89 +4,103 @@ import Link from "next/link";
 
 export const Footer = () => {
     return (
-        <footer className="bg-zinc-950 text-white pt-12 md:pt-24 pb-8 md:pb-12 border-t border-zinc-800">
+        <footer className="bg-zinc-950 text-white pt-16 md:pt-24 pb-8 border-t border-zinc-800 font-sans">
             <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 md:grid-cols-5 gap-8 lg:gap-12 mb-12 md:mb-20">
-                    {/* 1. Brand & CTA */}
-                    <div className="md:col-span-1">
-                        <Link href="/" className="block relative h-12 w-48 mb-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-8 mb-16">
+                    {/* 1. Brand & Newsletter (Spans 2 cols on LG) */}
+                    <div className="lg:col-span-2 space-y-8 pr-0 lg:pr-12">
+                        <Link href="/" className="block relative h-10 w-40">
                             <Image
                                 src="/images/tmt-logo-new.png"
                                 alt="The Maintenance Team Logo"
                                 fill
-                                className="object-contain"
+                                className="object-contain object-left"
                             />
                         </Link>
-                        <p className="text-zinc-400 mb-8 text-sm leading-relaxed">
-                            Cape Town&apos;s leading specialists in structural repairs, waterproofing, and industrial coating solutions.
+                        <p className="text-zinc-400 text-sm leading-relaxed max-w-sm">
+                            Cape Town&apos;s leading specialists in structural repairs, waterproofing, and industrial coating solutions. Protecting high-value assets since 2008.
                         </p>
-                        <Link href="/contact" className="inline-block bg-tmt-orange text-white px-6 py-3 font-bold rounded-lg text-sm hover:bg-orange-600 transition-colors uppercase tracking-wider">
-                            Get a Free Quote
-                        </Link>
+
+                        {/* Newsletter CTA */}
+                        <div className="pt-4">
+                            <h5 className="text-white font-bold text-sm mb-3">Expert insights in your inbox</h5>
+                            <div className="flex gap-2">
+                                <input
+                                    type="email"
+                                    placeholder="Enter your email"
+                                    className="bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-2 text-sm w-full focus:outline-none focus:border-tmt-orange transition-colors text-white placeholder:text-zinc-600"
+                                />
+                                <button className="bg-tmt-orange text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-orange-600 transition-colors">
+                                    Join
+                                </button>
+                            </div>
+                            <p className="text-zinc-600 text-[10px] mt-2">No spam. Unsubscribe anytime.</p>
+                        </div>
                     </div>
 
-                    {/* 2. Services */}
+                    {/* 2. Solutions */}
                     <div>
-                        <h4 className="font-heading font-bold text-lg mb-6 uppercase tracking-widest text-zinc-500">Expertise</h4>
-                        <ul className="space-y-4 text-zinc-400 text-sm">
-                            <li><Link href="/services/waterproofing" className="hover:text-tmt-orange transition-colors">Waterproofing</Link></li>
-                            <li><Link href="/services/painting" className="hover:text-tmt-orange transition-colors">Roof Painting</Link></li>
-                            <li><Link href="/services/structural-repairs" className="hover:text-tmt-orange transition-colors">Structural Repairs</Link></li>
-                            <li><Link href="/services/cleaning" className="hover:text-tmt-orange transition-colors">High-Pressure Cleaning</Link></li>
+                        <h4 className="font-heading font-bold text-sm mb-6 uppercase tracking-widest text-zinc-500">Solutions</h4>
+                        <ul className="space-y-3 text-zinc-400 text-sm">
+                            <li><Link href="/solutions/residential" className="hover:text-tmt-orange transition-colors">Residential</Link></li>
+                            <li><Link href="/solutions/commercial" className="hover:text-tmt-orange transition-colors">Commercial</Link></li>
+                            <li><Link href="/solutions/body-corporate" className="hover:text-tmt-orange transition-colors">Body Corporate</Link></li>
+                            <li><Link href="/solutions/estates" className="hover:text-tmt-orange transition-colors">Estates</Link></li>
+                            <li><Link href="/solutions/industrial" className="hover:text-tmt-orange transition-colors">Industrial</Link></li>
+                            <li><Link href="/solutions/rental-agents" className="hover:text-tmt-orange transition-colors">Rental Agents</Link></li>
                         </ul>
                     </div>
 
-                    {/* 3. Company */}
+                    {/* 3. Services */}
                     <div>
-                        <h4 className="font-heading font-bold text-lg mb-6 uppercase tracking-widest text-zinc-500">Company</h4>
-                        <ul className="space-y-4 text-zinc-400 text-sm">
-                            <li><Link href="/about" className="hover:text-tmt-orange transition-colors">About Us</Link></li>
-                            <li><Link href="/blog" className="hover:text-tmt-orange transition-colors">Insights & Blog</Link></li>
-                            <li><Link href="/contact" className="hover:text-tmt-orange transition-colors">Contact</Link></li>
-                            <li><Link href="/faq" className="hover:text-tmt-orange transition-colors">FAQs</Link></li>
+                        <h4 className="font-heading font-bold text-sm mb-6 uppercase tracking-widest text-zinc-500">Services</h4>
+                        <ul className="space-y-3 text-zinc-400 text-sm">
+                            <li><Link href="/services/waterproofing" className="hover:text-tmt-orange transition-colors">Waterproofing</Link></li>
+                            <li><Link href="/services/painting-roofing" className="hover:text-tmt-orange transition-colors">Roof Painting</Link></li>
+                            <li><Link href="/services/structural-repairs" className="hover:text-tmt-orange transition-colors">Structural Repairs</Link></li>
+                            <li><Link href="/services/paving-cleaning" className="hover:text-tmt-orange transition-colors">Cleaning</Link></li>
+                            <li><Link href="/services/plumbing" className="hover:text-tmt-orange transition-colors">Plumbing</Link></li>
+                            <li><Link href="/services/renovations" className="hover:text-tmt-orange transition-colors">Renovations</Link></li>
                         </ul>
                     </div>
 
                     {/* 4. Prime Areas */}
                     <div className="hidden md:block">
-                        <Link href="/areas" className="font-heading font-bold text-lg mb-6 uppercase tracking-widest text-zinc-500 block hover:text-tmt-orange transition-colors">Prime Areas</Link>
-                        <ul className="space-y-4 text-zinc-400 text-sm">
-                            <li><span className="text-zinc-500 block text-xs uppercase tracking-wide mb-1">Atlantic Seaboard</span> Camps Bay, Clifton, Llandudno</li>
-                            <li><span className="text-zinc-500 block text-xs uppercase tracking-wide mb-1">Southern Suburbs</span> Constantia, Bishopscourt</li>
-                            <li><span className="text-zinc-500 block text-xs uppercase tracking-wide mb-1">Northern Suburbs</span> Durbanville, Plattekloof</li>
-                            <li><span className="text-zinc-500 block text-xs uppercase tracking-wide mb-1">Winelands</span> Val de Vie, Pearl Valley</li>
+                        <Link href="/areas" className="font-heading font-bold text-sm mb-6 uppercase tracking-widest text-zinc-500 block hover:text-tmt-orange transition-colors">Areas</Link>
+                        <ul className="space-y-3 text-zinc-400 text-sm">
+                            <li><Link href="/areas/atlantic-seaboard" className="hover:text-tmt-orange transition-colors">Atlantic Seaboard</Link></li>
+                            <li><Link href="/areas/southern-suburbs" className="hover:text-tmt-orange transition-colors">Southern Suburbs</Link></li>
+                            <li><Link href="/areas/northern-suburbs" className="hover:text-tmt-orange transition-colors">Northern Suburbs</Link></li>
+                            <li><Link href="/areas/winelands" className="hover:text-tmt-orange transition-colors">Winelands</Link></li>
+                            <li><Link href="/areas/city-bowl" className="hover:text-tmt-orange transition-colors">City Bowl</Link></li>
                         </ul>
                     </div>
 
-                    {/* 5. Contact Info */}
+                    {/* 5. Company & Contact */}
                     <div>
-                        <h4 className="font-heading font-bold text-lg mb-6 uppercase tracking-widest text-zinc-500">Contact</h4>
-                        <ul className="space-y-6 text-zinc-400 text-sm">
-                            <li className="flex items-start gap-3">
-                                <MapPin className="w-5 h-5 text-tmt-orange flex-shrink-0" />
-                                <span>Table View, Cape Town,<br />Western Cape, 7441</span>
-                            </li>
-                            <li className="flex items-center gap-3">
-                                <Phone className="w-5 h-5 text-tmt-orange flex-shrink-0" />
-                                <a href="tel:+27211234567" className="hover:text-white transition-colors">+27 21 123 4567</a>
-                            </li>
-                            <li className="flex items-center gap-3">
-                                <Mail className="w-5 h-5 text-tmt-orange flex-shrink-0" />
-                                <a href="mailto:info@tmtsa.co.za" className="hover:text-white transition-colors">info@tmtsa.co.za</a>
-                            </li>
+                        <h4 className="font-heading font-bold text-sm mb-6 uppercase tracking-widest text-zinc-500">Company</h4>
+                        <ul className="space-y-3 text-zinc-400 text-sm mb-8">
+                            <li><Link href="/about" className="hover:text-tmt-orange transition-colors">About Us</Link></li>
+                            <li><Link href="/blog" className="hover:text-tmt-orange transition-colors">Insights</Link></li>
+                            <li><Link href="/contact" className="hover:text-tmt-orange transition-colors">Contact</Link></li>
+                            <li><Link href="/faq" className="hover:text-tmt-orange transition-colors">FAQs</Link></li>
                         </ul>
+                        <div className="flex gap-4">
+                            <a href="#" className="w-8 h-8 rounded-full bg-zinc-900 flex items-center justify-center text-zinc-400 hover:bg-tmt-orange hover:text-white transition-all"><Facebook className="w-4 h-4" /></a>
+                            <a href="#" className="w-8 h-8 rounded-full bg-zinc-900 flex items-center justify-center text-zinc-400 hover:bg-tmt-orange hover:text-white transition-all"><Instagram className="w-4 h-4" /></a>
+                            <a href="#" className="w-8 h-8 rounded-full bg-zinc-900 flex items-center justify-center text-zinc-400 hover:bg-tmt-orange hover:text-white transition-all"><Linkedin className="w-4 h-4" /></a>
+                        </div>
                     </div>
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="pt-8 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div className="pt-8 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-zinc-600 text-xs">
-                        &copy; {new Date().getFullYear()} The Maintenance Team (Pty) Ltd. All rights reserved.
+                        &copy; {new Date().getFullYear()} The Maintenance Team (Pty) Ltd.
                     </p>
-                    <div className="flex items-center gap-6">
-                        <a href="#" className="text-zinc-600 hover:text-white transition-colors"><Facebook className="w-5 h-5" /></a>
-                        <a href="#" className="text-zinc-600 hover:text-white transition-colors"><Instagram className="w-5 h-5" /></a>
-                        <a href="#" className="text-zinc-600 hover:text-white transition-colors"><Linkedin className="w-5 h-5" /></a>
+                    <div className="flex gap-6 text-xs text-zinc-600">
+                        <Link href="/privacy" className="hover:text-zinc-400">Privacy Policy</Link>
+                        <Link href="/terms" className="hover:text-zinc-400">Terms of Service</Link>
                     </div>
                 </div>
             </div>
