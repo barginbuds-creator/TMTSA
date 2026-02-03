@@ -1,4 +1,4 @@
-import { LucideIcon, Wrench, Shield, Warehouse, Home, Building2, MapPin, Calculator, CalendarCheck, FileText, Lock } from "lucide-react";
+import { LucideIcon, Calculator, CalendarCheck, FileText, Lock } from "lucide-react";
 
 export type PageData = {
     title: string;
@@ -17,7 +17,7 @@ export type NavItem = {
     title: string;
     href: string;
     description?: string;
-    icon?: any; // Using dynamic imports or Lucide names
+    icon?: LucideIcon;
 };
 
 export const SITE_DATA = {
