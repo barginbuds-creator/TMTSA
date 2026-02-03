@@ -3,7 +3,7 @@ import { BentoCard, BentoGrid } from "@/components/ui/BentoGrid";
 import { DynamicHero } from "@/components/ui/DynamicHero";
 import { FAQ } from "@/components/ui/FAQ";
 import { ReviewsTicker } from "@/components/ui/ReviewsTicker";
-import { Droplets, Paintbrush, ShieldCheck, Star, Wrench } from "lucide-react";
+import { Droplets, Paintbrush, ShieldCheck, Wrench } from "lucide-react";
 
 export default function HomePage() {
   return (

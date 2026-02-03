@@ -1,7 +1,5 @@
 import { TARGET_AREAS } from "@/data/areas";
-import { Footer } from "@/components/ui/Footer";
-import { Navbar } from "@/components/ui/Navbar";
-import { MapPin, ShieldCheck, ArrowRight } from "lucide-react";
+import { MapPin, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function AreasPage() {

@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { motion, useMotionValue, useTransform } from "framer-motion";
+// import { motion, useMotionValue, useTransform } from "framer-motion";
 import { GripVertical } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";

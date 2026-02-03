@@ -1,8 +1,8 @@
 "use client";
 
 import { PageHero } from "@/components/ui/PageHero";
-import { cn } from "@/lib/utils";
-import { ArrowRight, Droplets, Hammer, Home, Paintbrush, Phone, Wrench } from "lucide-react";
+// import { cn } from "@/lib/utils";
+import { ArrowRight, Wrench } from "lucide-react";
 import Link from "next/link";
 
 const SERVICES = [

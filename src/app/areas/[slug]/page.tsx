@@ -1,7 +1,7 @@
 import { TARGET_AREAS } from "@/data/areas";
 import { PageHero } from "@/components/ui/PageHero";
 
-import { ArrowRight, CheckCircle2, Home, MapPin, Phone, ShieldCheck } from "lucide-react";
+import { CheckCircle2, Home, Phone, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";

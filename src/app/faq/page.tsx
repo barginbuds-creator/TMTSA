@@ -1,6 +1,6 @@
 "use client";
 
-import { DynamicHero } from "@/components/ui/DynamicHero";
+// import { DynamicHero } from "@/components/ui/DynamicHero";
 import { PageHero } from "@/components/ui/PageHero";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
