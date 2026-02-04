@@ -42,7 +42,7 @@ export const BentoCard = ({
     return (
         <div
             className={cn(
-                "row-span-1 border border-neutral-200 group/bento hover:border-black transition duration-500 overflow-hidden relative bg-white h-full",
+                "row-span-1 border border-neutral-200 group/bento hover:border-black transition duration-500 overflow-hidden relative bg-white h-auto min-h-[350px] md:min-h-0 md:h-full",
                 className
             )}
         >
@@ -60,7 +60,7 @@ export const BentoCard = ({
                 <h3 className="font-heading font-bold text-2xl text-white mb-2 uppercase tracking-wide">
                     {title}
                 </h3>
-                <p className="font-sans font-normal text-zinc-600 text-sm mb-4 max-w-[90%]">
+                <p className="font-sans font-normal text-neutral-300 text-sm mb-4 max-w-[90%]">
                     {description}
                 </p>
                 {href && (
