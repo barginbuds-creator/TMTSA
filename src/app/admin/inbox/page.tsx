@@ -1,68 +1,78 @@
-import { db } from '@/db';
-import { quoteRequests } from '@/db/schema';
-import { desc } from 'drizzle-orm';
-import { format } from 'date-fns';
+import { db } from "@/db";
+import { quoteRequests } from "@/db/schema";
+import { desc } from "drizzle-orm";
+import { format } from "date-fns";
+import { LucidePhone, LucideMail, LucideCalendar, LucideMapPin, LucideBriefcase } from "lucide-react";
 
 export const dynamic = 'force-dynamic';
 
 export default async function InboxPage() {
-    const quotes = await db.select().from(quoteRequests).orderBy(desc(quoteRequests.createdAt));
+    const leads = await db.select().from(quoteRequests).orderBy(desc(quoteRequests.createdAt));
 
     return (
-        <div className="space-y-6">
-            <h1 className="text-3xl font-bold font-heading text-neutral-900">Inbox (Quote Requests)</h1>
+        <div className="space-y-8">
+            <div className="flex items-center justify-between">
+                <h1 className="text-3xl font-bold font-heading text-neutral-900">Inbox</h1>
+                <span className="bg-neutral-100 text-neutral-600 px-3 py-1 rounded-full text-sm font-medium">
+                    {leads.length} Total Leads
+                </span>
+            </div>
 
-            <div className="bg-white rounded-xl shadow-sm border border-neutral-200 overflow-hidden">
-                <table className="w-full text-left text-sm">
-                    <thead className="bg-neutral-50 border-b border-neutral-100/5 text-neutral-500 uppercase tracking-wider font-medium text-xs">
-                        <tr>
-                            <th className="px-6 py-4">Date</th>
-                            <th className="px-6 py-4">Name</th>
-                            <th className="px-6 py-4">Service</th>
-                            <th className="px-6 py-4">Email</th>
-                            <th className="px-6 py-4">Status</th>
-                            <th className="px-6 py-4">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody className="divide-y divide-neutral-100">
-                        {quotes.length === 0 ? (
-                            <tr>
-                                <td colSpan={6} className="px-6 py-8 text-center text-neutral-400">No quote requests yet.</td>
-                            </tr>
-                        ) : (
-                            quotes.map((quote) => (
-                                <tr key={quote.id} className="hover:bg-neutral-50/50 transition-colors">
-                                    <td className="px-6 py-4 text-neutral-400 font-mono text-xs">
-                                        {format(new Date(quote.createdAt), 'MMM d, yyyy')}
-                                    </td>
-                                    <td className="px-6 py-4 font-bold text-neutral-900">
-                                        {quote.name}
-                                        {quote.phone && <div className="text-xs font-normal text-neutral-400">{quote.phone}</div>}
-                                    </td>
-                                    <td className="px-6 py-4">
-                                        <span className="inline-flex items-center px-2 py-1 rounded bg-blue-50 text-blue-700 text-xs font-medium">
-                                            {quote.serviceType || 'General'}
+            <div className="grid gap-4">
+                {leads.map((lead) => (
+                    <div key={lead.id} className="bg-white p-6 rounded-xl border border-neutral-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="flex flex-col md:flex-row justify-between gap-4">
+                            {/* Header Info */}
+                            <div className="space-y-1">
+                                <h3 className="font-bold text-lg text-neutral-900">{lead.name}</h3>
+                                <div className="flex items-center gap-4 text-sm text-neutral-500">
+                                    <span className="flex items-center gap-1">
+                                        <LucideMail className="w-3 h-3" />
+                                        <a href={`mailto:${lead.email}`} className="hover:text-tmt-orange transition-colors">{lead.email}</a>
+                                    </span>
+                                    {lead.phone && (
+                                        <span className="flex items-center gap-1">
+                                            <LucidePhone className="w-3 h-3" />
+                                            <a href={`tel:${lead.phone}`} className="hover:text-tmt-orange transition-colors">{lead.phone}</a>
                                         </span>
-                                    </td>
-                                    <td className="px-6 py-4 text-neutral-600">{quote.email}</td>
-                                    <td className="px-6 py-4">
-                                        <span className={`inline-flex items-center px-2 py-1 rounded text-xs font-bold uppercase tracking-wide ${quote.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
-                                                quote.status === 'contacted' ? 'bg-green-100 text-green-800' :
-                                                    'bg-neutral-100 text-neutral-800'
-                                            }`}>
-                                            {quote.status}
-                                        </span>
-                                    </td>
-                                    <td className="px-6 py-4">
-                                        <button className="text-tmt-orange hover:text-orange-700 font-bold text-xs uppercase tracking-wide">
-                                            View Details
-                                        </button>
-                                    </td>
-                                </tr>
-                            ))
-                        )}
-                    </tbody>
-                </table>
+                                    )}
+                                </div>
+                            </div>
+
+                            {/* Date */}
+                            <div className="text-neutral-400 text-sm flex items-center gap-1 md:self-start">
+                                <LucideCalendar className="w-3 h-3" />
+                                {format(lead.createdAt, 'PP p')}
+                            </div>
+                        </div>
+
+                        <div className="mt-4 pt-4 border-t border-neutral-100 grid md:grid-cols-2 gap-4">
+                            <div>
+                                <span className="text-xs uppercase tracking-wider text-neutral-400 font-bold block mb-1">Service Type</span>
+                                <div className="flex items-center gap-2 text-neutral-800 font-medium bg-neutral-50 px-3 py-2 rounded-lg inline-block border border-neutral-100 text-sm">
+                                    <LucideBriefcase className="w-4 h-4 text-tmt-orange" />
+                                    {lead.serviceType}
+                                </div>
+                            </div>
+
+                            {/* Message */}
+                            {lead.message && (
+                                <div>
+                                    <span className="text-xs uppercase tracking-wider text-neutral-400 font-bold block mb-1">Message</span>
+                                    <p className="text-neutral-600 text-sm leading-relaxed bg-neutral-50 p-3 rounded-lg border border-neutral-100">
+                                        {lead.message}
+                                    </p>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                ))}
+
+                {leads.length === 0 && (
+                    <div className="text-center py-20 bg-white rounded-xl border border-neutral-200 border-dashed">
+                        <p className="text-neutral-400">No leads found yet.</p>
+                    </div>
+                )}
             </div>
         </div>
     );

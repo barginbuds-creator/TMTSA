@@ -53,9 +53,9 @@ export default async function ProjectAdminPage() {
                                         {format(new Date(project.createdAt), 'MMM d, yyyy')}
                                     </td>
                                     <td className="px-6 py-4 text-right flex justify-end gap-2">
-                                        <button className="p-2 text-neutral-400 hover:text-red-500 hover:bg-red-50 rounded transition-colors" title="Delete">
-                                            <LucideTrash className="w-4 h-4" />
-                                        </button>
+                                        <Link href={`/admin/projects/edit/${project.id}`} className="p-2 text-neutral-400 hover:text-tmt-orange hover:bg-orange-50 rounded transition-colors" title="Edit">
+                                            <LucideEdit className="w-4 h-4" />
+                                        </Link>
                                     </td>
                                 </tr>
                             ))
