@@ -83,6 +83,8 @@ export const VisualQuoteEngine = () => {
     const [prediction, setPrediction] = useState<string | null>(null);
     const [error, setError] = useState<string | null>(null);
 
+    const [blobUrl, setBlobUrl] = useState<string | null>(null);
+
     // Handlers
     const handleServiceSelect = (s: string) => {
         setService(s as ServiceType);
@@ -94,14 +96,27 @@ export const VisualQuoteEngine = () => {
         setStep(3);
     };
 
-    const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
         if (file) {
+            // 1. Show preview immediately
             const reader = new FileReader();
             reader.onloadend = () => {
                 setImageFile(reader.result as string);
             };
             reader.readAsDataURL(file);
+
+            // 2. Upload to Vercel Blob in background
+            try {
+                const response = await fetch(`/api/upload?filename=${file.name}`, {
+                    method: 'POST',
+                    body: file,
+                });
+                const blob = await response.json();
+                setBlobUrl(blob.url);
+            } catch (err) {
+                console.error("Failed to upload image to blob", err);
+            }
         }
     };
 
@@ -147,13 +162,14 @@ export const VisualQuoteEngine = () => {
         setImageFile(null);
         setPrediction(null);
         setError(null);
+        setBlobUrl(null);
     };
 
     // Helper to build WhatsApp Link
     const getWhatsAppLink = () => {
         if (!service || !size) return "#";
         const serviceLabel = SERVICES.find(s => s.id === service)?.label || service;
-        const message = `Hi TMT, I'm interested in the ${serviceLabel}. My area is roughly ${size.label} (${size.area}). The online estimate was ${size.priceRange}. Can we book a site visit? (Ref: AI-Quote)`;
+        const message = `Hi TMT, I'm interested in the ${serviceLabel}. My area is roughly ${size.label} (${size.area}). The online estimate was ${size.priceRange}. ${blobUrl ? `Here is a photo of the area: ${blobUrl}` : ""} Can we book a site visit? (Ref: AI-Quote)`;
         return `https://wa.me/27766300879?text=${encodeURIComponent(message)}`;
     };
 
