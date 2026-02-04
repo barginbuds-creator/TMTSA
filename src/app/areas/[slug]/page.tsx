@@ -39,17 +39,39 @@ export default async function AreaPage({ params }: Props) {
         notFound();
     }
 
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "Place",
+        "name": area.title,
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Cape Town",
+            "addressRegion": "Western Cape",
+            "addressCountry": "ZA"
+        },
+        "containedInPlace": {
+            "@type": "Place",
+            "name": "Cape Town"
+        }
+    };
+
     return (
-        <ContentPage
-            title={area.title}
-            subtitle={area.description}
-            heroImage={area.heroImage}
-            introText={area.introText}
-            benefits={area.benefits}
-            ctaText="Get a Local Quote"
-            serviceArea={{
-                locations: area.locations
-            }}
-        />
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <ContentPage
+                title={area.title}
+                subtitle={area.description}
+                heroImage={area.heroImage}
+                introText={area.introText}
+                benefits={area.benefits}
+                ctaText="Get a Local Quote"
+                serviceArea={{
+                    locations: area.locations
+                }}
+            />
+        </>
     );
 }

@@ -1,18 +1,18 @@
-import { getBlogPost, BLOG_POSTS } from "@/data/blog";
+import { db } from "@/db";
+import { blogPosts } from "@/db/schema";
+import { eq } from "drizzle-orm";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Calendar, User, Tag } from "lucide-react";
-
-// Force static generation for these paths
-export async function generateStaticParams() {
-    return BLOG_POSTS.map((post) => ({ slug: post.slug }));
-}
+import { format } from "date-fns";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const resolvedParams = await params;
-    const post = getBlogPost(resolvedParams.slug);
+    const post = await db.query.blogPosts.findFirst({
+        where: eq(blogPosts.slug, resolvedParams.slug),
+    });
 
     if (!post) {
         return {
@@ -22,29 +22,20 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
     return {
         title: `${post.title} | TMT Blog`,
-        description: post.excerpt,
-        keywords: post.keywords,
         openGraph: {
             title: post.title,
-            description: post.excerpt,
-            images: [
-                {
-                    url: post.coverImage,
-                    width: 1200,
-                    height: 630,
-                    alt: post.coverImageAlt,
-                },
-            ],
+            images: post.imageUrl ? [{ url: post.imageUrl }] : [],
             type: "article",
-            authors: [post.author],
-            publishedTime: post.date,
+            publishedTime: post.createdAt.toISOString(),
         },
     };
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
     const resolvedParams = await params;
-    const post = getBlogPost(resolvedParams.slug);
+    const post = await db.query.blogPosts.findFirst({
+        where: eq(blogPosts.slug, resolvedParams.slug),
+    });
 
     if (!post) {
         notFound();
@@ -62,12 +53,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 {/* Header */}
                 <header className="mb-12">
                     <div className="flex flex-wrap items-center gap-4 text-sm text-tmt-orange mb-6 font-bold uppercase tracking-widest">
-                        <span className="bg-orange-500/10 border border-orange-500/20 px-3 py-1 rounded-full">{post.category}</span>
+                        <span className="bg-orange-500/10 border border-orange-500/20 px-3 py-1 rounded-full">Tips</span>
                         <span className="flex items-center gap-2 text-neutral-500 normal-case font-normal">
-                            <Calendar className="w-4 h-4" /> {post.date}
+                            <Calendar className="w-4 h-4" /> {format(new Date(post.createdAt), 'MMM d, yyyy')}
                         </span>
                         <span className="flex items-center gap-2 text-neutral-500 normal-case font-normal">
-                            <User className="w-4 h-4" /> {post.author}
+                            <User className="w-4 h-4" /> TMT Team
                         </span>
                     </div>
 
@@ -75,15 +66,17 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                         {post.title}
                     </h1>
 
-                    <div className="relative w-full aspect-video rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-                        <Image
-                            src={post.coverImage}
-                            alt={post.coverImageAlt}
-                            fill
-                            className="object-cover"
-                            priority
-                        />
-                    </div>
+                    {post.imageUrl && (
+                        <div className="relative w-full aspect-video rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+                            <Image
+                                src={post.imageUrl}
+                                alt={post.title}
+                                fill
+                                className="object-cover"
+                                priority
+                            />
+                        </div>
+                    )}
                 </header>
 
                 {/* Content */}
@@ -101,11 +94,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                         <Tag className="w-4 h-4" /> Related Topics
                     </h4>
                     <div className="flex flex-wrap gap-2">
-                        {post.keywords.map(tag => (
-                            <span key={tag} className="bg-neutral-900 border border-white/10 px-4 py-2 rounded-lg text-sm text-neutral-300">
-                                {tag}
-                            </span>
-                        ))}
+                        {/* Tags could be added to DB schema later */}
+                        <span className="bg-neutral-900 border border-white/10 px-4 py-2 rounded-lg text-sm text-neutral-300">
+                            Maintenance
+                        </span>
                     </div>
                 </div>
 

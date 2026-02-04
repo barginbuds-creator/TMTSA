@@ -24,16 +24,46 @@ export const Footer = () => {
                         {/* Newsletter CTA */}
                         <div className="pt-4">
                             <h5 className="text-white font-bold text-sm mb-3">Expert insights in your inbox</h5>
-                            <div className="flex gap-2">
+                            <form
+                                onSubmit={async (e) => {
+                                    e.preventDefault();
+                                    const form = e.target as HTMLFormElement;
+                                    const emailInput = form.querySelector('input[type="email"]') as HTMLInputElement;
+                                    const email = emailInput?.value;
+                                    const btn = form.querySelector('button');
+
+                                    if (email && btn) {
+                                        const originalText = btn.innerText;
+                                        btn.disabled = true;
+                                        btn.innerText = '...';
+                                        try {
+                                            await fetch('/api/newsletter', {
+                                                method: 'POST',
+                                                headers: { 'Content-Type': 'application/json' },
+                                                body: JSON.stringify({ email }),
+                                            });
+                                            alert('Subscribed!');
+                                            form.reset();
+                                        } catch (err) {
+                                            console.error(err);
+                                        } finally {
+                                            btn.disabled = false;
+                                            btn.innerText = originalText;
+                                        }
+                                    }
+                                }}
+                                className="flex gap-2"
+                            >
                                 <input
                                     type="email"
                                     placeholder="Enter your email"
+                                    required
                                     className="bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-2 text-sm w-full focus:outline-none focus:border-tmt-orange transition-colors text-white placeholder:text-zinc-600"
                                 />
-                                <button className="bg-tmt-orange text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-orange-600 transition-colors">
+                                <button type="submit" className="bg-tmt-orange text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-orange-600 transition-colors">
                                     Join
                                 </button>
-                            </div>
+                            </form>
                             <p className="text-zinc-600 text-[10px] mt-2">No spam. Unsubscribe anytime.</p>
                         </div>
                     </div>

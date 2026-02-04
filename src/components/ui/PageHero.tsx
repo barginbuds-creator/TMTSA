@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 interface PageHeroProps {
   title: React.ReactNode;
@@ -32,10 +33,12 @@ export const PageHero = ({ title, subtitle, imageSrc, imageAlt, size = "default"
           }}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={imageSrc}
             alt={imageAlt}
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
+            priority
           />
         </motion.div>
 

@@ -39,13 +39,38 @@ export default async function SolutionPage({ params }: Props) {
         notFound();
     }
 
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": solution.title,
+        "provider": {
+            "@type": "HomeAndConstructionBusiness",
+            "name": "The Maintenance Team",
+            "image": "https://tmtsa.vercel.app/images/tmt-logo-2026.png",
+            "telephone": "+27766300879",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Cape Town",
+                "addressRegion": "Western Cape",
+                "addressCountry": "ZA"
+            }
+        },
+        "description": solution.description
+    };
+
     return (
-        <ContentPage
-            title={`${solution.title} Solutions`}
-            subtitle={solution.description}
-            heroImage={solution.heroImage}
-            introText={solution.introText}
-            benefits={solution.benefits}
-        />
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <ContentPage
+                title={`${solution.title} Solutions`}
+                subtitle={solution.description}
+                heroImage={solution.heroImage}
+                introText={solution.introText}
+                benefits={solution.benefits}
+            />
+        </>
     );
 }
