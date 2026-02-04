@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { ChevronDown } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
 import { useState } from "react";
 
 type FAQItem = {
@@ -11,20 +11,28 @@ type FAQItem = {
 
 const FAQS: FAQItem[] = [
     {
-        question: "Who is the best roof painter near me?",
-        answer: "The Maintenance Team (TMT) is Durbanville & Blouberg's top-rated roof painting specialist. We use high-pressure cleaning and industrial-grade waterproof coatings to ensure a finish that lasts 10+ years."
-    },
-    {
-        question: "How much does waterproofing cost in Cape Town?",
-        answer: "Waterproofing costs in Cape Town vary by surface type (tile vs. concrete). TMT offers free site assessments to provide an accurate, itemized quote with no hidden fees."
+        question: "How quickly can you start a project?",
+        answer: "We typically can schedule a site assessment within 48 hours. Once the quote is approved, our teams can usually start work within 5-7 working days, depending on our current project load and weather conditions."
     },
     {
         question: "Do you offer a guarantee on workmanship?",
-        answer: "Yes, we provide a 10-year guarantee on our waterproofing and structural repair services, giving you peace of mind against the Cape's harsh weather."
+        answer: "Yes, we providing industry-leading guarantees. Waterproofing comes with up to a 10-year guarantee, and structural repairs are covered by a comprehensive warranty plan. Terms and conditions apply based on the specific service."
     },
     {
         question: "What areas do you service?",
-        answer: "We focus on the Western Cape, specifically Durbanville (7550), Bloubergstrand, Darling, Camps Bay, and the greater Cape Town area."
+        answer: "We service the entire greater Cape Town area, including the Atlantic Seaboard, City Bowl, Southern Suburbs, Northern Suburbs (Durbanville, Bellville), and the Winelands."
+    },
+    {
+        question: "Are your quotes free?",
+        answer: "Yes, we offer free, no-obligation detailed quotes. Our project manager will visit your property to assess the scope of work and provide a comprehensive breakdown of costs."
+    },
+    {
+        question: "Do you handle insurance claims?",
+        answer: "Absolutely. We regularly work with body corporates and homeowners to provide the detailed technical reports and itemized quotes required for insurance claims processing."
+    },
+    {
+        question: "Is your team insured?",
+        answer: "Yes, The Maintenance Team carries full public liability insurance and all our staff are covered by Workmen's Compensation (COIDA), ensuring you have zero risk while we are on your property."
     }
 ];
 
@@ -50,37 +58,61 @@ export const FAQ = () => {
     };
 
     return (
-        <section className="py-24 bg-neutral-900 text-white" id="faq">
+        <section className="py-24 bg-zinc-50 relative overflow-hidden" id="faq">
+            {/* Background Decoration */}
+            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-zinc-200 to-transparent"></div>
+            <div className="absolute -top-[200px] -right-[200px] w-[500px] h-[500px] bg-tmt-orange/5 rounded-full blur-[100px] pointer-events-none"></div>
+
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-            <div className="container mx-auto px-4 max-w-3xl">
-                <h2 className="font-heading text-4xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
+            <div className="container mx-auto px-4 max-w-4xl relative z-10">
+                <div className="text-center mb-16">
+                    <span className="font-bold text-tmt-orange uppercase tracking-wider text-sm mb-2 block">Support</span>
+                    <h2 className="font-heading text-4xl md:text-5xl font-bold text-zinc-900 mb-4">Frequently Asked Questions</h2>
+                    <p className="text-zinc-500 text-lg max-w-2xl mx-auto">
+                        Everything you need to know about our services, process, and guarantees.
+                    </p>
+                </div>
 
                 <div className="space-y-4">
                     {FAQS.map((faq, index) => (
                         <div
                             key={index}
                             className={cn(
-                                "border border-white/10 rounded-lg overflow-hidden transition-all duration-300",
-                                openIndex === index ? "bg-white/5 border-tmt-orange/50" : "bg-transparent"
+                                "bg-white border rounded-2xl overflow-hidden transition-all duration-300",
+                                openIndex === index
+                                    ? "border-tmt-orange/30 shadow-lg shadow-tmt-orange/5"
+                                    : "border-zinc-200 hover:border-zinc-300 shadow-sm"
                             )}
                         >
                             <button
                                 onClick={() => toggle(index)}
-                                className="w-full flex items-center justify-between p-6 text-left font-heading font-medium text-lg hover:text-tmt-orange transition-colors"
+                                className="w-full flex items-center justify-between p-6 md:p-8 text-left group"
                                 aria-expanded={openIndex === index}
                             >
-                                {faq.question}
-                                <ChevronDown className={cn("w-5 h-5 transition-transform duration-300", openIndex === index ? "rotate-180 text-tmt-orange" : "")} />
+                                <span className={cn(
+                                    "font-heading font-bold text-lg md:text-xl transition-colors duration-300 pr-8",
+                                    openIndex === index ? "text-tmt-orange" : "text-zinc-800 group-hover:text-zinc-900"
+                                )}>
+                                    {faq.question}
+                                </span>
+                                <div className={cn(
+                                    "w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 shrink-0",
+                                    openIndex === index ? "bg-tmt-orange text-white rotate-180" : "bg-zinc-100 text-zinc-500 group-hover:bg-zinc-200"
+                                )}>
+                                    {openIndex === index ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+                                </div>
                             </button>
 
                             <div
                                 className={cn(
-                                    "px-6 text-neutral-400 font-sans leading-relaxed overflow-hidden transition-all duration-300",
-                                    openIndex === index ? "max-h-48 pb-6 opacity-100" : "max-h-0 opacity-0"
+                                    "overflow-hidden transition-all duration-300 ease-in-out",
+                                    openIndex === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                                 )}
                             >
-                                {faq.answer}
+                                <div className="p-6 md:p-8 pt-0 text-zinc-600 leading-relaxed text-base border-t border-transparent">
+                                    {faq.answer}
+                                </div>
                             </div>
                         </div>
                     ))}
