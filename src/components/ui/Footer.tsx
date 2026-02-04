@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Facebook, Instagram, Linkedin, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,7 +11,7 @@ export const Footer = () => {
                     <div className="lg:col-span-2 space-y-8 pr-0 lg:pr-12">
                         <Link href="/" className="block relative h-10 w-40">
                             <Image
-                                src="/images/tmt-logo-new.png"
+                                src="/images/tmt-logo-footer-2026.png"
                                 alt="The Maintenance Team Logo"
                                 fill
                                 className="object-contain object-left"

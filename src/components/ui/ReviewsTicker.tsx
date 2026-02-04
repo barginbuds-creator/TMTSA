@@ -1,7 +1,7 @@
 "use client";
 
 import { Star, Quote, CheckCircle2 } from "lucide-react";
-import Link from "next/link";
+
 
 const REVIEWS = [
     { name: "Sarah Jenkins", role: "Residential", date: "2 days ago", text: "Professional, tidy, and on time. The painting team completely transformed our living space. Highly recommended!", rating: 5 },

@@ -27,7 +27,7 @@ export const ContentPage = ({
     benefits,
     ctaLink = "/contact",
     ctaText = "Get a Free Quote",
-    serviceArea,
+
     children
 }: ContentPageProps) => {
     return (
