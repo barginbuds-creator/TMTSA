@@ -94,15 +94,7 @@ export const ReviewsTicker = () => {
                 </div>
 
                 {/* Bottom CTA */}
-                <div className="text-center mt-8">
-                    <Link
-                        href="https://www.google.com/search?q=The+Maintenance+Team+Cape+Town"
-                        target="_blank"
-                        className="inline-flex items-center gap-2 text-sm font-bold text-zinc-500 hover:text-tmt-orange transition-colors"
-                    >
-                        Read all 138 reviews on Google <span aria-hidden="true">&rarr;</span>
-                    </Link>
-                </div>
+
             </div>
         </div>
     );
