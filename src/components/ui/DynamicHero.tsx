@@ -51,19 +51,7 @@ export const DynamicHero = () => {
             <div className="relative z-30 container mx-auto px-4 text-center pb-20">
 
                 {/* Trusted Badge */}
-                <motion.div
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 }}
-                    className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 mb-8 mx-auto"
-                >
-                    <div className="flex -space-x-1">
-                        {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="w-3 h-3 fill-tmt-orange text-tmt-orange" />
-                        ))}
-                    </div>
-                    <span className="text-white text-xs font-bold tracking-wide uppercase">Trusted by 500+ Local Homeowners</span>
-                </motion.div>
+
 
                 <h1 className="font-heading font-black text-white text-5xl md:text-7xl lg:text-8xl leading-none tracking-tight uppercase drop-shadow-2xl mb-6">
                     <div>WE RESTORE</div>
