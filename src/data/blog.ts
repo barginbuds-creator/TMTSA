@@ -17,8 +17,8 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "5-waterproofing-secrets-cape-town-homes",
     title: "5 Waterproofing Secrets for Cape Town Homes 🏠☔",
     excerpt: "Don't wait for the first storm! Learn expert waterproofing tips for Cape Town homes to prevent damp and leaks before winter hits.",
-    coverImage: "/images/bento-industrial.png",
-    coverImageAlt: "Waterproofing inspection on a Cape Town roof",
+    coverImage: "/images/hero-executive-white-gold.png",
+    coverImageAlt: "Modern luxury Cape Town home with Table Mountain view and gathering storm clouds",
     date: "2026-02-04",
     author: "The Maintenance Team",
     readTime: "6 min read",
@@ -37,6 +37,12 @@ export const BLOG_POSTS: BlogPost[] = [
 
       <h2>1. Inspect Your Roof Flashings and Ridges</h2>
       <p>The harsh sun in the Northern Suburbs often degrades waterproofing membranes over the summer. We often find that the "lap joints" (where roofing sheets overlap) and flashings around chimneys are the first points of failure.</p>
+      
+      <figure class="my-8">
+        <img src="/images/bento-industrial.png" alt="Close-up photo of cracked roof flashing around a chimney on a tiled roof" class="rounded-xl shadow-lg border border-white/10 w-full" />
+        <figcaption class="text-center text-sm text-neutral-500 mt-2 italic">Cracked flashings are the #1 entry point for water.</figcaption>
+      </figure>
+
       <p>If these seals dry out and crack, water will find a way in. We recommend a full roof inspection annually.</p>
       <div class="bg-neutral-900 border-l-4 border-tmt-orange p-4 my-6">
         <p class="font-bold text-white m-0">Pro Tip:</p>
@@ -54,6 +60,12 @@ export const BLOG_POSTS: BlogPost[] = [
 
       <h2>3. Treat Rising Damp Immediately</h2>
       <p>Cape Town's high water table, especially in the City Bowl (Oranjezicht and Higgovale), puts older homes at risk of rising damp. This occurs when ground water rises up through the masonry of your walls.</p>
+      
+      <figure class="my-8">
+        <img src="/images/bento-residential-bright.png" alt="Photo of an interior wall in a home showing realistic signs of rising damp: bubbling paint and efflorescence" class="rounded-xl shadow-lg border border-white/10 w-full" />
+        <figcaption class="text-center text-sm text-neutral-500 mt-2 italic">Bubbling paint often indicates moisture rising from the foundation.</figcaption>
+      </figure>
+
       <p>If you notice bubbling paint low down on your walls or a salty white powder (efflorescence), you need professional intervention. Painting over it will not work; the moisture needs to be blocked at the source.</p>
 
       <h2>4. Check Exterior Walls for Hairline Cracks</h2>

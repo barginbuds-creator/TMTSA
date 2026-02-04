@@ -2,8 +2,6 @@
 
 import { useState } from "react";
 import { Upload, ArrowRight, CheckCircle2, Loader2, RefreshCw, Wand2 } from "lucide-react";
-import Image from "next/image";
-import { cn } from "@/lib/utils";
 
 // --- Pricing & Service Logic ---
 import { SITE_DATA } from "@/lib/siteData";

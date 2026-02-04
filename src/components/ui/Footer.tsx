@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, ChevronDown } from "lucide-react";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
