@@ -10,35 +10,53 @@ import { format } from "date-fns";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const resolvedParams = await params;
-    const post = await db.query.blogPosts.findFirst({
-        where: eq(blogPosts.slug, resolvedParams.slug),
-    });
+    try {
+        if (process.env.POSTGRES_URL) {
+            const post = await db.query.blogPosts.findFirst({
+                where: eq(blogPosts.slug, resolvedParams.slug),
+            });
 
-    if (!post) {
-        return {
-            title: "Post Not Found | TMT",
-        };
+            if (post) {
+                return {
+                    title: `${post.title} | TMT Blog`,
+                    openGraph: {
+                        title: post.title,
+                        images: post.imageUrl ? [{ url: post.imageUrl }] : [],
+                        type: "article",
+                        publishedTime: post.createdAt.toISOString(),
+                    },
+                };
+            }
+        }
+    } catch (e) {
+        // Fallback
     }
 
     return {
-        title: `${post.title} | TMT Blog`,
-        openGraph: {
-            title: post.title,
-            images: post.imageUrl ? [{ url: post.imageUrl }] : [],
-            type: "article",
-            publishedTime: post.createdAt.toISOString(),
-        },
+        title: "Expert Advice | TMT Blog",
     };
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
     const resolvedParams = await params;
-    const post = await db.query.blogPosts.findFirst({
-        where: eq(blogPosts.slug, resolvedParams.slug),
-    });
+    let post = null;
+    try {
+        if (process.env.POSTGRES_URL) {
+            post = await db.query.blogPosts.findFirst({
+                where: eq(blogPosts.slug, resolvedParams.slug),
+            });
+        }
+    } catch (e) {
+        console.warn("Blog post fetch failed during build:", e);
+    }
 
-    if (!post) {
+    if (!post && process.env.POSTGRES_URL) {
         notFound();
+    }
+
+    // Fallback for build time without DB
+    if (!post) {
+        return <div className="min-h-screen pt-32 text-center text-white">Post content unavailable during build.</div>;
     }
 
     return (

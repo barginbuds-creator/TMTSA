@@ -16,7 +16,15 @@ export const metadata: Metadata = {
 export const revalidate = 3600;
 
 export default async function GalleryPage() {
-    const projectList = await db.select().from(projects).orderBy(desc(projects.createdAt));
+    // Safe fetch for build
+    let projectList: typeof projects.$inferSelect[] = [];
+    try {
+        if (process.env.POSTGRES_URL) {
+            projectList = await db.select().from(projects).orderBy(desc(projects.createdAt));
+        }
+    } catch (e) {
+        console.warn("Gallery DB fetch failed during build:", e);
+    }
 
     return (
         <main className="min-h-screen bg-neutral-950 text-white pt-32 pb-20">
