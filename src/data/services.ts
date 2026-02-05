@@ -27,23 +27,35 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
             <p>In Cape Town, waterproofing isn't a luxury—it's a necessity. The combination of torrential winter rains and blistering summer heat causes standard sealants to crack and fail. At <strong>The Maintenance Team (TMT)</strong>, we don't just patch leaks; we engineer permanent solutions.</p>
             
             <h3>Our Waterproofing Systems</h3>
-            <p>We utilize industrial-grade materials suited for the harsh Western Cape climate:</p>
-            <ul>
-                <li><strong>Torch-on Membrane (4mm):</strong> The gold standard for flat concrete roofs and balconies. Heat-fused for a seamless, watertight bond.</li>
-                <li><strong>Acrylic & Fibre Reinforced:</strong> Ideal for parapet walls, flashings, and tiled ridging. Flexibility meets durability.</li>
-                <li><strong>Cementitious Slurries:</strong> Specialized heavy-duty waterproofing for showers, basements, and retaining walls.</li>
-            </ul>
+            <p>We utilize industrial-grade materials suited for the harsh Western Cape climate, including 4mm Torch-on membranes for flat roofs and specialized cementitious slurries for retaining walls.</p>
 
             <h3>Why Choose TMT for Waterproofing?</h3>
             <p>Leak detection is an art. Our team uses moisture mapping to identify the root cause of water ingress, ensuring we fix the problem at the source, not just the symptom. Every full waterproofing project comes with a <strong>CERTIFIED 10-YEAR GUARANTEE</strong>.</p>
-
-            <blockquote>
+             <blockquote>
                 "Water damage is progressive. A small damp spot today is a structural failure tomorrow. Protect your asset with TMT."
             </blockquote>
-
             <h3>Areas We cover in Cape Town</h3>
             <p>From the Atlantic Seaboard to the Southern Suburbs, our mobile teams are ready to deploy. We treat every home with the same rigor as an industrial site—clean, efficient, and built to last.</p>
-        `
+        `,
+        structuredData: {
+            processSteps: [
+                { title: "Moisture Mapping & Inspection", description: "We identify the exact entry point of water using thermal and moisture meters, not just guesswork." },
+                { title: "Surface Preparation", description: "All old, failing bitumen is stripped. The substrate is primed with a high-penetration bitumen primer." },
+                { title: "Torch-on Application", description: "We heat-fuse a 4mm reinforced bitumen membrane to the substrate, creating a seamless, watertight seal." },
+                { title: "Silver Coat & Flood Test", description: "A UV-reflective silver coating is applied to protect the membrane, followed by a water flood test to guarantee the seal." }
+            ],
+            features: [
+                { title: "10-Year Watertight Guarantee", description: "Peace of mind with a transferable warranty." },
+                { title: "Industrial Grade Materials", description: "We use only SABS-approved 4mm membranes." },
+                { title: "Certified Applicators", description: "Our teams are trained in correct heat-fusing techniques." },
+                { title: "Lateral Damp Specialists", description: "Expertise in complex rising and lateral damp treatments." }
+            ],
+            faqs: [
+                { question: "How long does torch-on waterproofing last?", answer: "When correctly applied and maintained with a silver coat every 2-3 years, a torch-on system can last 10-15 years." },
+                { question: "Can I tile over the waterproofing?", answer: "Yes, but it requires a specialized double-layer system with a focus on counter-flashing. Ask us for a spec sheet." },
+                { question: "Do you offer localized repairs?", answer: "Yes, for minor issues we can do patch repairs, but for older roofs (15+ years), a full replacement is often more cost-effective." }
+            ]
+        }
     },
     {
         slug: "roof-painting-durbanville",
@@ -56,20 +68,31 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
             <h2>Restore Value to Your Durbanville Home</h2>
             <p>A faded, moss-covered roof doesn't just look bad—it degrades your property's value. Durbanville's leafy environment often leads to heavy fungal and moss buildup on tiled roofs. <strong>The Maintenance Team</strong> restores your roof to showroom condition.</p>
             
-            <h3>The TMT Restoration Process</h3>
-            <ol>
-                <li><strong>High-Pressure Cleaning:</strong> We strip away years of dirt, moss, and flaking paint using industrial 250-bar pressure washers.</li>
-                <li><strong>Fungicidal Wash:</strong> We apply a chemical treatment to kill spore roots, preventing regrowth.</li>
-                <li><strong>Repair & Seal:</strong> Broken tiles are replaced, and ridge capping is re-pointed to ensure a watertight seal.</li>
-                <li><strong>Airless Spray Painting:</strong> We apply premium pure-acrylic roof coatings using airless spray technology for a uniform, factory-finish coat that brushes can't achieve.</li>
-            </ol>
-
             <h3>Thermal Efficiency</h3>
             <p>Modern roof coatings do more than look good. They reflect UV rays, lowering the internal temperature of your home during Durbanville's hot summers. Ask us about our <strong>Heat-Reflective Cool Roof</strong> options.</p>
 
             <h3>Why Spray Painting?</h3>
             <p>Airless spraying forces paint into the pores of the tiles, creating a stronger bond and a thicker film build than traditional rolling. The result is a finish that lasts 10+ years without peeling.</p>
-        `
+        `,
+        structuredData: {
+            processSteps: [
+                { title: "High-Pressure Cleaning", description: "We strip away years of dirt, moss, and flaking paint using industrial 250-bar pressure washers." },
+                { title: "Fungicidal Wash", description: "We apply a chemical treatment to kill spore roots, preventing moss regrowth under the new paint." },
+                { title: "Repair & Waterproofing", description: "Broken tiles are replaced, ridge capping is re-pointed, and flashings are sealed before painting begins." },
+                { title: "Airless Spray Painting", description: "We apply premium pure-acrylic roof coatings using airless spray technology for a uniform, factory-finish coat." }
+            ],
+            features: [
+                { title: "Airless Spray Technology", description: "Superior coverage and bonding compared to brush/roller." },
+                { title: "Heat-Reflective Coatings", description: "Reduce internal temperatures by up to 5°C." },
+                { title: "Rust Treatment", description: "Specialized primers for metal roof sheets and fixings." },
+                { title: "Color Consulting", description: "Expert advice on modern roof color trends." }
+            ],
+            faqs: [
+                { question: "Is spray painting better than hand painting?", answer: "Yes. Airless spraying atomizes the paint, forcing it into tile pores for better adhesion and a thicker, smoother finish." },
+                { question: "How long does the paint last?", answer: "We use premium pure acrylics rated for 10-12 years in the South African sun." },
+                { question: "Will cleaning damage my ceiling?", answer: "No. We utilize specialized angles and pressure control to enforce water runs down the roof, not up into the tiles." }
+            ]
+        }
     },
     {
         slug: "structural-repairs-blouberg",
@@ -82,52 +105,73 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
             <h2>Combating the 'Concrete Cancer' of the West Coast</h2>
             <p>Bloubergstrand offers beautiful views, but the salt-laden air is brutal on buildings. "Spalling" or concrete cancer occurs when steel reinforcing bars rust and expand, cracking the concrete from the inside out. This is a critical structural failure that requires expert intervention.</p>
             
-            <h3>Our Structural Repair Methodology</h3>
-            <p>This is not a "plaster over it" job. TMT follows a strict engineering protocol:</p>
-            <ul>
-                <li><strong>Exposure:</strong> We mechanically remove damaged concrete to expose the corroded rebar.</li>
-                <li><strong>Treatment:</strong> Rust is removed, and steel is treated with zinc-rich primers to halt corrosion.</li>
-                <li><strong>Bonding:</strong> A chemical bonding agent is applied to ensure adhesion between old and new material.</li>
-                <li><strong>Reinstatement:</strong> We use high-strength, non-shrink structural epoxies and mortars to rebuild the integrity of the column or beam.</li>
-            </ul>
-
             <h3>Crack Injection & Stitching</h3>
             <p>For non-structural cracks, we utilize epoxy injection systems that weld the masonry back together, preventing water ingress and further movement.</p>
 
             <h3>Don't Wait on Cracks</h3>
             <p>In Blouberg's corrosive environment, a small crack allows salt air to reach your rebar quickly. Early intervention saves tens of thousands in future heavy construction costs. Call TMT for a specialized structural assessment.</p>
-        `
+        `,
+        structuredData: {
+             processSteps: [
+                { title: "Exposure & Assessment", description: "We mechanically remove damaged concrete to clearly expose the full extent of the corroded rebar." },
+                { title: "Rust Treatment", description: "Steel is cleaned to a bright finish and treated with zinc-rich primers to permanently halt corrosion." },
+                { title: "Bonding Agent", description: "A structural wet-to-dry epoxy bonding agent is applied to ensure the new mortar fuses with the old concrete." },
+                { title: "Reinstatement", description: "We use high-strength, non-shrink structural mortars to rebuild the integrity of the column, beam, or balcony." }
+            ],
+            features: [
+                { title: "Engineering Standards", description: "All repairs follow strict structural engineering protocols." },
+                { title: "Sika & Abe Approved", description: "We use only industry-leading repair compounds." },
+                { title: "Spalling Specialists", description: "Deep expertise in coastal corrosion issues." },
+                { title: "Dust Control", description: "We manage the mess of chipping with strict containment protocols." }
+            ],
+             faqs: [
+                { question: "Is spalling dangerous?", answer: "Yes. Falling chunks of concrete pose a severe safety risk, and untreated spalling weakens the building's support structure." },
+                { question: "How long does a repair take?", answer: "It varies, but typically a balcony repair takes 3-5 days to allow for proper curing times between steps." },
+                { question: "Can you match the existing paint/texture?", answer: "Yes, once the structural repair is cured, we plaster and paint to blend seamlessly with the existing wall." }
+            ]
+        }
     },
     // GENERIC SERVICES (For /services main page linking)
     {
         slug: "waterproofing",
         service: "Waterproofing",
         location: "Cape Town",
-        heroImage: "/images/services/hero-waterproofing.png",
+        heroImage: "/images/services/hero-waterproofing.png", // Corrected path
         title: "Expert Waterproofing Contractors | Torch-on & Lateral Damp",
         description: "Industrial-grade waterproofing solutions. We specialize in torch-on systems for flat roofs and balconies, offering a 10-year guarantee against water ingress.",
         content: `
             <h2>Permanent Waterproofing Solutions</h2>
             <p>Water intrusion is the single biggest threat to your property's structural integrity. At <strong>The Maintenance Team</strong>, we employ advanced waterproofing systems designed to withstand the Cape's harsh winter rains and summer heat.</p>
             
-            <h3>Our Systems</h3>
-            <ul>
-                 <li><strong>Torch-on Membrane:</strong> Heat-fused bitumen layers for flat roofs and concrete slabs. Highly durable and seamless.</li>
-                 <li><strong>Cementitious Slurries:</strong> Ideal for rising damp, lateral damp, and basement tanking.</li>
-                 <li><strong>Acrylic Reinforced:</strong> Flexible waterproofing for parapets and flashings.</li>
-            </ul>
-
             <img src="/images/services/content-waterproofing.png" alt="Waterproofing Guarantee" class="rounded-lg shadow-lg my-8 w-full block" />
 
             <h3>The TMT 10-Year Guarantee</h3>
             <p>We stand by our workmanship. All full waterproofing installations come with a certified 10-year guarantee, giving you peace of mind that your asset is protected.</p>
-        `
+        `,
+         structuredData: {
+            processSteps: [
+                { title: "Moisture Mapping", description: "We identify the exact entry point of water utilizing thermal cameras." },
+                { title: "Surface Preparation", description: "Stripping old bitumen and priming the substrate for a perfect bond." },
+                { title: "Torch-on Application", description: "Heat-fusing 4mm reinforced bitumen membrane for a seamless seal." },
+                { title: "Water Testing", description: "We flood test flat roofs to verify watertightness before signing off." }
+            ],
+            features: [
+                { title: "10-Year Guarantee", description: "Fully transferable written warranty." },
+                { title: "Certified Applicators", description: "Teams trained by major manufacturers." },
+                { title: "Industrial Grade", description: "We don't use DIY-store products; only commercial specs." },
+                { title: "All Surface Types", description: "Concrete, Zinc, Tiled, and Slate roofs." }
+            ],
+            faqs: [
+                { question: "How long does torch-on waterproofing last?", answer: "10-15 years if maintained with a UV silver coat." },
+                { question: "Do you do balcony waterproofing?", answer: "Yes, we specialize in under-tile balcony waterproofing systems." }
+            ]
+        }
     },
     {
         slug: "painting-roofing",
         service: "Paint & Roof",
         location: "Cape Town",
-        heroImage: "/images/services/hero-painting.png",
+        heroImage: "/images/services/hero-painting.png", // Corrected path
         title: "Interior & Exterior Painting | Roof Restoration",
         description: "Transform your property with our premium painting and roof restoration services. Airless spraying for roofs and expert interior finishing.",
         content: `
@@ -137,14 +181,26 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
             <img src="/images/services/content-painting.png" alt="Interior Painting" class="rounded-lg shadow-lg my-8 w-full block" />
 
             <h3>Roof Restoration Specialists</h3>
-            <p>Don't replace your roof if you don't have to. Our restoration process extends the life of your roof by 10-15 years:</p>
-            <ol>
-                <li>High-pressure cleaning (250 bar) to remove moss and oxidation.</li>
-                <li>Fungicidal treatment to prevent regrowth.</li>
-                <li>Replacement of broken tiles and re-pointing of ridge caps.</li>
-                <li>Application of pure-acrylic roof coating via airless spray for a factory finish.</li>
-            </ol>
-        `
+            <p>Don't replace your roof if you don't have to. Our restoration process extends the life of your roof by 10-15 years.</p>
+        `,
+        structuredData: {
+            processSteps: [
+                { title: "High-Pressure Cleaning", description: "Removing all moss, lichen, and oxidation." },
+                { title: "Fungicidal Treatment", description: "Killing spores to prevent regrowth." },
+                { title: "Repairs & Pointing", description: "Replacing broken tiles and fixing ridge capping." },
+                { title: "Airless Spraying", description: "Applying heavy-duty roof coating for a brand-new look." }
+            ],
+            features: [
+                { title: "Airless Technology", description: "Superior finish and adhesion." },
+                { title: "Cool Roof Coatings", description: "Reduce heat build-up in your home." },
+                { title: "Interior & Exterior", description: "Full house repainting services." },
+                { title: "Color Consultation", description: "Expert advice on palettes and finishes." }
+            ],
+            faqs: [
+                 { question: "Is spray painting better than hand painting?", answer: "Yes, for roofs it provides far better coverage and pore penetration." },
+                 { question: "How long does it take?", answer: "An average home roof takes 2-3 days to clean, repair, and paint." }
+            ]
+        }
     },
     {
         slug: "plumbing",
@@ -156,15 +212,25 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
         content: `
             <h2>Reliable Maintenance Plumbing</h2>
             <p>From a dripping tap to a burst geyser, our plumbing division handles all general maintenance and emergency repairs. We pride ourselves on quick response times and tidy workmanship.</p>
-            
-            <h3>Core Services</h3>
-            <ul>
-                <li><strong>Leak Detection:</strong> Using acoustic and thermal imaging to find hidden leaks.</li>
-                <li><strong>Geyser Installation:</strong> Repairs and replacements to SANS 10254 standards.</li>
-                <li><strong>Blocked Drains:</strong> Mechanical drain cleaning to restore flow.</li>
-                <li><strong>Sanitaryware:</strong> Installation of toilets, basins, and showers for bathroom upgrades.</li>
-            </ul>
-        `
+        `,
+        structuredData: {
+            processSteps: [
+                { title: "Leak Detection", description: "Using acoustic and thermal equipment to pinpoint hidden leaks." },
+                { title: "Assessment & Quote", description: "We provide a clear, itemized quote before starting any work." },
+                { title: "Repair & Replace", description: "Using SABS-approved parts for lasting repairs." },
+                { title: "Testing & Certification", description: "Pressure testing and issuing COC certificates where required." }
+            ],
+            features: [
+                { title: "24/7 Emergency", description: "We are available when you need us most." },
+                { title: "PIRB Registered", description: "Qualified and compliant plumbers." },
+                { title: "Geyser Wise", description: "Smart timer installation and repairs." },
+                { title: "Blocked Drains", description: "High-pressure jetting services." }
+            ],
+            faqs: [
+                { question: "Do you issue Plumbing COCs?", answer: "Yes, we can inspect and issue Certificates of Compliance for property transfers." },
+                { question: "Do you help with insurance claims?", answer: "Yes, we provide detailed reports and photos to assist with your insurance claim." }
+            ]
+        }
     },
     {
         slug: "renovations",
@@ -178,21 +244,31 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
             <p>Renovating shouldn't be stressful. TMT offers a complete project management service for bathroom and kitchen makeovers. We coordinate all trades, so you only deal with one point of contact.</p>
 
             <img src="/images/services/content-renovation.png" alt="Bathroom Renovation" class="rounded-lg shadow-lg my-8 w-full block" />
-
-            <h3>Our Renovation Scope</h3>
-            <ul>
-                <li><strong>Demolition & Carting:</strong> Clean, safe removal of old rubble.</li>
-                <li><strong>Plumbing & Electrical:</strong> Re-routing points for new layouts.</li>
-                <li><strong>Tiling:</strong> Expert installation of porcelain, ceramic, and natural stone.</li>
-                <li><strong>Finishing:</strong> Skimming, painting, and fitting installation.</li>
-            </ul>
-        `
+        `,
+        structuredData: {
+            processSteps: [
+                { title: "Consultation & Design", description: "We meet to discuss your vision, budget, and material choices." },
+                { title: "Demolition & Prep", description: "Safe strip-out of old fixtures and carting away of rubble." },
+                { title: "Installation", description: "Plumbing, electrical, tiling, and cabinetry installation by skilled tradesmen." },
+                { title: "Snagging & Handover", description: "Final quality checks and cleaning before handover." }
+            ],
+            features: [
+                { title: "Turnkey Project Management", description: "One contact person for the whole job." },
+                { title: "Licensed Trades", description: "Qualified plumbers and electricians." },
+                { title: "Quality Finishes", description: "Expert tiling and joinery." },
+                { title: "On-Time Delivery", description: "We stick to the agreed schedule." }
+            ],
+            faqs: [
+                { question: "Do I need plans?", answer: "For internal cosmetic changes, usually no. Structural changes will require plans." },
+                { question: "How long does a bathroom renovation take?", answer: "Typically 10-14 working days, depending on the complexity." }
+            ]
+        }
     },
     {
         slug: "structural-repairs",
         service: "Structural Repairs",
         location: "Cape Town",
-        heroImage: "/images/services/hero-structural.png",
+        heroImage: "/images/services/hero-structural.png", // Corrected path
         title: "Structural Repair Experts | Spalling & Cracks",
         description: "Specialized repair of structural cracks and concrete spalling. Essential maintenance for coastal properties dealing with salt corrosion.",
         content: `
@@ -200,10 +276,25 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
             <p>Coastal living takes a toll on buildings. 'Concrete cancer' or spalling occurs when reinforcing steel rusts and expands, cracking the concrete. If left untreated, this can compromise the building's safety.</p>
 
              <img src="/images/services/content-structural.png" alt="Structural Repairs" class="rounded-lg shadow-lg my-8 w-full block" />
-
-            <h3>Our Engineering Approach</h3>
-            <p>We use high-strength structural epoxies and mortars to reinstate damaged concrete. Our process involves cutting back to clean steel, treating rust, applying bonding agents, and re-casting the section to original strength.</p>
-        `
+        `,
+        structuredData: {
+             processSteps: [
+                { title: "Assess & Expose", description: "Exposing corroded rebar to determine the extent of damage." },
+                { title: "Treat & Prime", description: "Anti-corrosion treatment for steel and bonding primers for concrete." },
+                { title: "Repair Mortar", description: "Application of high-strength structural epoxy mortars." },
+                { title: "Finish", description: "Plastering and painting to match the existing wall." }
+            ],
+            features: [
+                { title: "Engineering Approved", description: "Methods that meet structural standards." },
+                { title: "Sika Specialists", description: "We use top-tier repair products." },
+                { title: "Spalling Experts", description: "Coastal corrosion specialists." },
+                { title: "Safety First", description: "Strict safety protocols on all sites." }
+            ],
+            faqs: [
+                 { question: "Is spalling dangerous?", answer: "Yes, it weakens the structure and falling debris is a hazard." },
+                 { question: "Can you fix cracks in my walls?", answer: "Yes, we stitch cracks to prevent them from reopening." }
+            ]
+        }
     },
     {
         slug: "paving-cleaning",
