@@ -16,7 +16,15 @@ export const metadata: Metadata = {
 export const revalidate = 3600;
 
 export default async function BlogListingPage() {
-    const posts = await db.select().from(blogPosts).where(eq(blogPosts.isPublished, true)).orderBy(desc(blogPosts.createdAt));
+    // Data fetching with error handling for build environment
+    let posts: typeof blogPosts.$inferSelect[] = [];
+    try {
+        if (process.env.POSTGRES_URL) {
+            posts = await db.select().from(blogPosts).where(eq(blogPosts.isPublished, true)).orderBy(desc(blogPosts.createdAt));
+        }
+    } catch (error) {
+        console.warn("Database connection failed during build/render:", error);
+    }
 
     return (
         <main className="min-h-screen bg-neutral-950 text-white pt-32 pb-20">

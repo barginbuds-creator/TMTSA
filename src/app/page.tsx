@@ -15,10 +15,17 @@ import { desc } from "drizzle-orm";
 export const revalidate = 3600; // Revalidate every hour
 
 export default async function HomePage() {
-  // Fetch the latest project from the database
-  const latestProject = await db.query.projects.findFirst({
-    orderBy: [desc(projects.createdAt)],
-  });
+  // Fetch the latest project from the database only if fetching is possible
+  let latestProject = null;
+  try {
+    if (process.env.POSTGRES_URL) {
+      latestProject = await db.query.projects.findFirst({
+        orderBy: [desc(projects.createdAt)],
+      });
+    }
+  } catch (error) {
+    console.warn("Database connection failed during build/render:", error);
+  }
 
   return (
     <main className="min-h-screen bg-white text-black selection:bg-black selection:text-white pb-20">

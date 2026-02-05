@@ -2,7 +2,6 @@
 
 import { useActionState } from 'react';
 import { authenticate } from '@/app/lib/actions';
-import { Button } from '@/components/ui/button'; // Assuming you have this or will use standard button
 import { Loader2 } from 'lucide-react';
 
 export default function LoginPage() {
