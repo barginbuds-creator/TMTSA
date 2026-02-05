@@ -8,8 +8,18 @@ import Image from "next/image";
 import bentoIndustrial from "../../public/images/bento-industrial.png";
 import bentoResidential from "../../public/images/bento-residential-bright.png";
 import bentoCleaning from "../../public/images/bento-cleaning-bright.png";
+import { db } from "@/db";
+import { projects } from "@/db/schema";
+import { desc } from "drizzle-orm";
 
-export default function HomePage() {
+export const revalidate = 3600; // Revalidate every hour
+
+export default async function HomePage() {
+  // Fetch the latest project from the database
+  const latestProject = await db.query.projects.findFirst({
+    orderBy: [desc(projects.createdAt)],
+  });
+
   return (
     <main className="min-h-screen bg-white text-black selection:bg-black selection:text-white pb-20">
       {/* 1. HERO SECTION */}
@@ -96,16 +106,19 @@ export default function HomePage() {
                 Project Spotlight
               </div>
               <h3 className="font-heading text-5xl md:text-7xl font-bold text-black mb-8 leading-[0.9]">
-                Becott <br /><span className="text-neutral-400 font-light">Heights.</span>
+                {latestProject ? latestProject.title.split(' ')[0] : 'Becott'} <br />
+                <span className="text-neutral-400 font-light">
+                  {latestProject ? latestProject.title.split(' ').slice(1).join(' ') : 'Heights.'}
+                </span>
               </h3>
               <div className="space-y-8 text-neutral-600 font-sans text-xl leading-relaxed">
                 <p>
                   <strong className="text-black block mb-2 text-sm uppercase tracking-wide">The Challenge</strong>
-                  Leaking balconies causing structural decay and spalling concrete.
+                  {latestProject ? latestProject.description : 'Leaking balconies causing structural decay and spalling concrete.'}
                 </p>
                 <p>
                   <strong className="text-black block mb-2 text-sm uppercase tracking-wide">The Solution</strong>
-                  Comprehensive waterproofing overhaul with industrial-grade finish.
+                  Comprehensive restoration with industrial-grade finish.
                 </p>
 
                 <div className="flex items-center gap-3 text-black font-bold mt-12 pt-12 border-t border-neutral-200">
@@ -117,8 +130,8 @@ export default function HomePage() {
 
             <div className="w-full md:w-1/2">
               <BeforeAfterSlider
-                beforeImage="/images/project-spotlight-before.jpg"
-                afterImage="/images/project-spotlight-after.jpg"
+                beforeImage={latestProject?.beforeImageUrl || "/images/project-spotlight-before.jpg"}
+                afterImage={latestProject?.afterImageUrl || "/images/project-spotlight-after.jpg"}
                 className="shadow-2xl shadow-black/20 border-0"
               />
               <p className="text-[10px] text-center text-neutral-400 mt-4 uppercase tracking-[0.3em]">Drag to Compare</p>
