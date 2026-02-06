@@ -7,6 +7,7 @@ export type PageData = {
     slug: string;
     introText: string;
     benefits: string[];
+    keywords: string[]; // SEO Keywords
     serviceArea?: {
         image: string;
         locations: string[];
@@ -35,7 +36,8 @@ export const SITE_DATA = {
             description: "Industrial torch-on and injection systems.",
             heroImage: "/images/areas/city-bowl-hero.png", // Existing assest
             introText: "Water intrusion is the single biggest threat to your property's structural integrity. At The Maintenance Team, we employ advanced waterproofing systems designed to withstand the Cape's harsh winter rains and summer heat.",
-            benefits: ["10-Year Guarantee", "Torch-on Systems", "Lateral Damp Treatment", "Balcony Waterproofing"]
+            benefits: ["10-Year Guarantee", "Torch-on Systems", "Lateral Damp Treatment", "Balcony Waterproofing"],
+            keywords: ["Waterproofing Cape Town", "Torch-on waterproofing", "Balcony waterproofing", "Damp proofing Cape Town", "Roof leak repair"]
         },
         {
             title: "Painting & Roofing",
@@ -44,7 +46,8 @@ export const SITE_DATA = {
             description: "Airless roof spraying and exterior coating.",
             heroImage: "/images/areas/winelands-hero.png",
             introText: "Restore your home's value. High-pressure cleaning and airless spray painting services for tiled and metal roofs.",
-            benefits: ["Airless Spray Technology", "Fungicidal Wash", "broken tile replacement", "10-15 Year Lifespan"]
+            benefits: ["Airless Spray Technology", "Fungicidal Wash", "broken tile replacement", "10-15 Year Lifespan"],
+            keywords: ["Roof painting Cape Town", "Airless spray painting", "Exterior house painting", "Roof coating", "Tile roof restoration"]
         },
         {
             title: "Plumbing",
@@ -53,7 +56,8 @@ export const SITE_DATA = {
             description: "Leak detection, geysers, and maintenance.",
             heroImage: "/images/services/hero-plumbing.png",
             introText: "Reliable plumbing services for leak detection, blocked drains, and geyser maintenance. Fast turnaround times for emergencies.",
-            benefits: ["24/7 Emergency Support", "Leak Detection", "Geyser Installation", "Blocked Drains"]
+            benefits: ["24/7 Emergency Support", "Leak Detection", "Geyser Installation", "Blocked Drains"],
+            keywords: ["Plumber Cape Town", "Leak detection", "Geyser installation", "Emergency plumber", "Blocked drains Cape Town"]
         },
         {
             title: "Renovations",
@@ -62,7 +66,8 @@ export const SITE_DATA = {
             description: "Turnkey bathroom and kitchen makeovers.",
             heroImage: "/images/hero-services-gold.png",
             introText: "Turnkey renovation services. We handle the entire project from demolition to tiling, plumbing, and electrical, delivering showroom-quality results.",
-            benefits: ["Project Management", "Bathroom & Kitchen", "Tiling & Flooring", "Electrical & Plumbing"]
+            benefits: ["Project Management", "Bathroom & Kitchen", "Tiling & Flooring", "Electrical & Plumbing"],
+            keywords: ["Bathroom renovations Cape Town", "Kitchen renovations", "Home improvements", "Turnkey renovations", "Tiling contractors"]
         },
         {
             title: "Structural Repairs",
@@ -71,7 +76,8 @@ export const SITE_DATA = {
             description: "Spalling and concrete restoration.",
             heroImage: "/images/services/hero-structural.png",
             introText: "Fixing concrete cancer and cracks caused by sea spray. Specialized structural repairs for coastal properties.",
-            benefits: ["Spalling Repair", "Rebar Treatment", "Structural Engineer Sign-off", "Crack Injection"]
+            benefits: ["Spalling Repair", "Rebar Treatment", "Structural Engineer Sign-off", "Crack Injection"],
+            keywords: ["Spalling repair Cape Town", "Concrete restoration", "Crack injection", "Structural repairs", "Concrete cancer treatment"]
         },
         {
             title: "Paving Cleaning",
@@ -80,7 +86,8 @@ export const SITE_DATA = {
             description: "High-pressure clean and seal.",
             heroImage: "/images/bento-cleaning-bright.png",
             introText: "Restore your home's curb appeal. Expert high-pressure paving cleaning, weed removal, and sealing services.",
-            benefits: ["Weed Removal", "Oil Stain Treatment", "Sanding & Sealing", "Estate Compliant"]
+            benefits: ["Weed Removal", "Oil Stain Treatment", "Sanding & Sealing", "Estate Compliant"],
+            keywords: ["Paving cleaning Cape Town", "High pressure cleaning", "Driveway cleaning", "Paving sealing", "Roof cleaning"]
         },
     ],
     solutions: [
