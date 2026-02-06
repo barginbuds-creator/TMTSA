@@ -259,7 +259,7 @@ export const VisualQuoteEngine = () => {
                                             <div className="relative h-48 w-full">
                                                 <Image
                                                     src={imageFile}
-                                                    alt="Preview"
+                                                    alt="User uploaded property photo for renovation preview"
                                                     fill
                                                     className="object-contain rounded"
                                                 />
@@ -306,7 +306,7 @@ export const VisualQuoteEngine = () => {
                                 <>
                                     <Image
                                         src={prediction}
-                                        alt="AI Renovated"
+                                        alt={`AI generated ${service} renovation visualization`}
                                         fill
                                         className="object-cover"
                                         unoptimized // Allow varying AI domains

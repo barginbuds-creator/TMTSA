@@ -39,6 +39,7 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
 
 // DELETE /api/admin/projects/[id]
 export async function DELETE(
+    _req: NextRequest,
     { params }: { params: Promise<{ id: string }> }
 ) {
     try {

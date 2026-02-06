@@ -46,7 +46,7 @@ export default async function ProjectAdminPage() {
                                             {project.afterImageUrl && (
                                                 <Image
                                                     src={project.afterImageUrl}
-                                                    alt=""
+                                                    alt={`${project.title} - After Renovation`}
                                                     width={40}
                                                     height={40}
                                                     className="rounded object-cover bg-neutral-100"

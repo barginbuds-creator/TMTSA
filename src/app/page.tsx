@@ -56,7 +56,7 @@ export default async function HomePage() {
             header={
               <Image
                 src={bentoIndustrial}
-                alt="Industrial Waterproofing"
+                alt="Professional Industrial Waterproofing Services in Cape Town"
                 fill
                 className="object-cover opacity-80"
                 sizes="(max-width: 768px) 100vw, 66vw"
@@ -75,7 +75,7 @@ export default async function HomePage() {
             header={
               <Image
                 src={bentoResidential}
-                alt="Residential Painting"
+                alt="Expert Residential Painting and Decorating Services"
                 fill
                 className="object-cover opacity-80"
                 sizes="(max-width: 768px) 100vw, 33vw"
@@ -93,7 +93,7 @@ export default async function HomePage() {
             header={
               <Image
                 src={bentoCleaning}
-                alt="Cleaning Services"
+                alt="Commercial and Residential Cleaning Services"
                 fill
                 className="object-cover opacity-80"
                 sizes="(max-width: 768px) 100vw, 33vw"

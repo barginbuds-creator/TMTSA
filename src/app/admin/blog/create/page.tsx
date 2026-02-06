@@ -113,11 +113,12 @@ export default function CreateBlogPost() {
                     <label className="text-sm font-bold text-neutral-700">Cover Image</label>
                     <div className="flex items-center gap-6">
                         <div className="shrink-0 w-32 h-32 bg-neutral-100 rounded-lg border-2 border-dashed border-neutral-300 flex items-center justify-center overflow-hidden relative">
-                            {imageUrl ? <div className="relative w-full h-full rounded-lg overflow-hidden">
-                                <Image src={imageUrl} alt="Cover preview" fill className="object-cover" unoptimized />
-                            </div>
+                            {imageUrl ? (
+                                <div className="relative w-full h-full rounded-lg overflow-hidden">
+                                    <Image src={imageUrl} alt="Cover preview" fill className="object-cover" unoptimized />
+                                </div>
                             ) : (
-                            <Upload className="w-8 h-8 text-neutral-400" />
+                                <Upload className="w-8 h-8 text-neutral-400" />
                             )}
                         </div>
                         <div className="flex-1">

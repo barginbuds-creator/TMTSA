@@ -40,6 +40,7 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
 }
 
 export async function DELETE(
+    _req: NextRequest,
     { params }: { params: Promise<{ id: string }> } // Correct type for async params
 ) {
     try {
