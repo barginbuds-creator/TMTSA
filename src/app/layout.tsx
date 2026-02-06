@@ -25,6 +25,12 @@ export const metadata: Metadata = {
     default: 'The Maintenance Team | Waterproofing & Painting Specialists',
   },
   description: "Cape Town's No.1 specialists for waterproofing, painting, and structural repairs. Serving Durbanville, Blouberg, and greater Cape Town.",
+  keywords: ["Waterproofing Cape Town", "Painters Cape Town", "Roof Repairs", "Spalling Repair", "Home Maintenance", "Industrial Coatings"],
+  authors: [{ name: "The Maintenance Team" }],
+  metadataBase: new URL('https://tmtsa.vercel.app/'),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_ZA',
@@ -32,7 +38,7 @@ export const metadata: Metadata = {
     siteName: 'The Maintenance Team',
     images: [
       {
-        url: '/images/tmt-og-image.png', // Ensure this image exists or use a default
+        url: '/images/tmt-og-image.png',
         width: 1200,
         height: 630,
         alt: 'The Maintenance Team - Cape Town Property Specialists',
@@ -42,6 +48,9 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.png',
   },
+  other: {
+    "google-site-verification": "YOUR_VERIFICATION_CODE", // Placeholder
+  }
 };
 
 export default function RootLayout({

@@ -1,7 +1,13 @@
 import Script from 'next/script';
 
-export default function SchemaMarkup() {
-    const schema = {
+export default function SchemaMarkup({
+    pageType = 'LocalBusiness',
+    data = {}
+}: {
+    pageType?: 'WebSite' | 'LocalBusiness' | 'Service' | 'FAQPage';
+    data?: any;
+}) {
+    const baseSchema = {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "The Maintenance Team",
@@ -16,26 +22,11 @@ export default function SchemaMarkup() {
         },
         "priceRange": "$$",
         "areaServed": [
-            {
-                "@type": "Place",
-                "name": "Atlantic Seaboard"
-            },
-            {
-                "@type": "Place",
-                "name": "Southern Suburbs"
-            },
-            {
-                "@type": "Place",
-                "name": "Northern Suburbs"
-            },
-            {
-                "@type": "Place",
-                "name": "Winelands"
-            },
-            {
-                "@type": "Place",
-                "name": "City Bowl"
-            }
+            { "@type": "Place", "name": "Atlantic Seaboard" },
+            { "@type": "Place", "name": "Southern Suburbs" },
+            { "@type": "Place", "name": "Northern Suburbs" },
+            { "@type": "Place", "name": "Winelands" },
+            { "@type": "Place", "name": "City Bowl" }
         ],
         "url": "https://tmtsa.vercel.app/",
         "sameAs": [
@@ -44,11 +35,27 @@ export default function SchemaMarkup() {
         ]
     };
 
+    let finalSchema: any = { ...baseSchema };
+
+    if (pageType === 'Service') {
+        finalSchema = {
+            ...baseSchema,
+            "@type": "Service",
+            ...data // Merge dynamic service data
+        };
+    } else if (pageType === 'FAQPage') {
+        finalSchema = {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": data // Dynamic FAQ items
+        };
+    }
+
     return (
         <Script
             id="schema-markup"
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(finalSchema) }}
         />
     );
 }

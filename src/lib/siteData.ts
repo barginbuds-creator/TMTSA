@@ -98,7 +98,8 @@ export const SITE_DATA = {
             description: "Home maintenance for private owners.",
             heroImage: "/images/solutions/residential-hero.png",
             introText: "Protecting your family home with premium maintenance solutions. From roof leaks to full renovations.",
-            benefits: ["Personalized Service", "Clean Sites", "Trusted Teams", "Long-term Warranties"]
+            benefits: ["Personalized Service", "Clean Sites", "Trusted Teams", "Long-term Warranties"],
+            keywords: ["Residential maintenance Cape Town", "Home repairs", "Handyman services", "House painting", "Roof leak repair"]
         },
         {
             title: "Body Corporate",
@@ -107,7 +108,8 @@ export const SITE_DATA = {
             description: "Managed maintenance for sectional titles.",
             heroImage: "/images/solutions/body-corporate-hero.png",
             introText: "We partner with Trustees and Managing Agents to deliver reliable, budget-compliant maintenance plans for complexes.",
-            benefits: ["Budget Planning", "Maintenance Plans", "Compliance Certificates", "Tenant Coordination"]
+            benefits: ["Budget Planning", "Maintenance Plans", "Compliance Certificates", "Tenant Coordination"],
+            keywords: ["Body corporate maintenance", "Sectional title maintenance", "Complex painting", "Apartment block waterproofing", "Maintenance plans"]
         },
         {
             title: "Commercial",
@@ -116,7 +118,8 @@ export const SITE_DATA = {
             description: "Industrial and office park solutions.",
             heroImage: "/images/solutions/commercial-hero.png",
             introText: "Keep your business running. We offer commercial waterproofing, painting, and general maintenance with minimal disruption.",
-            benefits: ["After-hours Work", "Health & Safety Compliance", "Asset Management", "Industrial Coatings"]
+            benefits: ["After-hours Work", "Health & Safety Compliance", "Asset Management", "Industrial Coatings"],
+            keywords: ["Commercial maintenance Cape Town", "Office painting", "Industrial waterproofing", "Warehouse maintenance", "Commercial property repairs"]
         },
         {
             title: "Estates",
@@ -125,7 +128,8 @@ export const SITE_DATA = {
             description: "HOA compliant maintenance.",
             heroImage: "/images/solutions/estates-hero.png",
             introText: " specialized services for high-end residential estates. We understand the strict aesthetic and conduct rules of lifestyle estates.",
-            benefits: ["HOA Compliance", "Security Cleared Staff", "Uniformed Teams", "Estate Manager Liaison"]
+            benefits: ["HOA Compliance", "Security Cleared Staff", "Uniformed Teams", "Estate Manager Liaison"],
+            keywords: ["Estate maintenance Cape Town", "HOA compliant contractors", "Lifestyle estate maintenance", "Luxury home repairs", "Estate painting"]
         },
         {
             title: "Industrial",
@@ -134,7 +138,8 @@ export const SITE_DATA = {
             description: "Heavy-duty coating and repairs.",
             heroImage: "/images/solutions/industrial-hero.png",
             introText: "Rugged solutions for warehouses and factories. Anti-corrosion coatings, floor sealing, and structural reinforcement.",
-            benefits: ["Epoxy Flooring", "Rust Treatment", "Roof Sheeting", "High-Access Operations"]
+            benefits: ["Epoxy Flooring", "Rust Treatment", "Roof Sheeting", "High-Access Operations"],
+            keywords: ["Industrial coatings", "Factory maintenance", "Epoxy flooring Cape Town", "Rust treatment", "Roof sheeting repairs"]
         },
         {
             title: "Rental Agents",
@@ -143,7 +148,8 @@ export const SITE_DATA = {
             description: "Rapid response for tenant issues.",
             heroImage: "/images/solutions/rental-agents-hero.png",
             introText: "The preferred partner for rental agents. We handle incoming/outgoing inspections and urgent tenant repairs efficiently.",
-            benefits: ["48hr Turnaround", "Itemized Quoting", "Before/After Photos", "Key Handling"]
+            benefits: ["48hr Turnaround", "Itemized Quoting", "Before/After Photos", "Key Handling"],
+            keywords: ["Rental maintenance services", "Property management maintenance", "Tenant repairs", "Rental inspection repairs", "Real estate maintenance"]
         },
     ],
     areas: [
@@ -155,6 +161,7 @@ export const SITE_DATA = {
             heroImage: "/images/areas/atlantic-seaboard-hero.png",
             introText: "Serving Cape Town's premier coastal suburbs. We understand the unique challenges of marine environments, from salt-laden winds to driving rain.",
             benefits: ["Specialized Anti-Corrosion", "High-End Finishes", "Strict Noise Regulations", "Discrete Operations"],
+            keywords: ["Atlantic Seaboard maintenance", "Waterproofing Clifton", "Painting Camps Bay", "Luxury home maintenance Cape Town", "Coastal property repairs"],
             locations: ["Clifton", "Bantry Bay", "Camps Bay", "Fresnaye", "Llandudno", "Sea Point", "Green Point"],
             suburbDetails: {
                 "clifton": {
@@ -195,6 +202,7 @@ export const SITE_DATA = {
             heroImage: "/images/areas/southern-suburbs-hero.png",
             introText: "From Constantia to Newlands, we provide specialized care for established family homes and heritage properties.",
             benefits: ["Heritage Restoration", "Roof Cleaning & Painting", "Garden Cottage Renovations", "Estate Compliant"],
+            keywords: ["Southern Suburbs maintenance", "Constantia waterproofing", "Heritage home restoration", "Roof painting Newlands", "Damp proofing Southern Suburbs"],
             locations: ["Constantia", "Bishopscourt", "Newlands", "Claremont", "Rondebosch", "Wynberg", "Tokai"],
             suburbDetails: {
                 "constantia": {
@@ -235,6 +243,7 @@ export const SITE_DATA = {
             heroImage: "/images/areas/northern-suburbs-hero.png",
             introText: "Comprehensive construction and maintenance services for the rapidly growing Northern Suburbs and lifestyle estates.",
             benefits: ["New Build Snagging", "Roof Painting", "Paving Cleaning", "Complex Maintenance"],
+            keywords: ["Northern Suburbs maintenance", "Durbanville roof painting", "Estate maintenance Northern Suburbs", "Waterproofing Bellville", "Home repairs Plattekloof"],
             locations: ["Durbanville", "Bellville", "Plattekloof", "Welgemoed", "Brackenfell"],
             suburbDetails: {
                 "durbanville": {
@@ -267,6 +276,7 @@ export const SITE_DATA = {
             heroImage: "/images/hero-services-gold.png",
             introText: "Serving the prestigious estates of Paarl, Franschhoek, and Stellenbosch with premium maintenance solutions.",
             benefits: ["Val de Vie Accredited", "Farm Maintenance", "Hospitality Renovations", "Long-distance Teams"],
+            keywords: ["Winelands property maintenance", "Farm maintenance Paarl", "Stellenbosch waterproofing", "Franschhoek estate maintenance", "Val de Vie contractors"],
             locations: ["Paarl", "Stellenbosch", "Franschhoek", "Val de Vie", "Pearl Valley"],
             suburbDetails: {
                 "paarl": {
@@ -299,6 +309,7 @@ export const SITE_DATA = {
             heroImage: "/images/hero-background.png",
             introText: "Fast, efficient updates for City Bowl apartments and heritage offices. We handle the logistics of CBD work.",
             benefits: ["Apartment Renovations", "Body Corporate Work", "Interior Design Support", "Access Control"],
+            keywords: ["City Bowl maintenance", "Apartment renovations Cape Town", "Vredehoek waterproofing", "Heritage restoration City Bowl", "Tamboerskloof home repairs"],
             locations: ["Vredehoek", "Oranjezicht", "Tamboerskloof", "Gardens", "Higgovale"],
             suburbDetails: {
                 "vredehoek": {

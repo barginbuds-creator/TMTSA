@@ -21,6 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
         title: `${service.title} | The Maintenance Team`,
         description: service.description,
+        keywords: service.keywords,
     };
 }
 

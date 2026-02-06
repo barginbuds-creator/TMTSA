@@ -28,6 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
         title: `Builders & Renovators in ${area.title} | The Maintenance Team`,
         description: area.introText,
+        keywords: area.keywords,
     };
 }
 

@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import NextImage from "next/image";
 import { useEffect, useState } from "react";
 
 const ROTATING_TEXTS = ["HOMES", "ROOFS", "WALLS", "VALUE"];
@@ -32,11 +33,13 @@ export const DynamicHero = () => {
                         ease: "linear",
                     }}
                 >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
+                    <NextImage
                         src="/images/hero-executive-white-gold.png"
-                        alt="Executive White Marble & Gold | Light & Airy"
-                        className="w-full h-full object-cover opacity-80"
+                        alt="Cape Town Executive Waterproofing and Painting Services | White Marble & Gold Aesthetic"
+                        fill
+                        className="object-cover opacity-80"
+                        priority
+                        quality={90}
                     />
                 </motion.div>
 

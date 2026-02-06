@@ -71,7 +71,7 @@ export default function CreateBlogPost() {
         <div className="max-w-4xl mx-auto space-y-6 pb-20">
             <div className="flex items-center gap-4">
                 <Link href="/admin/blog" className="p-2 hover:bg-neutral-200 rounded-full transition-colors">
-                    <ArrowLeft className="w-5 h-5 text-neutral-600" />
+                    <LucideArrowLeft className="w-5 h-5 text-neutral-600" />
                 </Link>
                 <h1 className="text-3xl font-bold font-heading text-neutral-900">Create New Post</h1>
             </div>
@@ -118,7 +118,7 @@ export default function CreateBlogPost() {
                                     <Image src={imageUrl} alt="Cover preview" fill className="object-cover" unoptimized />
                                 </div>
                             ) : (
-                                <Upload className="w-8 h-8 text-neutral-400" />
+                                <LucideUpload className="w-8 h-8 text-neutral-400" />
                             )}
                         </div>
                         <div className="flex-1">
@@ -164,11 +164,11 @@ export default function CreateBlogPost() {
                     >
                         {isSubmitting ? (
                             <>
-                                <Loader2 className="w-4 h-4 animate-spin" /> Saving...
+                                <LucideLoader2 className="w-4 h-4 animate-spin" /> Saving...
                             </>
                         ) : (
                             <>
-                                <Save className="w-4 h-4" /> Save Post
+                                <LucideSave className="w-4 h-4" /> Save Post
                             </>
                         )}
                     </button>

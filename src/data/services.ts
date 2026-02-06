@@ -12,6 +12,7 @@ export type ServiceLocation = {
         features?: { title: string; description?: string; }[];
         faqs?: { question: string; answer: string; }[];
     };
+    keywords?: string[];
 };
 
 export const SERVICE_LOCATIONS: ServiceLocation[] = [
@@ -55,7 +56,8 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
                 { question: "Can I tile over the waterproofing?", answer: "Yes, but it requires a specialized double-layer system with a focus on counter-flashing. Ask us for a spec sheet." },
                 { question: "Do you offer localized repairs?", answer: "Yes, for minor issues we can do patch repairs, but for older roofs (15+ years), a full replacement is often more cost-effective." }
             ]
-        }
+        },
+        keywords: ["Waterproofing Cape Town", "Torch-on waterproofing", "Balcony waterproofing", "Damp proofing Cape Town", "Roof leak repair"]
     },
     {
         slug: "roof-painting-durbanville",
@@ -92,7 +94,8 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
                 { question: "How long does the paint last?", answer: "We use premium pure acrylics rated for 10-12 years in the South African sun." },
                 { question: "Will cleaning damage my ceiling?", answer: "No. We utilize specialized angles and pressure control to enforce water runs down the roof, not up into the tiles." }
             ]
-        }
+        },
+        keywords: ["Roof painting Durbanville", "Airless spray painting", "Exterior house painting", "Roof coating", "Tile roof restoration"]
     },
     {
         slug: "structural-repairs-blouberg",
@@ -112,7 +115,7 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
             <p>In Blouberg's corrosive environment, a small crack allows salt air to reach your rebar quickly. Early intervention saves tens of thousands in future heavy construction costs. Call TMT for a specialized structural assessment.</p>
         `,
         structuredData: {
-             processSteps: [
+            processSteps: [
                 { title: "Exposure & Assessment", description: "We mechanically remove damaged concrete to clearly expose the full extent of the corroded rebar." },
                 { title: "Rust Treatment", description: "Steel is cleaned to a bright finish and treated with zinc-rich primers to permanently halt corrosion." },
                 { title: "Bonding Agent", description: "A structural wet-to-dry epoxy bonding agent is applied to ensure the new mortar fuses with the old concrete." },
@@ -124,12 +127,13 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
                 { title: "Spalling Specialists", description: "Deep expertise in coastal corrosion issues." },
                 { title: "Dust Control", description: "We manage the mess of chipping with strict containment protocols." }
             ],
-             faqs: [
+            faqs: [
                 { question: "Is spalling dangerous?", answer: "Yes. Falling chunks of concrete pose a severe safety risk, and untreated spalling weakens the building's support structure." },
                 { question: "How long does a repair take?", answer: "It varies, but typically a balcony repair takes 3-5 days to allow for proper curing times between steps." },
                 { question: "Can you match the existing paint/texture?", answer: "Yes, once the structural repair is cured, we plaster and paint to blend seamlessly with the existing wall." }
             ]
-        }
+        },
+        keywords: ["Spalling repair Blouberg", "Concrete restoration", "Crack injection", "Structural repairs", "Concrete cancer treatment"]
     },
     // GENERIC SERVICES (For /services main page linking)
     {
@@ -148,7 +152,7 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
             <h3>The TMT 10-Year Guarantee</h3>
             <p>We stand by our workmanship. All full waterproofing installations come with a certified 10-year guarantee, giving you peace of mind that your asset is protected.</p>
         `,
-         structuredData: {
+        structuredData: {
             processSteps: [
                 { title: "Moisture Mapping", description: "We identify the exact entry point of water utilizing thermal cameras." },
                 { title: "Surface Preparation", description: "Stripping old bitumen and priming the substrate for a perfect bond." },
@@ -165,7 +169,8 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
                 { question: "How long does torch-on waterproofing last?", answer: "10-15 years if maintained with a UV silver coat." },
                 { question: "Do you do balcony waterproofing?", answer: "Yes, we specialize in under-tile balcony waterproofing systems." }
             ]
-        }
+        },
+        keywords: ["Waterproofing contractors Cape Town", "Torch-on waterproofing", "Balcony waterproofing", "Damp proofing", "Roof leaks"]
     },
     {
         slug: "painting-roofing",
@@ -197,10 +202,11 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
                 { title: "Color Consultation", description: "Expert advice on palettes and finishes." }
             ],
             faqs: [
-                 { question: "Is spray painting better than hand painting?", answer: "Yes, for roofs it provides far better coverage and pore penetration." },
-                 { question: "How long does it take?", answer: "An average home roof takes 2-3 days to clean, repair, and paint." }
+                { question: "Is spray painting better than hand painting?", answer: "Yes, for roofs it provides far better coverage and pore penetration." },
+                { question: "How long does it take?", answer: "An average home roof takes 2-3 days to clean, repair, and paint." }
             ]
-        }
+        },
+        keywords: ["Roof painting Cape Town", "Airless spray painting", "House painting", "Roof restoration", "Exterior painting"]
     },
     {
         slug: "plumbing",
@@ -262,7 +268,8 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
                 { question: "Do I need plans?", answer: "For internal cosmetic changes, usually no. Structural changes will require plans." },
                 { question: "How long does a bathroom renovation take?", answer: "Typically 10-14 working days, depending on the complexity." }
             ]
-        }
+        },
+        keywords: ["Bathroom renovations Cape Town", "Kitchen renovations", "Turnkey renovations", "Home improvements"]
     },
     {
         slug: "structural-repairs",
@@ -278,7 +285,7 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
              <img src="/images/services/content-structural.png" alt="Structural Repairs" class="rounded-lg shadow-lg my-8 w-full block" />
         `,
         structuredData: {
-             processSteps: [
+            processSteps: [
                 { title: "Assess & Expose", description: "Exposing corroded rebar to determine the extent of damage." },
                 { title: "Treat & Prime", description: "Anti-corrosion treatment for steel and bonding primers for concrete." },
                 { title: "Repair Mortar", description: "Application of high-strength structural epoxy mortars." },
@@ -291,10 +298,11 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
                 { title: "Safety First", description: "Strict safety protocols on all sites." }
             ],
             faqs: [
-                 { question: "Is spalling dangerous?", answer: "Yes, it weakens the structure and falling debris is a hazard." },
-                 { question: "Can you fix cracks in my walls?", answer: "Yes, we stitch cracks to prevent them from reopening." }
+                { question: "Is spalling dangerous?", answer: "Yes, it weakens the structure and falling debris is a hazard." },
+                { question: "Can you fix cracks in my walls?", answer: "Yes, we stitch cracks to prevent them from reopening." }
             ]
-        }
+        },
+        keywords: ["Structural repairs Cape Town", "Spalling repair", "Concrete cancer", "Crack stitching"]
     },
     {
         slug: "paving-cleaning",
@@ -329,7 +337,8 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
                 { question: "Do you remove oil stains from driveways?", answer: "We use bio-degradable degreasers with a high success rate. Deeply penetrated oil in porous stone may not be 100% removable but can be significantly lightened." },
                 { question: "Why do I need to re-sand my paving?", answer: "Re-sanding is critical to prevent pavers from shifting, wobbling, or sinking over time, acting as the 'glue' that holds them together." }
             ]
-        }
+        },
+        keywords: ["Paving cleaning Cape Town", "Driveway sealing", "High pressure cleaning", "Paving restoration"]
     }
 ];
 
