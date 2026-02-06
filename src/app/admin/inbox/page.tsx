@@ -2,7 +2,7 @@ import { db } from "@/db";
 import { quoteRequests } from "@/db/schema";
 import { desc } from "drizzle-orm";
 import { format } from "date-fns";
-import { LucidePhone, LucideMail, LucideCalendar, LucideMapPin, LucideBriefcase } from "lucide-react";
+import { LucidePhone, LucideMail, LucideCalendar, LucideBriefcase } from "lucide-react";
 
 export const dynamic = 'force-dynamic';
 

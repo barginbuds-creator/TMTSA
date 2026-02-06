@@ -3,7 +3,7 @@ import { projects } from "@/db/schema";
 import { desc } from "drizzle-orm";
 import { Metadata } from "next";
 import Image from "next/image";
-import { MapPin, Calendar, ArrowRight } from "lucide-react";
+import { MapPin, ArrowRight } from 'lucide-react';
 import { format } from "date-fns";
 import Link from "next/link";
 

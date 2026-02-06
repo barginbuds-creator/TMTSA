@@ -3,7 +3,8 @@ import { projects } from '@/db/schema';
 import { desc } from 'drizzle-orm';
 import { format } from 'date-fns';
 import Link from 'next/link';
-import { LucidePlus, LucideEdit, LucideTrash } from 'lucide-react';
+import Image from 'next/image';
+import { LucidePlus, LucideEdit } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 
@@ -43,7 +44,14 @@ export default async function ProjectAdminPage() {
                                     <td className="px-6 py-4 font-bold text-neutral-900">
                                         <div className="flex items-center gap-4">
                                             {project.afterImageUrl && (
-                                                <img src={project.afterImageUrl} alt="" className="w-10 h-10 rounded object-cover bg-neutral-100" />
+                                                <Image
+                                                    src={project.afterImageUrl}
+                                                    alt=""
+                                                    width={40}
+                                                    height={40}
+                                                    className="rounded object-cover bg-neutral-100"
+                                                    unoptimized
+                                                />
                                             )}
                                             {project.title}
                                         </div>

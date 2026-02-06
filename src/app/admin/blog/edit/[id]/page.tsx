@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { Loader2, Upload, Save, ArrowLeft, Trash2 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -170,7 +171,9 @@ export default function EditBlogPost() {
                     <div className="flex items-center gap-6">
                         <div className="shrink-0 w-32 h-32 bg-neutral-100 rounded-lg border-2 border-dashed border-neutral-300 flex items-center justify-center overflow-hidden relative">
                             {imageUrl ? (
-                                <img src={imageUrl} alt="Preview" className="w-full h-full object-cover" />
+                                <div className="relative w-full h-full rounded-lg overflow-hidden border border-neutral-200">
+                                    <Image src={imageUrl} alt="Preview" fill className="object-cover" unoptimized />
+                                </div>
                             ) : (
                                 <Upload className="w-8 h-8 text-neutral-400" />
                             )}

@@ -1,5 +1,5 @@
 import { db } from '@/db';
-import { newsletterSubs, quoteRequests } from '@/db/schema';
+import { newsletterSubs } from '@/db/schema';
 import { NextResponse } from 'next/server';
 
 // POST /api/newsletter

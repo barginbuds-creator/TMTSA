@@ -4,7 +4,7 @@ import { desc, eq } from "drizzle-orm";
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Calendar, Clock, ArrowRight } from "lucide-react";
+import { ArrowRight, Calendar } from "lucide-react";
 import { format } from "date-fns";
 
 export const metadata: Metadata = {

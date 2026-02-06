@@ -1,7 +1,7 @@
 import { db } from "@/db";
 import { projects } from "@/db/schema";
 import { eq } from "drizzle-orm";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(request: Request, { params }: { params: Promise<{ id: string }> }) {
     try {
@@ -11,13 +11,10 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
             where: eq(projects.id, id),
         });
 
-        if (!project) {
-            return NextResponse.json({ error: "Project not found" }, { status: 404 });
-        }
-
+        if (!project) return NextResponse.json({ error: 'Not found' }, { status: 404 });
         return NextResponse.json(project);
-    } catch (error) {
-        return NextResponse.json({ error: "Failed to fetch project" }, { status: 500 });
+    } catch (_error) {
+        return NextResponse.json({ error: 'Failed to fetch' }, { status: 500 });
     }
 }
 
@@ -40,15 +37,15 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
     }
 }
 
-export async function DELETE(request: Request, { params }: { params: Promise<{ id: string }> }) {
+// DELETE /api/admin/projects/[id]
+export async function DELETE(
+    { params }: { params: Promise<{ id: string }> }
+) {
     try {
-        const resolvedParams = await params;
-        const id = parseInt(resolvedParams.id);
-
-        await db.delete(projects).where(eq(projects.id, id));
-
+        const { id } = await params;
+        await db.delete(projects).where(eq(projects.id, parseInt(id)));
         return NextResponse.json({ success: true });
-    } catch (error) {
-        return NextResponse.json({ error: "Failed to delete project" }, { status: 500 });
+    } catch (_error) {
+        return NextResponse.json({ error: 'Failed to delete' }, { status: 500 });
     }
 }

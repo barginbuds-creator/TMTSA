@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Upload, ArrowRight, CheckCircle2, Loader2, RefreshCw, Wand2 } from "lucide-react";
 
 // --- Pricing & Service Logic ---
@@ -255,7 +256,14 @@ export const VisualQuoteEngine = () => {
                                 <div className="flex flex-col items-center justify-center pt-5 pb-6">
                                     {imageFile ? (
                                         <div className="relative w-full h-full p-4">
-                                            <img src={imageFile} alt="Preview" className="h-48 object-contain rounded" />
+                                            <div className="relative h-48 w-full">
+                                                <Image
+                                                    src={imageFile}
+                                                    alt="Preview"
+                                                    fill
+                                                    className="object-contain rounded"
+                                                />
+                                            </div>
                                             <p className="text-xs text-green-600 mt-2 font-bold flex items-center justify-center gap-1">
                                                 <CheckCircle2 className="w-3 h-3" /> Photo Ready
                                             </p>
@@ -296,11 +304,17 @@ export const VisualQuoteEngine = () => {
                                 </div>
                             ) : prediction ? (
                                 <>
-                                    <img src={prediction} alt="AI Renovated" className="w-full h-full object-cover" />
-                                    <div className="absolute top-4 left-4 bg-white/10 backdrop-blur-md border border-white/20 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-2">
+                                    <Image
+                                        src={prediction}
+                                        alt="AI Renovated"
+                                        fill
+                                        className="object-cover"
+                                        unoptimized // Allow varying AI domains
+                                    />
+                                    <div className="absolute top-4 left-4 bg-white/10 backdrop-blur-md border border-white/20 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-2 z-10">
                                         <Wand2 className="w-3 h-3 text-tmt-orange" /> AI Visualization
                                     </div>
-                                    <a href={prediction} download="tmt-vision.png" className="absolute bottom-4 right-4 bg-black/50 hover:bg-black text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity" title="Download Image">
+                                    <a href={prediction} download="tmt-vision.png" className="absolute bottom-4 right-4 bg-black/50 hover:bg-black text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-10" title="Download Image">
                                         <Upload className="w-4 h-4 rotate-180" />
                                     </a>
                                 </>
@@ -308,7 +322,17 @@ export const VisualQuoteEngine = () => {
                                 <div className="p-8 text-center">
                                     <p className="text-white mb-2">Could not generate visualization.</p>
                                     <p className="text-neutral-400 text-sm">{error || "Please try again with a clearer photo."}</p>
-                                    {imageFile && <img src={imageFile} alt="Original" className="mt-4 h-32 w-auto mx-auto opacity-50 rounded" />}
+                                    {imageFile && (
+                                        <div className="relative mt-4 h-32 w-auto mx-auto opacity-50 rounded overflow-hidden">
+                                            <Image
+                                                src={imageFile}
+                                                alt="Original"
+                                                width={200}
+                                                height={128}
+                                                className="object-contain"
+                                            />
+                                        </div>
+                                    )}
                                 </div>
                             )}
                         </div>

@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
                 };
             }
         }
-    } catch (e) {
+    } catch {
         // Fallback
     }
 
@@ -46,8 +46,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 where: eq(blogPosts.slug, resolvedParams.slug),
             });
         }
-    } catch (e) {
-        console.warn("Blog post fetch failed during build:", e);
+    } catch {
+        console.warn("Blog post fetch failed during build.");
     }
 
     if (!post && process.env.POSTGRES_URL) {

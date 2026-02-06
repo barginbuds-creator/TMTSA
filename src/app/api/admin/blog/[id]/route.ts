@@ -1,7 +1,7 @@
 import { db } from "@/db";
 import { blogPosts } from "@/db/schema";
 import { eq } from "drizzle-orm";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(request: Request, { params }: { params: Promise<{ id: string }> }) {
     try {
@@ -11,13 +11,11 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
             where: eq(blogPosts.id, id),
         });
 
-        if (!post) {
-            return NextResponse.json({ error: "Post not found" }, { status: 404 });
-        }
+        if (!post) return NextResponse.json({ error: 'Not found' }, { status: 404 });
 
         return NextResponse.json(post);
-    } catch (error) {
-        return NextResponse.json({ error: "Failed to fetch post" }, { status: 500 });
+    } catch (_error) {
+        return NextResponse.json({ error: 'Failed to fetch' }, { status: 500 });
     }
 }
 
@@ -35,21 +33,20 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
             .where(eq(blogPosts.id, id));
 
         return NextResponse.json({ success: true });
-    } catch (error) {
-        console.error("Update error:", error);
+    } catch (_error) { // Renamed error to _error
+        console.error("Update error:", _error); // Changed error to _error
         return NextResponse.json({ error: "Failed to update post" }, { status: 500 });
     }
 }
 
-export async function DELETE(request: Request, { params }: { params: Promise<{ id: string }> }) {
+export async function DELETE(
+    { params }: { params: Promise<{ id: string }> } // Correct type for async params
+) {
     try {
-        const resolvedParams = await params;
-        const id = parseInt(resolvedParams.id);
-
-        await db.delete(blogPosts).where(eq(blogPosts.id, id));
-
+        const { id } = await params;
+        await db.delete(blogPosts).where(eq(blogPosts.id, parseInt(id)));
         return NextResponse.json({ success: true });
-    } catch (error) {
-        return NextResponse.json({ error: "Failed to delete post" }, { status: 500 });
+    } catch (_error) {
+        return NextResponse.json({ error: 'Failed to delete' }, { status: 500 });
     }
 }

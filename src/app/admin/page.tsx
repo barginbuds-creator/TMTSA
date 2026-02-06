@@ -1,11 +1,11 @@
 import { db } from '@/db';
 import { quoteRequests, newsletterSubs, blogPosts } from '@/db/schema';
 import { count } from 'drizzle-orm';
-import { LucideInbox, LucideUsers, LucideFileText } from 'lucide-react';
+import { LucideInbox, LucideUsers, LucideFileText, LucideIcon } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 
-const StatCard = ({ title, value, icon: Icon, color }: { title: string; value: number; icon: any; color: string }) => (
+const StatCard = ({ title, value, icon: Icon, color }: { title: string; value: number; icon: LucideIcon; color: string }) => (
     <div className="bg-white p-6 rounded-xl shadow-sm border border-neutral-200">
         <div className="flex items-center justify-between mb-4">
             <h3 className="text-neutral-500 font-medium text-sm">{title}</h3>

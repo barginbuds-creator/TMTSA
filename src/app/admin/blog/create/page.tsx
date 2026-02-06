@@ -1,8 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { Loader2, Upload, Save, ArrowLeft } from 'lucide-react';
+import { useRouter } from "next/navigation";
+import Image from "next/image";
+import { LucideArrowLeft, LucideLoader2, LucideUpload, LucideSave } from "lucide-react";
 import Link from 'next/link';
 
 export default function CreateBlogPost() {
@@ -112,10 +113,11 @@ export default function CreateBlogPost() {
                     <label className="text-sm font-bold text-neutral-700">Cover Image</label>
                     <div className="flex items-center gap-6">
                         <div className="shrink-0 w-32 h-32 bg-neutral-100 rounded-lg border-2 border-dashed border-neutral-300 flex items-center justify-center overflow-hidden relative">
-                            {imageUrl ? (
-                                <img src={imageUrl} alt="Preview" className="w-full h-full object-cover" />
+                            {imageUrl ? <div className="relative w-full h-full rounded-lg overflow-hidden">
+                                <Image src={imageUrl} alt="Cover preview" fill className="object-cover" unoptimized />
+                            </div>
                             ) : (
-                                <Upload className="w-8 h-8 text-neutral-400" />
+                            <Upload className="w-8 h-8 text-neutral-400" />
                             )}
                         </div>
                         <div className="flex-1">

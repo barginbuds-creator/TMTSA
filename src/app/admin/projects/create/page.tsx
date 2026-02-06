@@ -1,8 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { Loader2, Upload, Save, ArrowLeft } from 'lucide-react';
+import { useRouter } from "next/navigation";
+import Image from "next/image";
+import { LucideArrowLeft, LucideLoader2, LucideUpload, LucideSave, ArrowLeft, Loader2, Upload, Save } from "lucide-react";
 import Link from 'next/link';
 
 export default function CreateProject() {
@@ -100,7 +101,9 @@ export default function CreateProject() {
                         <label className="text-sm font-bold text-neutral-700">Before Photo</label>
                         <div className="w-full h-48 bg-neutral-100 rounded-lg border-2 border-dashed border-neutral-300 flex items-center justify-center overflow-hidden relative group">
                             {beforeImage ? (
-                                <img src={beforeImage} alt="Before" className="w-full h-full object-cover" />
+                                <div className="relative w-full h-48 rounded-lg overflow-hidden border border-neutral-200">
+                                    <Image src={beforeImage} alt="Before preview" fill className="object-cover" unoptimized />
+                                </div>
                             ) : (
                                 <Upload className="w-8 h-8 text-neutral-400" />
                             )}
@@ -118,7 +121,9 @@ export default function CreateProject() {
                         <label className="text-sm font-bold text-neutral-700">After Photo</label>
                         <div className="w-full h-48 bg-neutral-100 rounded-lg border-2 border-dashed border-neutral-300 flex items-center justify-center overflow-hidden relative group">
                             {afterImage ? (
-                                <img src={afterImage} alt="After" className="w-full h-full object-cover" />
+                                <div className="relative w-full h-48 rounded-lg overflow-hidden border border-neutral-200">
+                                    <Image src={afterImage} alt="After preview" fill className="object-cover" unoptimized />
+                                </div>
                             ) : (
                                 <Upload className="w-8 h-8 text-neutral-400" />
                             )}

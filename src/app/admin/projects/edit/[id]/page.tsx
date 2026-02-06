@@ -1,8 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import { Loader2, Upload, Save, ArrowLeft, Trash2 } from 'lucide-react';
+import { useRouter } from "next/navigation";
+import Image from "next/image";
+import { LucideArrowLeft, LucideLoader2, LucideUpload, LucideSave, LucideTrash, ArrowLeft, Loader2, Upload, Save, Trash2 } from "lucide-react";
 import Link from 'next/link';
 
 // Using useParams from next/navigation for client components
@@ -173,7 +174,9 @@ export default function EditProject() {
                         <div className="flex flex-col gap-4">
                             <div className="w-full h-48 bg-neutral-100 rounded-lg border-2 border-dashed border-neutral-300 flex items-center justify-center overflow-hidden relative group">
                                 {beforeImageUrl ? (
-                                    <img src={beforeImageUrl} alt="Before" className="w-full h-full object-cover" />
+                                    <div className="relative w-full h-48 rounded-lg overflow-hidden border border-neutral-200">
+                                        <Image src={beforeImageUrl} alt="Before preview" fill className="object-cover" unoptimized />
+                                    </div>
                                 ) : (
                                     <Upload className="w-8 h-8 text-neutral-400" />
                                 )}
@@ -198,7 +201,9 @@ export default function EditProject() {
                         <div className="flex flex-col gap-4">
                             <div className="w-full h-48 bg-neutral-100 rounded-lg border-2 border-dashed border-neutral-300 flex items-center justify-center overflow-hidden relative group">
                                 {afterImageUrl ? (
-                                    <img src={afterImageUrl} alt="After" className="w-full h-full object-cover" />
+                                    <div className="relative w-full h-48 rounded-lg overflow-hidden border border-neutral-200">
+                                        <Image src={afterImageUrl} alt="After preview" fill className="object-cover" unoptimized />
+                                    </div>
                                 ) : (
                                     <Upload className="w-8 h-8 text-neutral-400" />
                                 )}

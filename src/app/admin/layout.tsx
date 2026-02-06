@@ -1,10 +1,9 @@
 import Link from 'next/link';
 import { signOut } from '@/auth';
-import { LucideLayoutDashboard, LucideInbox, LucideUsers, LucideFileText, LucideBriefcase, LucideLogOut } from 'lucide-react';
-import { cn } from '@/lib/utils';
-import Image from 'next/image';
 
-const NavItem = ({ href, icon: Icon, label }: { href: string; icon: any; label: string }) => {
+import { LucideLayoutDashboard, LucideInbox, LucideUsers, LucideFileText, LucideBriefcase, LucideLogOut, LucideIcon } from 'lucide-react';
+
+const NavItem = ({ href, icon: Icon, label }: { href: string; icon: LucideIcon; label: string }) => {
     return (
         <Link
             href={href}
