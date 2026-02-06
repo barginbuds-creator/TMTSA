@@ -4,11 +4,9 @@ import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import LeadNotificationEmail from '@/components/emails/LeadNotification';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-const ADMIN_EMAIL = 'info@themaintenanceteamsa.co.za'; // Replace with env var if preferred
-
 // POST /api/quote
 export async function POST(req: Request) {
+    const ADMIN_EMAIL = 'info@themaintenanceteamsa.co.za';
     try {
         const data = await req.json();
 
@@ -30,6 +28,7 @@ export async function POST(req: Request) {
         // 2. Send Email Notification (Only if API Key is present)
         if (process.env.RESEND_API_KEY) {
             try {
+                const resend = new Resend(process.env.RESEND_API_KEY);
                 const { error } = await resend.emails.send({
                     from: 'TMT Website <onboarding@resend.dev>', // Update to verified domain e.g., notifications@themaintenanceteamsa.co.za
                     to: [ADMIN_EMAIL],

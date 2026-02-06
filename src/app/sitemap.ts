@@ -37,12 +37,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }));
 
     // Areas
-    const areas = SITE_DATA.areas.map((area) => ({
-        url: `${baseUrl}/areas/${area.slug}`,
-        lastModified: new Date(),
-        changeFrequency: 'weekly' as const,
-        priority: 0.8,
-    }));
+    // Areas
+    const areas = SITE_DATA.areas.flatMap((area) => {
+        const regionRoute = {
+            url: `${baseUrl}/areas/${area.slug}`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly' as const,
+            priority: 0.8,
+        };
+
+        const suburbRoutes = area.locations.map((suburb) => ({
+            url: `${baseUrl}/areas/${area.slug}/${suburb.toLowerCase().replace(/\s+/g, '-')}`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly' as const,
+            priority: 0.7,
+        }));
+
+        return [regionRoute, ...suburbRoutes];
+    });
 
     return [...routes, ...services, ...solutions, ...areas];
 }
