@@ -1,6 +1,11 @@
 import { db } from '@/db';
 import { quoteRequests } from '@/db/schema';
 import { NextResponse } from 'next/server';
+import { Resend } from 'resend';
+import LeadNotificationEmail from '@/components/emails/LeadNotification';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+const ADMIN_EMAIL = 'info@themaintenanceteamsa.co.za'; // Replace with env var if preferred
 
 // POST /api/quote
 export async function POST(req: Request) {
@@ -12,6 +17,7 @@ export async function POST(req: Request) {
             return NextResponse.json({ error: 'Name and Email required' }, { status: 400 });
         }
 
+        // 1. Save to Database
         await db.insert(quoteRequests).values({
             name: data.name,
             email: data.email,
@@ -20,6 +26,30 @@ export async function POST(req: Request) {
             message: data.message,
             status: 'pending'
         });
+
+        // 2. Send Email Notification (Only if API Key is present)
+        if (process.env.RESEND_API_KEY) {
+            try {
+                const { error } = await resend.emails.send({
+                    from: 'TMT Website <onboarding@resend.dev>', // Update to verified domain e.g., notifications@themaintenanceteamsa.co.za
+                    to: [ADMIN_EMAIL],
+                    subject: `New Lead: ${data.serviceType} from ${data.name}`,
+                    react: LeadNotificationEmail({
+                        name: data.name,
+                        email: data.email,
+                        phone: data.phone || 'N/A',
+                        serviceType: data.serviceType,
+                        message: data.message,
+                    }),
+                });
+
+                if (error) {
+                    console.error('Resend Error:', error);
+                }
+            } catch (emailError) {
+                console.warn('Email sending failed:', emailError);
+            }
+        }
 
         return NextResponse.json({ success: true });
     } catch (error) {

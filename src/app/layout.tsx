@@ -5,6 +5,7 @@ import { Footer } from "@/components/ui/Footer";
 import { WhatsAppFloat } from "@/components/ui/WhatsAppFloat";
 import { Analytics } from "@/components/analytics/Analytics";
 import SchemaMarkup from "@/components/SchemaMarkup";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -16,6 +17,7 @@ const outfit = Outfit({
   variable: "--font-outfit", // Replaces Space Grotesk for Headings
   subsets: ["latin"],
 });
+
 
 export const metadata: Metadata = {
   title: {
@@ -58,6 +60,7 @@ export default function RootLayout({
         <Footer />
         <WhatsAppFloat />
         <Analytics />
+        <VercelAnalytics />
       </body>
     </html>
   );

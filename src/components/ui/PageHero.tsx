@@ -32,7 +32,6 @@ export const PageHero = ({ title, subtitle, imageSrc, imageAlt, size = "default"
             ease: "easeOut",
           }}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
           <Image
             src={imageSrc}
             alt={imageAlt}

@@ -5,6 +5,7 @@ export const authConfig = {
         signIn: '/admin/login',
     },
     callbacks: {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         authorized({ auth, request: { nextUrl } }: { auth: any; request: { nextUrl: URL } }) {
             const isLoggedIn = !!auth?.user;
             const isAdminSection = nextUrl.pathname.startsWith('/admin');
