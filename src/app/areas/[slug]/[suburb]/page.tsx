@@ -53,18 +53,25 @@ export default async function SuburbPage({ params }: Props) {
     const suburbNameFormatted = getSuburbName(suburb);
     const suburbNameOriginal = region.locations.find(l => l.toLowerCase().replace(/\s+/g, '-') === suburb) || suburbNameFormatted;
 
-    const introText = `Living in ${suburbNameOriginal} offers a unique lifestyle, but the local climate can take a toll on your property. ${region.introText} We provide specialized maintenance solutions tailored for homes in ${suburbNameOriginal}.`;
+    // Check for specific suburb overrides
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const override = (region as any).suburbDetails?.[suburb];
+
+    const introText = override?.introText || `Living in ${suburbNameOriginal} offers a unique lifestyle, but the local climate can take a toll on your property. ${region.introText} We provide specialized maintenance solutions tailored for homes in ${suburbNameOriginal}.`;
+
+    const benefits = override?.benefits
+        ? [`Servicing ${suburbNameOriginal}`, ...override.benefits]
+        : [`Servicing ${suburbNameOriginal}`, ...region.benefits];
+
+    const heroImage = override?.heroImage || region.heroImage;
 
     return (
         <ContentPage
             title={`Property Maintenance in ${suburbNameOriginal}`}
             subtitle={`Expert Waterproofing, Painting & Renovations for ${suburbNameOriginal} Residents`}
-            heroImage={region.heroImage}
+            heroImage={heroImage}
             introText={introText}
-            benefits={[
-                `Servicing ${suburbNameOriginal}`,
-                ...region.benefits
-            ]}
+            benefits={benefits}
             ctaText={`Get a Quote in ${suburbNameOriginal}`}
             serviceArea={{
                 locations: region.locations

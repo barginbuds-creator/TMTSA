@@ -11,6 +11,12 @@ export type PageData = {
         image: string;
         locations: string[];
     };
+    // Optional overrides for specific suburbs
+    suburbDetails?: Record<string, {
+        introText?: string;
+        heroImage?: string;
+        benefits?: string[];
+    }>;
 };
 
 export type NavItem = {
@@ -142,7 +148,17 @@ export const SITE_DATA = {
             heroImage: "/images/areas/atlantic-seaboard-hero.png", // Coastal-relevant
             introText: "Serving Cape Town's premier coastal suburbs. We understand the unique challenges of marine environments, from salt-laden winds to driving rain.",
             benefits: ["Specialized Anti-Corrosion", "High-End Finishes", "Strict Noise Regulations", "Discrete Operations"],
-            locations: ["Clifton", "Bantry Bay", "Camps Bay", "Fresnaye", "Llandudno", "Sea Point", "Green Point"]
+            locations: ["Clifton", "Bantry Bay", "Camps Bay", "Fresnaye", "Llandudno", "Sea Point", "Green Point"],
+            suburbDetails: {
+                "camps-bay": {
+                    introText: "Camps Bay properties face unique challenges from the Atlantic Seaboard's salt-laden air and strong driving winds. Our specialized waterproofing and painting solutions are designed to protect luxury villas against coastal corrosion and moisture intrusion.",
+                    benefits: ["Salt Spray Protection", "Premium Finishes", "Seasonal Maintenance", "Discrete & Secure Teams"]
+                },
+                "clifton": {
+                    introText: "Perched on the granite cliffs, Clifton bungalows require specialized structural and moisture protection. We offer discreet, high-end maintenance services that respect the privacy of this exclusive enclave.",
+                    benefits: ["Cliffside Waterproofing", "Marine Grade Coatings", "Privacy Focused", "Bungalow Renovations"]
+                }
+            }
         },
         {
             title: "Southern Suburbs",
@@ -162,7 +178,13 @@ export const SITE_DATA = {
             heroImage: "/images/areas/northern-suburbs-hero.png",
             introText: "Comprehensive construction and maintenance services for the rapidly growing Northern Suburbs and lifestyle estates.",
             benefits: ["New Build Snagging", "Roof Painting", "Paving Cleaning", "Complex Maintenance"],
-            locations: ["Durbanville", "Bellville", "Plattekloof", "Welgemoed", "Brackenfell"]
+            locations: ["Durbanville", "Bellville", "Plattekloof", "Welgemoed", "Brackenfell"],
+            suburbDetails: {
+                "bellville": {
+                    introText: "As a bustling hub in the Northern Suburbs, Bellville homes and businesses require durable, long-lasting maintenance. From roof painting in Loevenstein to waterproofing in Boston, we provide cost-effective solutions for family homes and commercial properties.",
+                    benefits: ["Cost-Effective", "Roof Painting", "Commercial & Residential", "Durable Coatings"]
+                }
+            }
         },
         {
             title: "Winelands",
